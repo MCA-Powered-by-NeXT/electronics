@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Day 2: Circuit Architectures</title>
+ <style>
+:root {
+ --primary: #c0392b;
+ --secondary: #2c3e50;
+ --accent: #f1c40f;
+ --text: #ffffff;
+ --dark-bg: #1a1a1a;
+ --success: #27ae60;
+ }
+ body {
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: var(--dark-bg);
+ color: var(--text);
+ margin: 0;
+ padding: 0;
+ scroll-behavior: smooth;
+ }
+ section {
+ min-height: 100vh;
+ padding: 40px 10%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-bottom: 2px solid #333;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px;
+ text-align: center;
+ border-top: 1px solid #333;
+ font-size: 0.9rem;
+ color: #7f8c8d;
+ width: 100%;
+ }
+ .footer-logo {
+ width: 50vw;
+ max-width: 250px;
+ height: auto;
+ display: block;
+ margin: 0 auto 15px auto;
+ opacity: 0.8;
+ }
+ h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+ h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+ p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+ .safety-alert {
+ background: var(--primary);
+ padding: 30px;
+ border-radius: 15px;
+ border: 5px solid white;
+ font-weight: bold;
+ margin-bottom: 20px;
+ }
+ .formula-card {
+ background: #2980b9;
+ padding: 40px;
+ border-radius: 20px;
+ text-align: center;
+ font-size: 4rem;
+ margin: 20px 0;
+ font-family: 'Courier New', Courier, monospace;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+ }
+ .lab-task {
+ background: var(--success);
+ padding: 20px;
+ border-left: 15px solid #2ecc71;
+ margin-top: 20px;
+ }
+ .grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .diagram-img {
+ width: 100%;
+ max-width: 500px;
+ border-radius: 10px;
+ background: white;
+ padding: 10px;
+ }
+ .nav-dots {
+ position: fixed;
+ right: 20px;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 100;
+ }
+ .nav-dots a {
+ display: block;
+ width: 15px;
+ height: 15px;
+ background: #555;
+ margin: 15px;
+ border-radius: 50%;
+ border: 2px solid #888;
+ }
+ .nav-dots a:hover { background: var(--accent); }
+ .pro-tip {
+ background: #444;
+ padding: 15px;
+ border-radius: 10px;
+ font-size: 1.2rem;
+ border-left: 5px solid var(--accent);
+ }
+ .recap-card {
+ border: 2px dashed var(--accent);
+ padding: 20px;
+ margin-top: 20px;
+ background: rgba(241, 196, 15, 0.1);
+ }
+ </style>
+</head>
+<body>
+<div class="nav-dots">
+ <a href="#intro" title="Welcome"></a>
+ <a href="#safety" title="Limits"></a>
+ <a href="#series" title="Series"></a>
+ <a href="#parallel" title="Parallel"></a>
+ <a href="#power" title="Power"></a>
+ <a href="#switches" title="Switches"></a>
+ <a href="#lab" title="Lab Activity"></a>
+ <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+<h1>Day 2</h1>
+ <h2>Series vs. Parallel</h2>
+ <p>Yesterday we built a single loop. Today, we learn how to branch out.</p>
+ <ul>
+ <li><strong>Series:</strong> One path, shared current.</li>
+ <li><strong>Parallel:</strong> Multiple paths, shared voltage.</li>
+ <li><strong>Nodes:</strong> The "intersections" where paths meet.</li>
+ <li><strong>Technician view:</strong> Series problems often look like opens; parallel problems often look like one failed branch.</li>
+ </ul>
+ <p><strong>Real-world example:</strong> Home outlets are wired in parallel so a lamp, phone charger, and TV can all receive the same supply voltage independently.</p>
+ <div class="pro-tip">Pro Tip: If one bulb goes out in series, they all go out. If one goes out in parallel, the rest stay on.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which layout would you choose for room lights, and which layout would you choose for a single safety fuse?</div>
+</section>
+
+<!-- Slide 2: Component Limits -->
+<section id="safety">
+<h2>Component Limits</h2>
+ <div class="safety-alert">DANGER: Exceeding Current (Amps) creates HEAT.<br>
+ <span style="font-size: 1.2rem; font-weight: normal;">Every component has a wattage or current limit. Push too hard, and it fries.</span></div>
+ <div class="grid">
+ <div>
+ <p><strong>Protecting the Gear:</strong></p>
+ <ul>
+ <li>Short circuits bypass the load and cause rapid overheating.</li>
+ <li>Smell something funny? Disconnect the battery immediately.</li>
+ <li>Check battery voltage before and after long labs.</li>
+ <li>Use the resistor as the planned "traffic limit" for LED current.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day2/short_circuit.jpg" class="diagram-img" alt="Short Circuit Visual">
+ <p style="font-size: 1rem;">The Danger of a Short Circuit</p>
+ </div>
+ </div>
+ <p><strong>Sanity Check:</strong> If a wire directly connects + to -, the circuit has almost no resistance and current can spike quickly.</p>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why does a short circuit usually get hot faster than a normal circuit?</div>
+</section>
+
+<!-- Slide 3: The Chain -->
+<section id="series">
+<h2>The Chain: Series</h2>
+ <div class="formula-card">Rt = R1 + R2 + ...</div>
+ <div class="grid">
+ <div>
+ <p><strong>Cumulative Resistance:</strong></p>
+ <ul>
+ <li>Adding resistors in series increases total resistance.</li>
+ <li>Current remains the same through all components.</li>
+ <li>Voltage divides across loads based on their resistance.</li>
+ <li>An open anywhere stops current everywhere.</li>
+ </ul>
+ <p>Example: Two 470&Omega; resistors in a line = 940&Omega; total.</p>
+ <p><strong>Sanity Check:</strong> More series resistance means less current for the same battery.</p>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day2/series_diagram.jpg" class="diagram-img" alt="Series Circuit Diagram">
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If two LEDs are in series and one is removed, why does the other go dark?</div>
+</section>
+
+<!-- Slide 4: The Branches -->
+<section id="parallel">
+<h2>The Branches: Parallel</h2>
+ <p>In parallel, each branch gets the full voltage of the source.</p>
+ <div class="grid">
+ <div>
+ <p><strong>Independent Paths:</strong></p>
+ <p><strong>Voltage:</strong> Stays constant across all branches.</p>
+ <p><strong>Current:</strong> Splits between the available paths.</p>
+ <p><strong>The Trade-off:</strong> More branches in parallel decreases total resistance because there are more paths for electrons.</p>
+ </div>
+ <div>
+ <ul>
+ <li><strong>Misconception:</strong> Adding more branches does not "use up" voltage; it increases total current demand.</li>
+ <li><strong>Application:</strong> Power strips are parallel distribution points.</li>
+ <li><strong>Joke:</strong> Parallel circuits share voltage better than most group projects share work.</li>
+ </ul>
+ </div>
+ </div>
+ <div class="pro-tip">Talking Point: Why is your house wired in parallel? Hint: Do your lights die when the toaster is unplugged?</div>
+</section>
+
+<!-- Slide 5: New Slide - Power Sharing -->
+<section id="power">
+<h2>Power Sharing &amp; Resistor Choices</h2>
+ <div class="formula-card">P = V &times; I</div>
+ <div class="grid">
+ <div>
+ <p><strong>Why power matters:</strong> Components fail when they must turn too much electrical energy into heat.</p>
+ <ul>
+ <li>In series, one resistor may drop more voltage and dissipate more heat.</li>
+ <li>In parallel, each branch needs its own current limit if each branch has an LED.</li>
+ <li>Do not assume equal brightness unless the branch components are equal.</li>
+ </ul>
+ </div>
+ <div>
+ <div class="lab-task"><strong>Quick Estimate:</strong> A 20mA LED branch on 9V uses about 0.18W total. Choose resistor wattage with margin.</div>
+ <p><strong>Rule of Thumb:</strong> If a resistor is too hot to comfortably touch, stop and recalculate current and power.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why is "one resistor for four parallel LEDs" usually a bad repair habit?</div>
+</section>
+
+<!-- Slide 6: Switches and Control -->
+<section id="switches">
+<h2>Switches &amp; Control</h2>
+ <p><strong>AND vs. OR Logic:</strong></p>
+ <ol>
+ <li><strong>AND (Series):</strong> Both switch A AND switch B must be closed for the light to turn on.</li>
+ <li><strong>OR (Parallel):</strong> Either switch A OR switch B can be closed to complete the circuit.</li>
+ </ol>
+ <p>This is the foundation of computer logic.</p>
+ <div class="grid">
+ <div>
+ <p><strong>Button Basics:</strong></p>
+ <ul>
+ <li><strong>Momentary:</strong> Only ON while pressed.</li>
+ <li><strong>Toggle:</strong> Stays ON until flipped back.</li>
+ <li><strong>Normally Open:</strong> Conducts only when pressed.</li>
+ <li><strong>Normally Closed:</strong> Conducts until pressed.</li>
+ </ul>
+ </div>
+ <div>
+ <p><strong>Real-world example:</strong> A machine may use two series safety switches so both guards must be closed before operation.</p>
+ <p><strong>Sanity Check:</strong> When debugging a switch, measure continuity with power off before blaming the load.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Is a refrigerator door switch normally open or normally closed from the light's point of view?</div>
+</section>
+
+<!-- Slide 7: Lab Activity -->
+<section id="lab">
+<h2>Lab 2: Branching Out</h2>
+ <div class="grid">
+ <div>
+ <div class="lab-task"><strong>OBJECTIVE:</strong> Build and compare two LED configurations.</div>
+ <ol>
+ <li>Setup A: Four LEDs in series with one resistor.</li>
+ <li>Setup B: Four LEDs in parallel, each with their own resistor.</li>
+ </ol>
+ <p><strong>Observations:</strong></p>
+ <ul>
+ <li>Which setup is dimmer? Why?</li>
+ <li>Pull one LED out - what happens to the other?</li>
+ <li>Measure supply voltage before and during the test.</li>
+ <li>Sketch both circuits before building to catch node mistakes.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day2/series_led_breadboard.jpg" class="diagram-img" alt="Series LED wiring">
+ <img src="feetPics/day2/parallel_led_breadboard.jpg" class="diagram-img" alt="Parallel LED wiring" style="margin-top: 20px;">
+ <p style="font-size: 1rem; color: #888;">Notice how both parallel LEDs connect to the power rail.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which circuit would be easier to troubleshoot if only one LED is dark?</div>
+</section>
+
+<!-- Slide 8: Recap -->
+<section id="recap">
+<h1>Wrap Up</h1>
+ <h2>Day 2 Recap</h2>
+ <div class="recap-card">
+ <ul>
+ <li><strong>Series:</strong> Components in a single file line. High resistance, low current.</li>
+ <li><strong>Parallel:</strong> Components side-by-side. Shared voltage, independent paths.</li>
+ <li><strong>Total Resistance:</strong> Increases in series; decreases in parallel.</li>
+ <li><strong>The "Magic Smoke":</strong> Respect component limits to keep the hardware alive.</li>
+ <li><strong>Logic:</strong> We used hardware to create simple AND/OR decisions.</li>
+ <li><strong>Power:</strong> Heat is the evidence that energy is being dissipated.</li>
+ </ul>
+ </div>
+ <p><strong>Exit Question:</strong> Why does total resistance decrease when you add a parallel branch?</p>
+ <p><strong>Tomorrow:</strong> Capacitors &amp; Timing - Making circuits that can "remember" or blink on their own.</p>
+</section>
+
+ <footer>
+ <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+ <p>&copy; 2026 Mississippi Coding Academy / NEXTHANDS</p>
+ </footer>
+</body>
+</html>

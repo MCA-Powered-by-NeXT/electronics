@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Day 6: Transistors as Switches</title>
+ <style>
+:root {
+ --primary: #c0392b;
+ --secondary: #2c3e50;
+ --accent: #f1c40f;
+ --text: #ffffff;
+ --dark-bg: #1a1a1a;
+ --success: #27ae60;
+ }
+ body {
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: var(--dark-bg);
+ color: var(--text);
+ margin: 0;
+ padding: 0;
+ scroll-behavior: smooth;
+ }
+ section {
+ min-height: 100vh;
+ padding: 40px 10%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-bottom: 2px solid #333;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px;
+ text-align: center;
+ border-top: 1px solid #333;
+ font-size: 0.9rem;
+ color: #7f8c8d;
+ width: 100%;
+ }
+ .footer-logo {
+ width: 50vw;
+ max-width: 250px;
+ height: auto;
+ display: block;
+ margin: 0 auto 15px auto;
+ opacity: 0.8;
+ }
+ h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+ h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+ p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+ .safety-alert {
+ background: var(--primary);
+ padding: 30px;
+ border-radius: 15px;
+ border: 5px solid white;
+ font-weight: bold;
+ margin-bottom: 20px;
+ }
+ .formula-card {
+ background: #2980b9;
+ padding: 40px;
+ border-radius: 20px;
+ text-align: center;
+ font-size: 4rem;
+ margin: 20px 0;
+ font-family: 'Courier New', Courier, monospace;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+ }
+ .lab-task {
+ background: var(--success);
+ padding: 20px;
+ border-left: 15px solid #2ecc71;
+ margin-top: 20px;
+ }
+ .grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .diagram-img {
+ width: 100%;
+ max-width: 500px;
+ border-radius: 10px;
+ background: white;
+ padding: 10px;
+ }
+ .nav-dots {
+ position: fixed;
+ right: 20px;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 100;
+ }
+ .nav-dots a {
+ display: block;
+ width: 15px;
+ height: 15px;
+ background: #555;
+ margin: 15px;
+ border-radius: 50%;
+ border: 2px solid #888;
+ }
+ .nav-dots a:hover { background: var(--accent); }
+ .pro-tip {
+ background: #444;
+ padding: 15px;
+ border-radius: 10px;
+ font-size: 1.2rem;
+ border-left: 5px solid var(--accent);
+ }
+ .recap-card {
+ border: 2px dashed var(--accent);
+ padding: 20px;
+ margin-top: 20px;
+ background: rgba(241, 196, 15, 0.1);
+ }
+ </style>
+</head>
+<body>
+<div class="nav-dots">
+ <a href="#intro" title="BJT"></a>
+ <a href="#states" title="States"></a>
+ <a href="#gain" title="Gain"></a>
+ <a href="#pinout" title="Pinout"></a>
+ <a href="#base-resistor" title="Base Resistor"></a>
+ <a href="#lab" title="Lab Activity"></a>
+ <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+<h1>Day 6</h1>
+ <h2>The BJT: Electronic Switching</h2>
+ <p>A Bipolar Junction Transistor (BJT) is a "faucet" for electricity.</p>
+ <ul>
+ <li><strong>Base (B):</strong> The Handle. Small current here controls a large current elsewhere.</li>
+ <li><strong>Collector (C):</strong> The Inlet. Where the main current comes from.</li>
+ <li><strong>Emitter (E):</strong> The Outlet. Where the current goes to.</li>
+ <li><strong>Repair view:</strong> A transistor often sits between a low-power control signal and a higher-power load.</li>
+ </ul>
+ <p><strong>Real-world example:</strong> A microcontroller pin cannot drive a motor directly, so it uses a transistor to switch motor current.</p>
+ <div class="pro-tip">Pro Tip: Mechanical switches need a finger; transistors allow a circuit to flip its own switches.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why might a tiny control signal need help turning on a larger load?</div>
+</section>
+
+<!-- Slide 2: Cutoff vs Saturation -->
+<section id="states">
+<h2>The Two States: Cutoff vs. Saturation</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Cutoff (OFF):</strong></p>
+ <ul>
+ <li>No current to the Base.</li>
+ <li>Collector to Emitter is an Open Circuit.</li>
+ <li>Load should be OFF except for leakage or wiring mistakes.</li>
+ </ul>
+ <p><strong>Saturation (ON):</strong></p>
+ <ul>
+ <li>Sufficient current to the Base.</li>
+ <li>Collector to Emitter acts like a Closed Wire.</li>
+ <li>Best state for switching because heat is lower than halfway-on operation.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day6/transistor_switch.jpg" class="diagram-img" alt="BJT Switch Diagram">
+ <p style="font-size: 1rem;">NPN Transistor as a Switch</p>
+ </div>
+ </div>
+ <p><strong>Sanity Check:</strong> For a low-side NPN switch, emitter goes to ground and the load is usually above the collector.</p>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why can a transistor get hot when it is only halfway on?</div>
+</section>
+
+<!-- Slide 3: DC Current Gain -->
+<section id="gain">
+<h2>The Math: DC Current Gain</h2>
+ <div class="formula-card">&beta; (hFE) = Ic / Ib</div>
+ <div class="grid">
+ <div>
+ <p><strong>Amplification Power:</strong></p>
+ <ul>
+ <li><strong>Ib:</strong> Base Current (Small control signal)</li>
+ <li><strong>Ic:</strong> Collector Current (Large load signal)</li>
+ <li>If a transistor has a Gain (&beta;) of 100, 1mA at the base can control 100mA at the collector.</li>
+ <li>For switching, design for saturation instead of trusting the best-case gain.</li>
+ </ul>
+ </div>
+ <div>
+ <p><strong>Check the Datasheet:</strong> Every transistor has a different gain limit. Look for the hFE value.</p>
+ <p><strong>Sanity Check:</strong> If the load needs 100mA, do not provide only a tiny base current and hope; give the base enough margin through a resistor.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why is datasheet gain a range instead of one exact number?</div>
+</section>
+
+<!-- Slide 4: 2N2222 Pinout -->
+<section id="pinout">
+<h2>The 2N2222 Pinout</h2>
+ <p>BJTs look identical from the outside. You MUST know the pinout.</p>
+ <div class="grid">
+ <div>
+ <p><strong>NPN vs PNP:</strong></p>
+ <ul>
+ <li><strong>NPN:</strong> Switched with a POSITIVE voltage (Most common).</li>
+ <li><strong>PNP:</strong> Switched with a NEGATIVE (Ground) voltage.</li>
+ <li>Look for the flat side of the TO-92 package to identify pins 1, 2, and 3.</li>
+ <li>Do not assume every transistor package uses the same order.</li>
+ </ul>
+ <p><strong>Sanity Check:</strong> Wrong pinout can make a correct schematic behave like a dead circuit.</p>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day6/2n2222_pinout.jpg" class="diagram-img" alt="2N2222 Pinout Diagram">
+ <p style="font-size: 1rem;">Flat face facing you: E - B - C</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> What symptoms might you see if collector and emitter are swapped?</div>
+</section>
+
+<!-- Slide 5: New Slide - Base Resistor -->
+<section id="base-resistor">
+<h2>Choosing a Base Resistor</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Why it exists:</strong> The base-emitter junction behaves like a diode. Without a resistor, base current can be too high.</p>
+ <ul>
+ <li>The base resistor protects the control source.</li>
+ <li>It also controls how strongly the transistor is driven ON.</li>
+ <li>Too large: transistor may not saturate.</li>
+ <li>Too small: control pin or transistor may overheat.</li>
+ </ul>
+ </div>
+ <div>
+ <div class="lab-task"><strong>Quick Estimate:</strong> If the control signal is 5V and base-emitter drop is about 0.7V, a 10k resistor gives about 0.43mA base current.</div>
+ <p><strong>Rule of Thumb:</strong> Use a base resistor every time a BJT base connects to a voltage source or logic pin.</p>
+ <p><strong>Transistor Joke:</strong> A transistor is a tiny bouncer; a small signal at the base decides whether the load gets in.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> What could happen if you connect the base directly to 9V with no resistor?</div>
+</section>
+
+<!-- Slide 6: Lab Activity -->
+<section id="lab">
+<h2>Lab 6: The Transistor Switch</h2>
+ <div class="grid">
+ <div>
+ <div class="lab-task"><strong>OBJECTIVE:</strong> Use a low-power touch to light a high-power LED.</div>
+ <ol>
+ <li>Insert 2N2222 NPN Transistor.</li>
+ <li>Connect Load (LED + Resistor) to the Collector.</li>
+ <li>Connect Emitter to Ground.</li>
+ <li>Touch the Base through a 10k resistor to 9V.</li>
+ <li>Measure base voltage and collector voltage in OFF and ON states.</li>
+ </ol>
+ <p><strong>Challenge:</strong> Can you make the LED light up just by touching the wire with your finger? Using your body's resistance as the Base trigger.</p>
+ </div>
+ <div>
+ <p class="safety-alert">WARNING: Transistors get HOT if they are in the Linear Region (half-way on). Ensure you are fully saturating the base.</p>
+ <p><strong>Common mistakes:</strong> reversed E-B-C pins, missing LED resistor, and forgetting common ground.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> How can measuring collector voltage tell you whether the transistor is saturated?</div>
+</section>
+
+<!-- Slide 7: Recap -->
+<section id="recap">
+<h1>Wrap Up</h1>
+ <h2>Day 6 Recap</h2>
+ <div class="recap-card">
+ <ul>
+ <li><strong>Solid State:</strong> No moving parts, unlike a mechanical relay.</li>
+ <li><strong>Current Gain:</strong> A tiny Input controls a larger Output.</li>
+ <li><strong>The Faucet:</strong> Base is the handle, Collector is the supply, Emitter is the drain.</li>
+ <li><strong>Saturation:</strong> For switching, we want the transistor Wide Open.</li>
+ <li><strong>Base Resistor:</strong> Protects the control signal and controls drive current.</li>
+ </ul>
+ </div>
+ <p><strong>Exit Question:</strong> Why is "halfway on" a bad state for a transistor used as a switch?</p>
+ <p><strong>Tomorrow:</strong> Digital Logic - How millions of these transistors work together to Think.</p>
+</section>
+
+ <footer>
+ <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+ <p>&copy; 2026 Mississippi Coding Academy / NEXTHANDS</p>
+ </footer>
+</body>
+</html>

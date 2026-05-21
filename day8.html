@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8: Soldering & Rework</title>
+    <style>
+        :root {
+            --primary: #c0392b;
+            --secondary: #2c3e50;
+            --accent: #f1c40f;
+            --text: #ffffff;
+            --dark-bg: #1a1a1a;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 40px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid #333;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center; 
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            width: 100%;
+        }
+
+        .footer-logo {
+            width: 50vw;
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px auto;
+            opacity: 0.8;
+        }
+
+        h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+        h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+        p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+
+        .safety-alert {
+            background: var(--primary);
+            padding: 30px;
+            border-radius: 15px;
+            border: 5px solid white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .tool-card {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+            margin: 10px 0;
+        }
+
+        .lab-task {
+            background: var(--success);
+            padding: 20px;
+            border-left: 15px solid #2ecc71;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .diagram-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-dots a {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #555;
+            margin: 15px;
+            border-radius: 50%;
+            border: 2px solid #888;
+        }
+
+        .nav-dots a:hover { background: var(--accent); }
+
+        .pro-tip {
+            background: #444;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            border-left: 5px solid var(--accent);
+        }
+
+        .recap-card {
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(241, 196, 15, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav-dots">
+    <a href="#intro" title="Thermal Bond"></a>
+    <a href="#tools" title="Equipment"></a>
+    <a href="#technique" title="Perfect Joint"></a>
+    <a href="#rework" title="Desoldering"></a>
+    <a href="#lab" title="Lab Activity"></a>
+    <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+    <h1>Day 8</h1>
+    <h2>Soldering: The Permanent Connection</h2>
+    <p>Soldering is the process of joining two metals using a filler material (Solder) to create a mechanical and electrical bond.</p>
+    <ul>
+        <li><strong>Thermal Mass:</strong> The ability of a component to hold heat.</li>
+        <li><strong>Wetting:</strong> When molten solder flows smoothly over a surface.</li>
+        <li><strong>Flux:</strong> A chemical agent that removes oxidation so solder can stick.</li>
+    </ul>
+    <div class="pro-tip">Pro Tip: You aren't "gluing" parts; you are creating a metallurgical bond!</div>
+</section>
+
+<!-- Slide 2: Equipment -->
+<section id="tools">
+    <h2>The Solder Station</h2>
+    <div class="grid">
+        <div>
+            <div class="tool-card">
+                <h3>The Iron</h3>
+                <p>Heats the joint. Standard electronics work happens between 300°C and 350°C.</p>
+            </div>
+            <div class="tool-card">
+                <h3>The Solder</h3>
+                <p>Usually a Lead-Free (Sn/Cu) or Leaded (Sn/Pb) wire with a Rosin Core (Flux).</p>
+            </div>
+        </div>
+        <div>
+            <p><strong>Cleaning Tools:</strong></p>
+            <ul>
+                <li>Brass Wool (Best for tip life)</li>
+                <li>Damp Sponge (Classic)</li>
+                <li>Tip Tanner (For oxidized tips)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: The Technique -->
+<section id="technique">
+    <h2>Anatomy of a Perfect Joint</h2>
+    <div class="grid">
+        <div>
+            <p><strong>The "3-Second" Rule:</strong></p>
+            <ol>
+                <li><strong>Heat:</strong> Touch iron to the pad AND the lead simultaneously.</li>
+                <li><strong>Feed:</strong> Touch solder to the <em>joint</em>, not the iron tip.</li>
+                <li><strong>Retract:</strong> Remove solder, then remove the iron.</li>
+            </ol>
+            <p>A good joint is <strong>Shiny and Concave</strong> (like a Hershey's Kiss).</p>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day8/solder_joints.jpg" class="diagram-img" alt="Good vs Bad Solder Joints">
+            <p style="font-size: 1rem;">Left: Ideal Joint | Right: Cold Joint (Bad)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Rework & Desoldering -->
+<section id="rework">
+    <h2>Fixing Mistakes: Desoldering</h2>
+    <div class="safety-alert">
+        CAUTION: Repeatedly heating a pad can cause it to "Lift" off the board. Work quickly!
+    </div>
+    <div class="grid">
+        <div>
+            <p><strong>Tools for the "Undo" Button:</strong></p>
+            <ul>
+                <li><strong>Solder Sucker:</strong> A vacuum pump that gulps molten solder.</li>
+                <li><strong>Solder Wick:</strong> Braided copper that "soaks" up solder via capillary action.</li>
+            </ul>
+        </div>
+        <div class="pro-tip">
+            <strong>Pro Tip:</strong> If a joint won't melt, add a little <em>fresh</em> solder. The new flux will help the heat flow!
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Lab Activity -->
+<section id="lab">
+    <h2>Lab 8: Through-Hole Soldering</h2>
+    <div class="grid">
+        <div>
+            <div class="lab-task">
+                <strong>OBJECTIVE:</strong> Assemble a practice PCB and perform component rework.
+            </div>
+            <ol>
+                <li>Solder a 10-resistor "Ladder" on a perf-board.</li>
+                <li>Inspect for "Bridges" (accidental connections).</li>
+                <li>Use Solder Wick to remove one resistor without damaging the pad.</li>
+                <li>Final check: Use DMM Continuity mode to verify connections.</li>
+            </ol>
+        </div>
+        <div class="safety-alert" style="background: var(--secondary);">
+            SAFETY: Fumes are toxic. Turn on the desk fans and never touch the metal barrel of the iron!
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Recap -->
+<section id="recap">
+    <h1>Wrap Up</h1>
+    <h2>Day 8 Recap</h2>
+    <div class="recap-card">
+        <ul>
+            <li><strong>The Bond:</strong> Solder flows toward the heat. Heat the work, not the solder.</li>
+            <li><strong>Appearance:</strong> Shiny and smooth = Good. Dull and chunky = Cold/Weak.</li>
+            <li><strong>Flux:</strong> Your best friend for clean, fast soldering.</li>
+            <li><strong>Rework:</strong> Desoldering is just as important as soldering.</li>
+        </ul>
+    </div>
+    <p><strong>Tomorrow:</strong> Systematic Troubleshooting—How to find the needle in the haystack.</p>
+</section>
+
+<footer>
+    <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+    <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
+</footer>
+
+</body>
+</html>

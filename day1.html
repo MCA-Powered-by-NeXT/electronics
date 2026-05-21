@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Electronics Foundations</title>
+    <style>
+        :root {
+            --primary: #c0392b;
+            --secondary: #2c3e50;
+            --accent: #f1c40f;
+            --text: #ffffff;
+            --dark-bg: #1a1a1a;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 40px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid #333;
+        }
+
+        footer {
+        margin-top: 50px;
+        padding: 20px;
+        text-align: center; 
+        border-top: 1px solid #333;
+        font-size: 0.9rem;
+        color: #7f8c8d;
+        width: 100%;
+        }
+
+        .footer-logo {
+        width: 50vw;        /* Exactly half the viewport width */
+        max-width: 250px;   /* Prevents it from becoming a giant on big TV screens */
+        height: auto;       /* Maintains aspect ratio */
+        display: block;
+        margin: 0 auto 15px auto; /* Centers the image and adds space below */
+        opacity: 0.8;       /* Makes it look more integrated and professional */
+        }
+
+        h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+        h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+        p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+
+        .safety-alert {
+            background: var(--primary);
+            padding: 30px;
+            border-radius: 15px;
+            border: 5px solid white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .formula-card {
+            background: #2980b9;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 4rem;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .lab-task {
+            background: var(--success);
+            padding: 20px;
+            border-left: 15px solid #2ecc71;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .diagram-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-dots a {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #555;
+            margin: 15px;
+            border-radius: 50%;
+            border: 2px solid #888;
+        }
+
+        .nav-dots a:hover { background: var(--accent); }
+
+        .pro-tip {
+            background: #444;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            border-left: 5px solid var(--accent);
+        }
+
+        .recap-card {
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(241, 196, 15, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav-dots">
+    <a href="#intro" title="Welcome"></a>
+    <a href="#safety" title="Safety"></a>
+    <a href="#theory" title="Ohm's Law"></a>
+    <a href="#components" title="The Toolkit"></a>
+    <a href="#dmm" title="DMM Use"></a>
+    <a href="#lab" title="Lab Activity"></a>
+    <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+    <h1>Day 1</h1>
+    <h2>Orientation & The Circuit</h2>
+    <p>Electronics is the study of controlling the flow of electrons.</p>
+    <ul>
+        <li><strong>Voltage (V):</strong> Potential energy (The "Push")</li>
+        <li><strong>Current (I):</strong> Flow rate (The "River")</li>
+        <li><strong>Resistance (R):</strong> Restriction (The "Narrow Pipe")</li>
+    </ul>
+    <div class="pro-tip">Pro Tip: Electricity always wants to find the path of least resistance to Ground!</div>
+</section>
+
+<!-- Slide 2: Safety -->
+<section id="safety">
+    <h2>Safety & ESD</h2>
+    <div class="safety-alert">
+        DANGER: NEVER work on "Mains" power (Wall Outlets).<br>
+        <span style="font-size: 1.2rem; font-weight: normal;">Static electricity (ESD) can destroy chips. Wear your wrist strap!</span>
+    </div>
+    <div class="grid">
+        <div>
+            <p><strong>The Golden Rules:</strong></p>
+            <ul>
+                <li>Eye protection during lead clipping.</li>
+                <li>Keep drinks away from your workstation.</li>
+                <li>Check for "Magic Smoke" (Signs of overheating).</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day1/esd_strap.jpg" class="diagram-img" alt="ESD Strap Usage">
+            <p style="font-size: 1rem;">Proper ESD Protection</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Ohm's Law -->
+<section id="theory">
+    <h2>The Math: Ohm's Law</h2>
+    <div class="formula-card">V = I × R</div>
+    <div class="grid">
+        <div>
+            <p><strong>Calculating Flow:</strong></p>
+            <ul>
+                <li>Increase Voltage = Increase Current</li>
+                <li>Increase Resistance = Decrease Current</li>
+            </ul>
+            <p>Example: If V=9V and R=470Ω, what is I?</p>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day1/ohms_law.jpg" class="diagram-img" alt="Ohm's Law Triangle">
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Filler Content - The Components -->
+<section id="components">
+    <h2>The Component Toolkit</h2>
+    <p>Before we build, look at the physical parts in your kit:</p>
+    <div class="grid">
+        <div>
+            <p><strong>Resistors:</strong> Look for the colored bands. They don't have a "side"—you can plug them in either way.</p>
+            <p><strong>LEDs:</strong> Light Emitting Diodes. These ARE polarized. 
+                <br><small>Short Leg = Negative (-) | Long Leg = Positive (+)</small>
+            </p>
+        </div>
+        <div>
+            <p><strong>Jumper Wires:</strong> Think of these as your "Electron Highways."</p>
+            <p><strong>Breadboards:</strong> These allow us to prototype without permanent soldering.</p>
+        </div>
+    </div>
+    <div class="pro-tip">Talking Point: Why is the resistor needed for the LED? (Hint: To stop the LED from exploding!)</div>
+</section>
+
+<!-- Slide 5: DMM Basics -->
+<section id="dmm">
+    <h2>Using the Multimeter (DMM)</h2>
+    <div class="grid">
+        <div>
+            <p><strong>The Three Big Settings:</strong></p>
+            <ol>
+                <li><strong>DC Voltage:</strong> Probing batteries and power.</li>
+                <li><strong>Resistance (Ω):</strong> Checking component values.</li>
+                <li><strong>Continuity (Beep):</strong> Checking for broken wires.</li>
+            </ol>
+            <p style="color: var(--primary); font-weight: bold;">⚠️ Never check resistance on a live circuit!</p>
+        </div>
+        <div>
+            <div class="pro-tip">
+                <strong>How to measure:</strong><br>
+                - Voltage is measured in <strong>Parallel</strong>.<br>
+                - Current is measured in <strong>Series</strong>.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Lab Activity -->
+<section id="lab">
+    <h2>Lab 1: Your First Circuit</h2>
+    <div class="grid">
+        <div>
+            <div class="lab-task">
+                <strong>OBJECTIVE:</strong> Construct a simple DC circuit.
+            </div>
+            <ol>
+                <li>Power: 9V Battery</li>
+                <li>Control: 470 Ohm Resistor</li>
+                <li>Load: Standard LED</li>
+            </ol>
+            <p><strong>Common Mistakes:</strong></p>
+            <ul>
+                <li>LED backwards (Long leg is Positive).</li>
+                <li>Resistor not making contact in the breadboard.</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day1/breadboard_internal_connections.png" class="diagram-img" alt="Breadboard internal connections">
+            <p style="font-size: 1rem; color: #888;">Horizontal rows are connected!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Recap -->
+<section id="recap">
+    <h1>Wrap Up</h1>
+    <h2>Day 1 Recap</h2>
+    <div class="recap-card">
+        <ul>
+            <li><strong>Safety First:</strong> We wear ESD straps and eye pro. No wall outlets!</li>
+            <li><strong>The Big Three:</strong> Voltage pushes, Current flows, Resistance slows.</li>
+            <li><strong>V = I x R:</strong> The most important math you'll ever use in this shop.</li>
+            <li><strong>Tools:</strong> The Multimeter is your eyes. Use it to "see" electricity.</li>
+            <li><strong>The Lab:</strong> You built a circuit! If it didn't light up, you learned how to troubleshoot.</li>
+        </ul>
+    </div>
+    <p><strong>Tomorrow:</strong> Series vs. Parallel—Why Christmas lights used to be a nightmare.</p>
+</section>
+    <footer>
+        <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+        <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
+    </footer>
+</body>
+</html>

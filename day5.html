@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5: Capacitors & RC Timing</title>
+    <style>
+        :root {
+            --primary: #c0392b;
+            --secondary: #2c3e50;
+            --accent: #f1c40f;
+            --text: #ffffff;
+            --dark-bg: #1a1a1a;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 40px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid #333;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center; 
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            width: 100%;
+        }
+
+        .footer-logo {
+            width: 50vw;
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px auto;
+            opacity: 0.8;
+        }
+
+        h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+        h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+        p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+
+        .safety-alert {
+            background: var(--primary);
+            padding: 30px;
+            border-radius: 15px;
+            border: 5px solid white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .formula-card {
+            background: #2980b9;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 4rem;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .lab-task {
+            background: var(--success);
+            padding: 20px;
+            border-left: 15px solid #2ecc71;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .diagram-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-dots a {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #555;
+            margin: 15px;
+            border-radius: 50%;
+            border: 2px solid #888;
+        }
+
+        .nav-dots a:hover { background: var(--accent); }
+
+        .pro-tip {
+            background: #444;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            border-left: 5px solid var(--accent);
+        }
+
+        .recap-card {
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(241, 196, 15, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav-dots">
+    <a href="#intro" title="Introduction"></a>
+    <a href="#caps" title="The Capacitor"></a>
+    <a href="#timing" title="RC Timing"></a>
+    <a href="#inductors" title="Inductors"></a>
+    <a href="#repair" title="Visual Inspection"></a>
+    <a href="#lab" title="Lab Activity"></a>
+    <a href="#recap" title="Recap"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+    <h1>Day 5</h1>
+    <h2>Capacitors & RC Timing</h2>
+    <p>Yesterday we steered electricity. Today we learn how to <strong>store it</strong> and use it to create <strong>timing</strong>.</p>
+    <ul>
+        <li><strong>Temporary Batteries:</strong> Capacitors store energy in an electric field.</li>
+        <li><strong>Filtering:</strong> Turning "bumpy" DC into smooth power.</li>
+        <li><strong>The Time Constant:</strong> Using resistors and capacitors to control speed.</li>
+    </ul>
+    <div class="pro-tip">Pro Tip: Capacitors are like water tanks; they can fill up slowly and dump their energy all at once!</div>
+</section>
+
+<!-- Slide 2: The Capacitor -->
+<section id="caps">
+    <h2>The Capacitor (C)</h2>
+    <div class="safety-alert">
+        DANGER: Capacitors can hold a charge even when the power is OFF.<br>
+        <span style="font-size: 1.2rem; font-weight: normal;">Always discharge large capacitors before touching a circuit. They can "bite"!</span>
+    </div>
+    <div class="grid">
+        <div>
+            <p><strong>Key Concepts:</strong></p>
+            <ul>
+                <li><strong>Farads (F):</strong> The unit of capacitance (usually &mu;F or nF).</li>
+                <li><strong>Voltage Rating:</strong> The maximum pressure the cap can handle before it explodes.</li>
+                <li><strong>Electrolytic:</strong> These are polarized (+ and -). If you put them in backward, they pop!</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day5/capacitor_types.jpg" class="diagram-img" alt="Ceramic vs Electrolytic Capacitors">
+            <p style="font-size: 1rem;">Electrolytic (Can) vs Ceramic (Disc)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: RC Timing -->
+<section id="timing">
+    <h2>The RC Time Constant</h2>
+    <div class="formula-card">τ = R × C</div>
+    <div class="grid">
+        <div>
+            <p><strong>How it works:</strong></p>
+            <p>A Resistor limits how fast a Capacitor can fill up. This creates a predictable delay.</p>
+            <ul>
+                <li>High Resistance = Slower charge.</li>
+                <li>High Capacitance = Slower charge.</li>
+                <li><strong>5 Tau Rule:</strong> It takes roughly 5 time constants to fully charge/discharge.</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day5/rc_curve.jpg" class="diagram-img" alt="RC Charge and Discharge Curve">
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Inductors -->
+<section id="inductors">
+    <h2>Inductors (L)</h2>
+    <p>The "Mirror Image" of a capacitor. While caps store energy in an <em>Electric Field</em>, Inductors store it in a <em>Magnetic Field</em>.</p>
+    <div class="grid">
+        <div>
+            <p><strong>Characteristics:</strong></p>
+            <ul>
+                <li>Measured in <strong>Henries (H)</strong>.</li>
+                <li>They resist sudden changes in <strong>Current</strong>.</li>
+                <li>Commonly used in filters and power conversion.</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day5/inductor_coil.jpg" class="diagram-img" alt="Copper Coil Inductor">
+            <p style="font-size: 1rem;">Simple coils of wire create magnetism.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Repair Logic -->
+<section id="repair">
+    <h2>Repair Skills: Inspecting Failed Caps</h2>
+    <p>Capacitors are the #1 cause of failure in modern electronics.</p>
+    <div class="grid">
+        <div>
+            <p><strong>Visual Red Flags:</strong></p>
+            <ul>
+                <li><strong>Bulging:</strong> The top "X" or "K" vent is puffed up.</li>
+                <li><strong>Leaking:</strong> Crusty brown/white fluid at the base.</li>
+                <li><strong>Heat:</strong> Discoloration on the PCB around the cap.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="pro-tip">
+                <strong>Troubleshooting Step:</strong><br>
+                Use your DMM in "Capacitance Mode" to see if the value matches the label. If a 1000&mu;F cap reads 200&mu;F, it’s dead.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Lab Activity -->
+<section id="lab">
+    <h2>Lab 5: The LED Fade-Off</h2>
+    <div class="grid">
+        <div>
+            <div class="lab-task">
+                <strong>OBJECTIVE:</strong> Build an RC circuit that keeps an LED lit after the button is released.
+            </div>
+            <ol>
+                <li>Place a large Electrolytic Cap (470&mu;F+) in parallel with an LED circuit.</li>
+                <li>Press the button to "charge" the tank.</li>
+                <li>Release the button and observe the "fade out."</li>
+            </ol>
+            <p><strong>The Challenge:</strong></p>
+            <p>Swap the resistor for a higher value. Does the LED stay on longer or shorter? Why?</p>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day5/rc_lab_circuit.jpg" class="diagram-img" alt="LED Fade Breadboard Diagram">
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Week 1 Wrap-Up -->
+<section id="recap">
+    <h1>Week 1 Complete</h1>
+    <h2>Fundamentals Mastered</h2>
+    <div class="recap-card">
+        <ul>
+            <li><strong>Safety:</strong> You know how to respect the bench.</li>
+            <li><strong>Ohm's Law:</strong> You can calculate the "Big Three" (V, I, R).</li>
+            <li><strong>DMM:</strong> You can measure continuity, voltage, and components.</li>
+            <li><strong>Diodes/Caps:</strong> You understand direction and storage.</li>
+        </ul>
+    </div>
+    <p><strong>Next Week:</strong> We move to Active Devices—starting with <strong>Transistors</strong>, the building blocks of all modern computing.</p>
+</section>
+
+    <footer>
+        <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+        <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
+    </footer>
+</body>
+</html>

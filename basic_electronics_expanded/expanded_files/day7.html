@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Day 7: Digital Logic & Gates</title>
+ <style>
+:root {
+ --primary: #c0392b;
+ --secondary: #2c3e50;
+ --accent: #f1c40f;
+ --text: #ffffff;
+ --dark-bg: #1a1a1a;
+ --success: #27ae60;
+ }
+ body {
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: var(--dark-bg);
+ color: var(--text);
+ margin: 0;
+ padding: 0;
+ scroll-behavior: smooth;
+ }
+ section {
+ min-height: 100vh;
+ padding: 40px 10%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-bottom: 2px solid #333;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px;
+ text-align: center;
+ border-top: 1px solid #333;
+ font-size: 0.9rem;
+ color: #7f8c8d;
+ width: 100%;
+ }
+ .footer-logo {
+ width: 50vw;
+ max-width: 250px;
+ height: auto;
+ display: block;
+ margin: 0 auto 15px auto;
+ opacity: 0.8;
+ }
+ h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+ h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+ p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+ .safety-alert {
+ background: var(--primary);
+ padding: 30px;
+ border-radius: 15px;
+ border: 5px solid white;
+ font-weight: bold;
+ margin-bottom: 20px;
+ }
+ .formula-card {
+ background: #2980b9;
+ padding: 40px;
+ border-radius: 20px;
+ text-align: center;
+ font-size: 4rem;
+ margin: 20px 0;
+ font-family: 'Courier New', Courier, monospace;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+ }
+ .lab-task {
+ background: var(--success);
+ padding: 20px;
+ border-left: 15px solid #2ecc71;
+ margin-top: 20px;
+ }
+ .grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .diagram-img {
+ width: 100%;
+ max-width: 500px;
+ border-radius: 10px;
+ background: white;
+ padding: 10px;
+ }
+ .nav-dots {
+ position: fixed;
+ right: 20px;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 100;
+ }
+ .nav-dots a {
+ display: block;
+ width: 15px;
+ height: 15px;
+ background: #555;
+ margin: 15px;
+ border-radius: 50%;
+ border: 2px solid #888;
+ }
+ .nav-dots a:hover { background: var(--accent); }
+ .pro-tip {
+ background: #444;
+ padding: 15px;
+ border-radius: 10px;
+ font-size: 1.2rem;
+ border-left: 5px solid var(--accent);
+ }
+ .recap-card {
+ border: 2px dashed var(--accent);
+ padding: 20px;
+ margin-top: 20px;
+ background: rgba(241, 196, 15, 0.1);
+ }
+ </style>
+</head>
+<body>
+<div class="nav-dots">
+ <a href="#intro" title="Digital"></a>
+ <a href="#gates" title="Gates"></a>
+ <a href="#truth" title="Truth Table"></a>
+ <a href="#floating" title="Floating Pins"></a>
+ <a href="#debug" title="Debug Inputs"></a>
+ <a href="#lab" title="Lab Activity"></a>
+ <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+<h1>Day 7</h1>
+ <h2>Digital Logic &amp; Gateways</h2>
+ <p>Everything in modern computing boils down to two states: 1 (High/ON) and 0 (Low/OFF).</p>
+ <ul>
+ <li><strong>Binary:</strong> Base-2 numbering system.</li>
+ <li><strong>Logic Level:</strong> Usually 5V or 3.3V represents High.</li>
+ <li><strong>Decision Making:</strong> Using Logic Gates to perform operations.</li>
+ <li><strong>Repair view:</strong> Digital circuits still fail for analog reasons: bad power, floating inputs, shorts, and heat.</li>
+ </ul>
+ <p><strong>Real-world example:</strong> A thermostat uses digital decisions: if temperature is low AND the system is enabled, turn heat ON.</p>
+ <div class="pro-tip">Pro Tip: Computers do not "know" math; they navigate a massive maze of logic gates.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why is a clean HIGH or LOW more reliable than a signal that floats in between?</div>
+</section>
+
+<!-- Slide 2: Big Three Gates -->
+<section id="gates">
+<h2>The "Big Three" Gates</h2>
+ <div class="grid">
+ <div>
+ <h3 style="font-size: 2rem; color: var(--accent);">AND Gate</h3>
+ <p>Output is HIGH only if both inputs are HIGH.</p>
+ <h3 style="font-size: 2rem; color: var(--accent);">OR Gate</h3>
+ <p>Output is HIGH if either input is HIGH.</p>
+ <h3 style="font-size: 2rem; color: var(--accent);">NOT Gate (Inverter)</h3>
+ <p>Flips the signal. 1 becomes 0. 0 becomes 1.</p>
+ </div>
+ <div>
+ <ul>
+ <li><strong>Misconception:</strong> A logic gate is not magic software; it is hardware made from transistors.</li>
+ <li><strong>Application:</strong> Door sensors, safety interlocks, and alarms all use logic decisions.</li>
+ <li><strong>Sanity Check:</strong> Before blaming a gate, verify VCC and GND pins.</li>
+ </ul>
+ <p><strong>Binary Joke:</strong> There are 10 types of people: those who read binary and those who do not.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which gate would you use if two safety switches must both be active?</div>
+</section>
+
+<!-- Slide 3: Truth Table -->
+<section id="truth">
+<h2>The Truth Table</h2>
+ <p>A map of every possible input combination and the resulting output.</p>
+ <div class="grid">
+ <div>
+ <p><strong>AND GATE TABLE:</strong></p>
+ <p>A: 0 | B: 0 -> OUT: 0<br>
+ A: 1 | B: 0 -> OUT: 0<br>
+ A: 0 | B: 1 -> OUT: 0<br>
+ A: 1 | B: 1 -> OUT: 1</p>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day7/logic_symbols.jpg" class="diagram-img" alt="Digital Logic Gate Symbols">
+ <p style="font-size: 1rem;">Schematic Symbols for Logic Gates</p>
+ </div>
+ </div>
+ <ul>
+ <li><strong>Technician habit:</strong> Compare measured output to the truth table one row at a time.</li>
+ <li><strong>Common mistake:</strong> Testing only one input state and declaring the gate good.</li>
+ <li><strong>Sanity Check:</strong> For an AND gate, any input LOW should force output LOW.</li>
+ </ul>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which truth table row proves that an AND gate is not the same as an OR gate?</div>
+</section>
+
+<!-- Slide 4: Floating Pins -->
+<section id="floating">
+<h2>Floating Pins &amp; Pull-ups</h2>
+ <p>In digital electronics, an unconnected pin is Floating - it is not 1 or 0, it is garbage.</p>
+ <div class="grid">
+ <div>
+ <p><strong>Pull-up Resistor:</strong> A resistor connected to VCC that ensures a pin stays HIGH when the switch is open.</p>
+ <p><strong>Pull-down Resistor:</strong> A resistor connected to GND that ensures a pin stays LOW when the switch is open.</p>
+ </div>
+ <div>
+ <ul>
+ <li><strong>Misconception:</strong> "Not connected" does not mean LOW.</li>
+ <li><strong>Application:</strong> Buttons on microcontrollers use pull-ups or pull-downs to avoid random presses.</li>
+ <li><strong>Rule of Thumb:</strong> Every digital input needs a defined state.</li>
+ </ul>
+ </div>
+ </div>
+ <div class="pro-tip">Talking Point: Without pull resistors, static electricity and nearby signals can trigger digital circuits randomly.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> What would a floating input look like on an LED output: steady, off, or random?</div>
+</section>
+
+<!-- Slide 5: New Slide - Debugging Digital Inputs -->
+<section id="debug">
+<h2>Debugging Digital Inputs</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Debug order:</strong></p>
+ <ol>
+ <li>Verify chip power: VCC and GND.</li>
+ <li>Verify input state: is it truly HIGH or LOW?</li>
+ <li>Verify pull resistor path.</li>
+ <li>Compare output to the truth table.</li>
+ </ol>
+ </div>
+ <div>
+ <div class="lab-task"><strong>Mini-Demo:</strong> Remove one pull-down resistor and watch the output become unstable. Then reconnect it and retest.</div>
+ <p><strong>Real-world example:</strong> A loose keypad line can make a device think buttons are being pressed.</p>
+ <p><strong>Sanity Check:</strong> A valid logic HIGH must meet the chip's voltage threshold, not just "some voltage."</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If the input is floating, can the gate itself still be perfectly good?</div>
+</section>
+
+<!-- Slide 6: Lab Activity -->
+<section id="lab">
+<h2>Lab 7: Logic Observation</h2>
+ <div class="grid">
+ <div>
+ <div class="lab-task"><strong>OBJECTIVE:</strong> Verify an AND gate using the 74HC08 Integrated Circuit.</div>
+ <ol>
+ <li>Power the IC (Pin 14 to 5V, Pin 7 to GND).</li>
+ <li>Connect two switches to Pins 1 and 2 (Inputs).</li>
+ <li>Connect an LED to Pin 3 (Output).</li>
+ <li>Ensure you use 10k Pull-down resistors on the switches.</li>
+ <li>Fill out the truth table from actual measurements.</li>
+ </ol>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day7/74hc08_pinout.jpg" class="diagram-img" alt="74HC08 Pinout">
+ <p style="font-size: 1rem;">Quad 2-Input AND Gate IC</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If the LED never turns on, should you check the truth table first or the IC power pins first?</div>
+</section>
+
+<!-- Slide 7: Recap -->
+<section id="recap">
+<h1>Wrap Up</h1>
+ <h2>Day 7 Recap</h2>
+ <div class="recap-card">
+ <ul>
+ <li><strong>Digital:</strong> Binary states (High vs. Low) replace the sliding scale of analog.</li>
+ <li><strong>Logic Gates:</strong> The hardware that makes decisions.</li>
+ <li><strong>Truth Tables:</strong> The cheat sheet for how a gate behaves.</li>
+ <li><strong>Pull-ups/downs:</strong> Crucial for keeping digital inputs stable.</li>
+ <li><strong>Debugging:</strong> Power, inputs, pulls, output - in that order.</li>
+ </ul>
+ </div>
+ <p><strong>Exit Question:</strong> Why is a floating input more dangerous than a LOW input?</p>
+ <p><strong>Tomorrow:</strong> Soldering Theory - Making your circuits permanent and professional.</p>
+</section>
+
+ <footer>
+ <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+ <p>&copy; 2026 Mississippi Coding Academy / NEXTHANDS</p>
+ </footer>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Day 4: Diodes & Power Supplies</title>
+ <style>
+:root {
+ --primary: #c0392b;
+ --secondary: #2c3e50;
+ --accent: #f1c40f;
+ --text: #ffffff;
+ --dark-bg: #1a1a1a;
+ --success: #27ae60;
+ }
+ body {
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: var(--dark-bg);
+ color: var(--text);
+ margin: 0;
+ padding: 0;
+ scroll-behavior: smooth;
+ }
+ section {
+ min-height: 100vh;
+ padding: 40px 10%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-bottom: 2px solid #333;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px;
+ text-align: center;
+ border-top: 1px solid #333;
+ font-size: 0.9rem;
+ color: #7f8c8d;
+ width: 100%;
+ }
+ .footer-logo {
+ width: 50vw;
+ max-width: 250px;
+ height: auto;
+ display: block;
+ margin: 0 auto 15px auto;
+ opacity: 0.8;
+ }
+ h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+ h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+ p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+ .safety-alert {
+ background: var(--primary);
+ padding: 30px;
+ border-radius: 15px;
+ border: 5px solid white;
+ font-weight: bold;
+ margin-bottom: 20px;
+ }
+ .formula-card {
+ background: #2980b9;
+ padding: 40px;
+ border-radius: 20px;
+ text-align: center;
+ font-size: 4rem;
+ margin: 20px 0;
+ font-family: 'Courier New', Courier, monospace;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+ }
+ .lab-task {
+ background: var(--success);
+ padding: 20px;
+ border-left: 15px solid #2ecc71;
+ margin-top: 20px;
+ }
+ .grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .diagram-img {
+ width: 100%;
+ max-width: 500px;
+ border-radius: 10px;
+ background: white;
+ padding: 10px;
+ }
+ .nav-dots {
+ position: fixed;
+ right: 20px;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 100;
+ }
+ .nav-dots a {
+ display: block;
+ width: 15px;
+ height: 15px;
+ background: #555;
+ margin: 15px;
+ border-radius: 50%;
+ border: 2px solid #888;
+ }
+ .nav-dots a:hover { background: var(--accent); }
+ .pro-tip {
+ background: #444;
+ padding: 15px;
+ border-radius: 10px;
+ font-size: 1.2rem;
+ border-left: 5px solid var(--accent);
+ }
+ .recap-card {
+ border: 2px dashed var(--accent);
+ padding: 20px;
+ margin-top: 20px;
+ background: rgba(241, 196, 15, 0.1);
+ }
+ </style>
+</head>
+<body>
+<div class="nav-dots">
+ <a href="#intro" title="Welcome"></a>
+ <a href="#semiconductor" title="Diode Body"></a>
+ <a href="#rectify" title="Rectify"></a>
+ <a href="#types" title="Types"></a>
+ <a href="#bridge" title="Bridge"></a>
+ <a href="#failures" title="Failures"></a>
+ <a href="#lab" title="Lab Activity"></a>
+ <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+<h1>Day 4</h1>
+ <h2>Diodes &amp; Power Supplies</h2>
+ <p>Until now, we have dealt with current that flows easily. Today, we learn how to control its direction.</p>
+ <ul>
+ <li><strong>Semiconductors:</strong> Materials that only conduct under specific conditions.</li>
+ <li><strong>AC vs DC:</strong> Converting "Wall Power" (Alternating) to "Battery Power" (Direct).</li>
+ <li><strong>The Check Valve:</strong> Diodes allow current in one direction only.</li>
+ <li><strong>Repair connection:</strong> Many dead devices fail at the power input before the main circuit even starts.</li>
+ </ul>
+ <p><strong>Real-world example:</strong> Reverse-polarity protection diodes help protect devices when the wrong adapter is plugged in.</p>
+ <div class="pro-tip">Pro Tip: Without diodes, your phone charger would not safely convert AC into the DC your battery needs.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why would a one-way electrical part be useful in a power supply?</div>
+</section>
+
+<!-- Slide 2: The Semiconductor -->
+<section id="semiconductor">
+<h2>The Semi-Conductor</h2>
+ <div class="safety-alert">POLARITY MATTERS: Diodes are directional.<br>
+ <span style="font-size: 1.2rem; font-weight: normal;">The silver stripe marks the Cathode (-). The other side is the Anode (+).</span></div>
+ <div class="grid">
+ <div>
+ <p><strong>Bias States:</strong></p>
+ <ul>
+ <li><strong>Forward Bias:</strong> Current flows (Switch is ON).</li>
+ <li><strong>Reverse Bias:</strong> Current is blocked (Switch is OFF).</li>
+ <li><strong>Voltage Drop:</strong> Most silicon diodes "steal" about 0.7V.</li>
+ <li><strong>Misconception:</strong> A diode is not a perfect wire when ON; it has a voltage drop and a current limit.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day4/diode_schematic.jpg" class="diagram-img" alt="Diode Physical vs Schematic Symbol">
+ <p style="font-size: 1rem;">Silver Stripe = Negative (Cathode)</p>
+ </div>
+ </div>
+ <p><strong>Sanity Check:</strong> In diode test mode, one direction should show a voltage drop and the other should show OL.</p>
+ <div class="pro-tip"><strong>Question Hook:</strong> If a diode reads 0.000V in both directions, what failure mode does that suggest?</div>
+</section>
+
+<!-- Slide 3: Why We Need Them -->
+<section id="rectify">
+<h2>Why do we need them?</h2>
+ <div class="formula-card">AC &rarr; Diode &rarr; DC</div>
+ <div class="grid">
+ <div>
+ <p><strong>Rectification:</strong></p>
+ <p>The process of converting Alternating Current, which flips back and forth, into Direct Current, which flows one way.</p>
+ <ul>
+ <li>Devices like the 1N4001 are the workhorses of small power supplies.</li>
+ <li>The output is not perfectly smooth yet; it still pulses.</li>
+ <li>Capacitors often come next to smooth the ripple.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day4/ac_dc_waveform.jpg" class="diagram-img" alt="Waveform conversion">
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why is rectified DC still not as smooth as battery DC?</div>
+</section>
+
+<!-- Slide 4: Rectification Types -->
+<section id="types">
+<h2>Rectification Types</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Half-Wave:</strong></p>
+ <p>Uses 1 diode. It cuts off the bottom half of the AC wave. It works, but it is bumpy and inefficient.</p>
+ <ul>
+ <li>Simple and cheap.</li>
+ <li>Large gaps between pulses.</li>
+ </ul>
+ </div>
+ <div>
+ <p><strong>Full-Wave:</strong></p>
+ <p>Uses multiple diodes to flip the negative half of the wave into positive. This provides much smoother power.</p>
+ <ul>
+ <li>Better use of the AC waveform.</li>
+ <li>More parts, but better output quality.</li>
+ </ul>
+ </div>
+ </div>
+ <div class="pro-tip">Talking Point: Think of a Half-Wave rectifier like hopping on one leg. Full-Wave is like walking with both.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which rectifier type would make a filter capacitor's job easier, and why?</div>
+</section>
+
+<!-- Slide 5: Bridge Rectifier -->
+<section id="bridge">
+<h2>The Bridge Rectifier</h2>
+ <p>This is the standard layout for almost every DC power brick on earth.</p>
+ <div class="grid">
+ <div>
+ <p><strong>The Diamond Pattern:</strong></p>
+ <ol>
+ <li>Four diodes arranged to steer current.</li>
+ <li>No matter which way the AC comes in, the DC always leaves the same way.</li>
+ <li>Two diodes conduct at a time, so expect roughly two diode drops in the path.</li>
+ </ol>
+ <p><strong>Diagnostic Check:</strong><br>- Use the Diode Test mode on your DMM.<br>- You should see about 0.6V one way and OL the other way.</p>
+ </div>
+ <div>
+ <p><strong>Sanity Check:</strong> If the output polarity flips with the AC input, the bridge is wired incorrectly.</p>
+ <p><strong>Real-world example:</strong> Many laptop adapters and phone chargers begin with rectification before voltage regulation.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why does a bridge rectifier need four diodes instead of one?</div>
+</section>
+
+<!-- Slide 6: New Slide - Diode Failure Modes -->
+<section id="failures">
+<h2>Diode Failure Modes</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Common failures:</strong></p>
+ <ul>
+ <li><strong>Open diode:</strong> Blocks both directions; circuit acts dead past that point.</li>
+ <li><strong>Shorted diode:</strong> Conducts both directions; may blow fuses or overheat.</li>
+ <li><strong>Leaky diode:</strong> Partly conducts in reverse; can cause weird, intermittent behavior.</li>
+ </ul>
+ </div>
+ <div>
+ <div class="lab-task"><strong>Demo Prep:</strong> Compare a known-good diode and a failed/shorted sample using diode test mode.</div>
+ <p><strong>Rule of Thumb:</strong> Test out of circuit when readings do not make sense; nearby parts can create alternate paths.</p>
+ <p><strong>Diode Joke:</strong> Diodes are one-way streets; ignore the sign and traffic gets confusing fast.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which failure would cause a fuse to blow faster: an open diode or a shorted diode?</div>
+</section>
+
+<!-- Slide 7: Lab Activity -->
+<section id="lab">
+<h2>Lab 4: Building a Rectifier</h2>
+ <div class="grid">
+ <div>
+ <div class="lab-task"><strong>OBJECTIVE:</strong> Build a Half-Wave and Full-Wave rectifier circuit.</div>
+ <ol>
+ <li>Use an AC signal generator (low voltage!).</li>
+ <li>Construct the circuit using 1N4001 diodes.</li>
+ <li>Measure the Output Voltage with your DMM.</li>
+ <li>Use diode mode to verify each diode before building.</li>
+ </ol>
+ <p><strong>Common Mistakes:</strong></p>
+ <ul>
+ <li>Diode facing the wrong way (stripe is key).</li>
+ <li>Measuring AC setting on a DC output.</li>
+ <li>Forgetting that bridge output has a + and - even though the input is AC.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day4/bridge_rectifier_breadboard.jpg" class="diagram-img" alt="Bridge Rectifier Breadboard Layout">
+ <p style="font-size: 1rem; color: #888;">Follow the diamond pattern.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> What should the meter show if you accidentally reverse one diode in the bridge?</div>
+</section>
+
+<!-- Slide 8: Recap -->
+<section id="recap">
+<h1>Wrap Up</h1>
+ <h2>Day 4 Recap</h2>
+ <div class="recap-card">
+ <ul>
+ <li><strong>Diodes:</strong> Electronic one-way valves.</li>
+ <li><strong>Anode/Cathode:</strong> Current enters the Anode (+) and leaves the Cathode (-).</li>
+ <li><strong>Rectification:</strong> Turning messy AC into usable DC.</li>
+ <li><strong>Bridge Rectifiers:</strong> The 4-diode team that powers our digital world.</li>
+ <li><strong>Measurement:</strong> We use the DMM Diode mode to verify if a diode is blown.</li>
+ <li><strong>Failure Modes:</strong> Open, shorted, and leaky diodes tell different troubleshooting stories.</li>
+ </ul>
+ </div>
+ <p><strong>Exit Question:</strong> What is the difference between a diode being reverse-biased and a diode being open?</p>
+ <p><strong>Tomorrow:</strong> Capacitors &amp; Timing - How to smooth out bumpy DC and create delays.</p>
+</section>
+
+ <footer>
+ <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+ <p>&copy; 2026 Mississippi Coding Academy / NEXTHANDS</p>
+ </footer>
+</body>
+</html>

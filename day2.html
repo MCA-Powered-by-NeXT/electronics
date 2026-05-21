@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Circuit Architectures</title>
+    <style>
+        :root {
+            --primary: #c0392b;
+            --secondary: #2c3e50;
+            --accent: #f1c40f;
+            --text: #ffffff;
+            --dark-bg: #1a1a1a;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 40px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid #333;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center; 
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            width: 100%;
+        }
+
+        .footer-logo {
+            width: 50vw;
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px auto;
+            opacity: 0.8;
+        }
+
+        h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+        h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+        p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+
+        .safety-alert {
+            background: var(--primary);
+            padding: 30px;
+            border-radius: 15px;
+            border: 5px solid white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .formula-card {
+            background: #2980b9;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 4rem;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .lab-task {
+            background: var(--success);
+            padding: 20px;
+            border-left: 15px solid #2ecc71;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .diagram-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-dots a {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #555;
+            margin: 15px;
+            border-radius: 50%;
+            border: 2px solid #888;
+        }
+
+        .nav-dots a:hover { background: var(--accent); }
+
+        .pro-tip {
+            background: #444;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            border-left: 5px solid var(--accent);
+        }
+
+        .recap-card {
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(241, 196, 15, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav-dots">
+    <a href="#intro" title="Welcome"></a>
+    <a href="#safety" title="Component Safety"></a>
+    <a href="#theory" title="Series Circuits"></a>
+    <a href="#parallel" title="Parallel Circuits"></a>
+    <a href="#logic" title="Switch Logic"></a>
+    <a href="#lab" title="Lab Activity"></a>
+    <a href="#recap" title="Summary"></a>
+</div>
+
+<!-- Slide 1: Welcome -->
+<section id="intro">
+    <h1>Day 2</h1>
+    <h2>Series vs. Parallel</h2>
+    <p>Yesterday we built a single loop. Today, we learn how to branch out.</p>
+    <ul>
+        <li><strong>Series:</strong> One path, shared current.</li>
+        <li><strong>Parallel:</strong> Multiple paths, shared voltage.</li>
+        <li><strong>Nodes:</strong> The "intersections" where paths meet.</li>
+    </ul>
+    <div class="pro-tip">Pro Tip: If one bulb goes out in series, they all go out. If one goes out in parallel, the rest stay on!</div>
+</section>
+
+<!-- Slide 2: Safety -->
+<section id="safety">
+    <h2>Component Limits</h2>
+    <div class="safety-alert">
+        DANGER: Exceeding Current (Amps) creates HEAT.<br>
+        <span style="font-size: 1.2rem; font-weight: normal;">Every component has a "wattage" or "current" limit. Push too hard, and it fries.</span>
+    </div>
+    <div class="grid">
+        <div>
+            <p><strong>Protecting the Gear:</strong></p>
+            <ul>
+                <li>Short circuits bypass the load and cause rapid overheating.</li>
+                <li>Smell something funny? Disconnect the battery immediately.</li>
+                <li>Check battery voltage before and after long labs.</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day2/short_circuit.jpg" class="diagram-img" alt="Short Circuit Visual">
+            <p style="font-size: 1rem;">The Danger of a Short Circuit</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Series Circuits -->
+<section id="theory">
+    <h2>The Chain: Series</h2>
+    <div class="formula-card">Rt = R1 + R2 + ...</div>
+    <div class="grid">
+        <div>
+            <p><strong>Cumulative Resistance:</strong></p>
+            <ul>
+                <li>Adding resistors in series increases total resistance.</li>
+                <li>Current remains the same through all components.</li>
+            </ul>
+            <p>Example: Two 470Ω resistors in a line = 940Ω total.</p>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day2/series_diagram.jpg" class="diagram-img" alt="Series Circuit Diagram">
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Parallel Circuits -->
+<section id="parallel">
+    <h2>The Branches: Parallel</h2>
+    <p>In parallel, each branch gets the full voltage of the source.</p>
+    <div class="grid">
+        <div>
+            <p><strong>Independent Paths:</strong></p>
+            <p><strong>Voltage:</strong> Stays constant across all branches.</p>
+            <p><strong>Current:</strong> Splits between the available paths.</p>
+        </div>
+        <div>
+            <p><strong>The Trade-off:</strong> More branches in parallel actually <em>decreases</em> total resistance (more paths for electrons!).</p>
+            <p>Think of it like adding more lanes to a highway.</p>
+        </div>
+    </div>
+    <div class="pro-tip">Talking Point: Why is your house wired in parallel? (Hint: Do your lights die when the toaster is unplugged?)</div>
+</section>
+
+<!-- Slide 5: Switch Logic -->
+<section id="logic">
+    <h2>Switches & Control</h2>
+    <div class="grid">
+        <div>
+            <p><strong>AND vs. OR Logic:</strong></p>
+            <ol>
+                <li><strong>AND (Series):</strong> Both switch A AND switch B must be closed for the light to turn on.</li>
+                <li><strong>OR (Parallel):</strong> Either switch A OR switch B can be closed to complete the circuit.</li>
+            </ol>
+            <p style="color: var(--accent); font-weight: bold;">This is the foundation of computer logic!</p>
+        </div>
+        <div>
+            <div class="pro-tip">
+                <strong>Button Basics:</strong><br>
+                - Momentary: Only "ON" while pressed.<br>
+                - Toggle: Stays "ON" until flipped back.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Lab Activity -->
+<section id="lab">
+    <h2>Lab 2: Branching Out</h2>
+    <div class="grid">
+        <div>
+            <div class="lab-task">
+                <strong>OBJECTIVE:</strong> Build and compare two LED configurations.
+            </div>
+            <ol>
+                <li><strong>Setup A:</strong> Four LEDs in series with one resistor.</li>
+                <li><strong>Setup B:</strong> Four LEDs in parallel, each with their own resistor.</li>
+            </ol>
+            <p><strong>Observations:</strong></p>
+            <ul>
+                <li>Which setup is dimmer? Why?</li>
+                <li>Pull one LED out—what happens to the other?</li>
+            </ul>
+        </div>
+        <div style="text-align: center;">
+            <img src="feetPics/day2/series_led_breadboard.jpg" class="diagram-img" alt="Parallel LED wiring">
+            <img src="feetPics/day2/parallel_led_breadboard.jpg" class="diagram-img" alt="Parallel LED wiring">
+            <p style="font-size: 1rem; color: #888;">Notice how both LEDs connect to the Power Rail!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Recap -->
+<section id="recap">
+    <h1>Wrap Up</h1>
+    <h2>Day 2 Recap</h2>
+    <div class="recap-card">
+        <ul>
+            <li><strong>Series:</strong> Components in a single file line. High resistance, low current.</li>
+            <li><strong>Parallel:</strong> Components side-by-side. Shared voltage, independent paths.</li>
+            <li><strong>Total Resistance:</strong> Increases in series; decreases in parallel.</li>
+            <li><strong>The "Magic Smoke":</strong> Respect component limits to keep the hardware alive.</li>
+            <li><strong>Logic:</strong> We used hardware to create simple "AND/OR" decisions.</li>
+        </ul>
+    </div>
+    <p><strong>Tomorrow:</strong> Capacitors & Timing—Making circuits that can "remember" or blink on their own.</p>
+</section>
+
+    <footer>
+        <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+        <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
+    </footer>
+</body>
+</html>
