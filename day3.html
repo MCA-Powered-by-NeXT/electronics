@@ -1,293 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 3: Multimeter Mastery & Troubleshooting</title>
-    <style>
-        :root {
-            --primary: #c0392b;
-            --secondary: #2c3e50;
-            --accent: #f1c40f;
-            --text: #ffffff;
-            --dark-bg: #1a1a1a;
-            --success: #27ae60;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 40px 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 2px solid #333;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center; 
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            width: 100%;
-        }
-
-        .footer-logo {
-            width: 50vw;
-            max-width: 250px;
-            height: auto;
-            display: block;
-            margin: 0 auto 15px auto;
-            opacity: 0.8;
-        }
-
-        h1 { font-size: 4rem; color: var(--accent); margin: 0; }
-        h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
-        p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
-
-        .safety-alert {
-            background: var(--primary);
-            padding: 30px;
-            border-radius: 15px;
-            border: 5px solid white;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .formula-card {
-            background: #2980b9;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 4rem;
-            margin: 20px 0;
-            font-family: 'Courier New', Courier, monospace;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .lab-task {
-            background: var(--success);
-            padding: 20px;
-            border-left: 15px solid #2ecc71;
-            margin-top: 20px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .diagram-img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            background: white;
-            padding: 10px;
-        }
-
-        .nav-dots {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-        }
-
-        .nav-dots a {
-            display: block;
-            width: 15px;
-            height: 15px;
-            background: #555;
-            margin: 15px;
-            border-radius: 50%;
-            border: 2px solid #888;
-        }
-
-        .nav-dots a:hover { background: var(--accent); }
-
-        .pro-tip {
-            background: #444;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            border-left: 5px solid var(--accent);
-        }
-
-        .recap-card {
-            border: 2px dashed var(--accent);
-            padding: 20px;
-            margin-top: 20px;
-            background: rgba(241, 196, 15, 0.1);
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Day 3: Multimeter Mastery & Troubleshooting</title>
+ <style>
+:root {
+ --primary: #c0392b;
+ --secondary: #2c3e50;
+ --accent: #f1c40f;
+ --text: #ffffff;
+ --dark-bg: #1a1a1a;
+ --success: #27ae60;
+ }
+ body {
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: var(--dark-bg);
+ color: var(--text);
+ margin: 0;
+ padding: 0;
+ scroll-behavior: smooth;
+ }
+ section {
+ min-height: 100vh;
+ padding: 40px 10%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-bottom: 2px solid #333;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px;
+ text-align: center;
+ border-top: 1px solid #333;
+ font-size: 0.9rem;
+ color: #7f8c8d;
+ width: 100%;
+ }
+ .footer-logo {
+ width: 50vw;
+ max-width: 250px;
+ height: auto;
+ display: block;
+ margin: 0 auto 15px auto;
+ opacity: 0.8;
+ }
+ h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+ h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+ p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+ .safety-alert {
+ background: var(--primary);
+ padding: 30px;
+ border-radius: 15px;
+ border: 5px solid white;
+ font-weight: bold;
+ margin-bottom: 20px;
+ }
+ .formula-card {
+ background: #2980b9;
+ padding: 40px;
+ border-radius: 20px;
+ text-align: center;
+ font-size: 4rem;
+ margin: 20px 0;
+ font-family: 'Courier New', Courier, monospace;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+ }
+ .lab-task {
+ background: var(--success);
+ padding: 20px;
+ border-left: 15px solid #2ecc71;
+ margin-top: 20px;
+ }
+ .grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .diagram-img {
+ width: 100%;
+ max-width: 500px;
+ border-radius: 10px;
+ background: white;
+ padding: 10px;
+ }
+ .nav-dots {
+ position: fixed;
+ right: 20px;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 100;
+ }
+ .nav-dots a {
+ display: block;
+ width: 15px;
+ height: 15px;
+ background: #555;
+ margin: 15px;
+ border-radius: 50%;
+ border: 2px solid #888;
+ }
+ .nav-dots a:hover { background: var(--accent); }
+ .pro-tip {
+ background: #444;
+ padding: 15px;
+ border-radius: 10px;
+ font-size: 1.2rem;
+ border-left: 5px solid var(--accent);
+ }
+ .recap-card {
+ border: 2px dashed var(--accent);
+ padding: 20px;
+ margin-top: 20px;
+ background: rgba(241, 196, 15, 0.1);
+ }
+ </style>
 </head>
 <body>
-
 <div class="nav-dots">
-    <a href="#intro" title="Welcome"></a>
-    <a href="#safety" title="Probe Safety"></a>
-    <a href="#theory" title="The Power Wheel"></a>
-    <a href="#components" title="DMM Dial"></a>
-    <a href="#dmm" title="Testing Flow"></a>
-    <a href="#lab" title="Fault Finding"></a>
-    <a href="#recap" title="Summary"></a>
+ <a href="#intro" title="Welcome"></a>
+ <a href="#safety" title="Probe Safety"></a>
+ <a href="#power" title="Power Wheel"></a>
+ <a href="#dial" title="DMM Dial"></a>
+ <a href="#logic" title="Troubleshooting"></a>
+ <a href="#notes" title="Notes"></a>
+ <a href="#lab" title="Lab Activity"></a>
+ <a href="#recap" title="Summary"></a>
 </div>
 
 <!-- Slide 1: Welcome -->
 <section id="intro">
-    <h1>Day 3</h1>
-    <h2>DMM Mastery & Troubleshooting</h2>
-    <p>A technician is only as good as their ability to measure and interpret data.</p>
-    <ul>
-        <li><strong>Verification:</strong> Confirming components meet specs.</li>
-        <li><strong>Isolation:</strong> Pinpointing exactly where a circuit "breaks."</li>
-        <li><strong>Validation:</strong> Ensuring a repair actually fixed the root cause.</li>
-    </ul>
-    <div class="pro-tip">Pro Tip: The Digital Multimeter (DMM) isn't just a tool; it's your "eyes" inside the copper traces!</div>
+<h1>Day 3</h1>
+ <h2>DMM Mastery &amp; Troubleshooting</h2>
+ <p>A technician is only as good as their ability to measure and interpret data.</p>
+ <ul>
+ <li><strong>Verification:</strong> Confirming components meet specs.</li>
+ <li><strong>Isolation:</strong> Pinpointing exactly where a circuit "breaks."</li>
+ <li><strong>Validation:</strong> Ensuring a repair actually fixed the root cause.</li>
+ <li><strong>Documentation:</strong> Writing down readings so the repair story can be defended.</li>
+ </ul>
+ <p><strong>Real-world example:</strong> A repair shop will often require before-and-after measurements before approving a board as fixed.</p>
+ <div class="pro-tip">Pro Tip: The Digital Multimeter (DMM) is not just a tool; it is your "eyes" inside the copper traces.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> What is the difference between guessing a bad part and proving a bad part?</div>
 </section>
 
 <!-- Slide 2: Probe Safety -->
 <section id="safety">
-    <h2>Probe Safety & Limits</h2>
-    <div class="safety-alert">
-        WARNING: High current testing can blow your DMM's internal fuse.<br>
-        <span style="font-size: 1.2rem; font-weight: normal;">Always start with the highest range setting if you are unsure of the signal level.</span>
-    </div>
-    <div class="grid">
-        <div>
-            <p><strong>Safe Probing Habits:</strong></p>
-            <ul>
-                <li>Never touch the metal tips while the circuit is live.</li>
-                <li>Keep probes sharp; dull tips slip and cause shorts.</li>
-                <li>Verify your fuse before starting a complex repair.</li>
-            </ul>
-        </div>
-        <div style="text-align: center;">
-            <img src="feetPics/day3/dmm_safety.jpg" class="diagram-img" alt="Safe Multimeter Probing">
-            <p style="font-size: 1rem;">Finger Guards & Lead Integrity</p>
-        </div>
-    </div>
+<h2>Probe Safety &amp; Limits</h2>
+ <div class="safety-alert">WARNING: High current testing can blow your DMM's internal fuse.<br>
+ <span style="font-size: 1.2rem; font-weight: normal;">Always start with the highest range setting if you are unsure of the signal level.</span></div>
+ <div class="grid">
+ <div>
+ <p><strong>Safe Probing Habits:</strong></p>
+ <ul>
+ <li>Never touch the metal tips while the circuit is live.</li>
+ <li>Keep probes sharp; dull tips slip and cause shorts.</li>
+ <li>Verify your fuse before starting a complex repair.</li>
+ <li>Anchor your black lead to ground when possible, then probe with red.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day3/dmm_safety.jpg" class="diagram-img" alt="Safe Multimeter Probing">
+ <p style="font-size: 1rem;">Finger Guards &amp; Lead Integrity</p>
+ </div>
+ </div>
+ <p><strong>Sanity Check:</strong> If the meter reads nothing, check the dial, lead jacks, and ground clip before assuming the circuit is dead.</p>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why do many meters have a separate jack for current measurements?</div>
 </section>
 
-<!-- Slide 3: The Power Wheel -->
-<section id="theory">
-    <h2>The Math: The Power Wheel</h2>
-    <div class="formula-card">P = V × I</div>
-    <div class="grid">
-        <div>
-            <p><strong>Watt's Law in Action:</strong></p>
-            <ul>
-                <li>Power is measured in Watts (W).</li>
-                <li>High Power = High Heat (The tech's biggest enemy).</li>
-            </ul>
-            <p>Example: If a circuit pulls 2A at 12V, how many Watts are used?</p>
-        </div>
-        <div style="text-align: center;">
-            <img src="feetPics/day3/power_wheel.jpg" class="diagram-img" alt="Ohm's and Watt's Law Wheel">
-        </div>
-    </div>
+<!-- Slide 3: Power Wheel -->
+<section id="power">
+<h2>The Math: The Power Wheel</h2>
+ <div class="formula-card">P = V &times; I</div>
+ <div class="grid">
+ <div>
+ <p><strong>Watt's Law in Action:</strong></p>
+ <ul>
+ <li>Power is measured in Watts (W).</li>
+ <li>High Power = High Heat (The tech's biggest enemy).</li>
+ <li>Power can reveal hidden overloads even when voltage looks normal.</li>
+ <li>A resistor can have the correct ohms value but the wrong wattage rating.</li>
+ </ul>
+ <p>Example: If a circuit pulls 2A at 12V, how many Watts are used?</p>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day3/power_wheel.jpg" class="diagram-img" alt="Ohm's and Watt's Law Wheel">
+ </div>
+ </div>
+ <p><strong>Sanity Check:</strong> 12V at 2A equals 24W; that is enough heat to demand component ratings and airflow.</p>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why might a component fail even if the voltage measurement looks correct?</div>
 </section>
 
-<!-- Slide 4: DMM Dial Navigation -->
-<section id="components">
-    <h2>Navigating the Dial</h2>
-    <p>Modern DMMs have specific modes for specialized testing:</p>
-    <div class="grid">
-        <div>
-            <p><strong>Continuity (The Beep):</strong> Used for checking "Opens" (broken wires) and "Shorts" (accidental connections).</p>
-            <p><strong>Diode Check:</strong> Measures the forward voltage drop (usually 0.6V for Silicon).
-                <br><small>If it beeps both ways, the diode is shorted!</small>
-            </p>
-        </div>
-        <div>
-            <p><strong>Auto-Ranging:</strong> The meter finds the decimal point for you.</p>
-            <p><strong>Hold Function:</strong> Freezes a reading when you can't see the screen.</p>
-        </div>
-    </div>
-    <div class="pro-tip">Talking Point: Why does the DMM show 'OL' when the probes aren't touching anything? (Hint: Over Limit / Infinite Resistance!)</div>
+<!-- Slide 4: Navigating the Dial -->
+<section id="dial">
+<h2>Navigating the Dial</h2>
+ <p>Modern DMMs have specific modes for specialized testing:</p>
+ <div class="grid">
+ <div>
+ <p><strong>Continuity (The Beep):</strong> Used for checking Opens (broken wires) and Shorts (accidental connections).</p>
+ <p><strong>Diode Check:</strong> Measures the forward voltage drop, usually around 0.6V for silicon. If it beeps both ways, the diode is shorted.</p>
+ </div>
+ <div>
+ <p><strong>Auto-Ranging:</strong> The meter finds the decimal point for you.</p>
+ <p><strong>Hold Function:</strong> Freezes a reading when you cannot see the screen.</p>
+ <p><strong>Common mistake:</strong> Seeing "OL" and thinking the meter is broken. It often means open circuit or over limit.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Meter Joke:</strong> Good technicians do not guess; they ask the meter to testify.</div>
+ <div class="pro-tip">Talking Point: Why does the DMM show OL when the probes are not touching anything? Hint: Over Limit / Infinite Resistance.</div>
 </section>
 
-<!-- Slide 5: Systematic Testing -->
-<section id="dmm">
-    <h2>Logical Troubleshooting</h2>
-    <div class="grid">
-        <div>
-            <p><strong>The "Half-Split" Method:</strong></p>
-            <ol>
-                <li>Measure at the center of the signal path.</li>
-                <li>Reading Good? The fault is in the second half.</li>
-                <li>Reading Bad? The fault is in the first half.</li>
-            </ol>
-            <p style="color: var(--primary); font-weight: bold;">⚠️ Always check your Ground reference first!</p>
-        </div>
-        <div>
-            <div class="pro-tip">
-                <strong>Measurement Rules:</strong><br>
-                - <strong>Voltage:</strong> Probes across the component.<br>
-                - <strong>Current:</strong> The DMM becomes part of the wire.
-            </div>
-        </div>
-    </div>
+<!-- Slide 5: Logical Troubleshooting -->
+<section id="logic">
+<h2>Logical Troubleshooting</h2>
+ <p><strong>The "Half-Split" Method:</strong></p>
+ <ol>
+ <li>Measure at the center of the signal path.</li>
+ <li>Reading Good? The fault is in the second half.</li>
+ <li>Reading Bad? The fault is in the first half.</li>
+ </ol>
+ <p style="color: var(--primary); font-weight: bold;">&#9888;&#65039; Always check your Ground reference first!</p>
+ <div class="grid">
+ <div>
+ <p><strong>Measurement Rules:</strong></p>
+ <ul>
+ <li>Voltage: Probes across the component.</li>
+ <li>Current: The DMM becomes part of the wire.</li>
+ <li>Continuity: Power off, then listen for the path.</li>
+ </ul>
+ </div>
+ <div>
+ <p><strong>Practical implication:</strong> Half-splitting prevents random part swapping. It turns a big unknown into two smaller questions.</p>
+ <p><strong>Sanity Check:</strong> A voltage reading is meaningless unless you know what point you are using as reference.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If the input voltage is good and the output is bad, where should your next measurement be?</div>
 </section>
 
-<!-- Slide 6: Lab Activity -->
+<!-- Slide 6: New Slide - Measurement Notes -->
+<section id="notes">
+<h2>Measurement Notes That Save Time</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Write down four things for each reading:</strong></p>
+ <ol>
+ <li>Meter mode and range.</li>
+ <li>Black probe location.</li>
+ <li>Red probe location.</li>
+ <li>Expected value vs. actual value.</li>
+ </ol>
+ </div>
+ <div>
+ <div class="lab-task"><strong>Mini-Drill:</strong> Measure the same resistor in two different breadboard locations and record whether the reading changes.</div>
+ <p><strong>Real-world example:</strong> Repair tickets often fail when the tech writes "bad voltage" without saying where it was measured.</p>
+ <p><strong>Rule of Thumb:</strong> A measurement without a reference point is only half a measurement.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why is "5V measured at pin 14 to ground" better than writing only "5V"?</div>
+</section>
+
+<!-- Slide 7: Lab Activity -->
 <section id="lab">
-    <h2>Lab 3: Fault Finding Drills</h2>
-    <div class="grid">
-        <div>
-            <div class="lab-task">
-                <strong>OBJECTIVE:</strong> Identify three hidden faults on a pre-built board.
-            </div>
-            <ol>
-                <li>Check for "Shorts" to Ground.</li>
-                <li>Verify "Continuity" across all switches.</li>
-                <li>Measure "Voltage Drop" across the load.</li>
-            </ol>
-            <p><strong>Troubleshooting Signs:</strong></p>
-            <ul>
-                <li>Discolored PCB = Overheating.</li>
-                <li>Loose solder joints = Intermittent power.</li>
-            </ul>
-        </div>
-        <div style="text-align: center;">
-            <img src="feetPics/day3/troubleshooting_flow.jpg" class="diagram-img" alt="Troubleshooting Flowchart">
-            <p style="font-size: 1rem; color: #888;">Follow the logic, not your gut!</p>
-        </div>
-    </div>
+<h2>Lab 3: Fault Finding Drills</h2>
+ <div class="grid">
+ <div>
+ <div class="lab-task"><strong>OBJECTIVE:</strong> Identify three hidden faults on a pre-built board.</div>
+ <ol>
+ <li>Check for Shorts to Ground.</li>
+ <li>Verify Continuity across all switches.</li>
+ <li>Measure Voltage Drop across the load.</li>
+ <li>Record the expected reading before taking the actual reading.</li>
+ </ol>
+ <p><strong>Troubleshooting Signs:</strong></p>
+ <ul>
+ <li>Discolored PCB = Overheating.</li>
+ <li>Loose solder joints = Intermittent power.</li>
+ <li>Voltage present on one side of a switch but not the other = open switch or bad joint.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day3/troubleshooting_flow.jpg" class="diagram-img" alt="Troubleshooting Flowchart">
+ <p style="font-size: 1rem; color: #888;">Follow the logic, not your gut.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Which fault is more likely: a component that randomly failed or a connection that was just touched?</div>
 </section>
 
-<!-- Slide 7: Recap -->
+<!-- Slide 8: Recap -->
 <section id="recap">
-    <h1>Wrap Up</h1>
-    <h2>Day 3 Recap</h2>
-    <div class="recap-card">
-        <ul>
-            <li><strong>Measurement:</strong> We used the DMM to "see" what our eyes cannot.</li>
-            <li><strong>The Power Wheel:</strong> P = V x I. Power kills components through heat.</li>
-            <li><strong>Continuity:</strong> Our most used tool for finding broken traces.</li>
-            <li><strong>Strategy:</strong> Using the "Half-Split" method to save time.</li>
-            <li><strong>The Lab:</strong> You moved from building to "fixing."</li>
-        </ul>
-    </div>
-    <p><strong>Tomorrow:</strong> Diodes & Power—How we tame electricity to go in only one direction.</p>
+<h1>Wrap Up</h1>
+ <h2>Day 3 Recap</h2>
+ <div class="recap-card">
+ <ul>
+ <li><strong>Measurement:</strong> We used the DMM to see what our eyes cannot.</li>
+ <li><strong>The Power Wheel:</strong> P = V x I. Power kills components through heat.</li>
+ <li><strong>Continuity:</strong> Our most used tool for finding broken traces.</li>
+ <li><strong>Strategy:</strong> Using the Half-Split method to save time.</li>
+ <li><strong>The Lab:</strong> You moved from building to fixing.</li>
+ <li><strong>Documentation:</strong> Good notes turn a repair into evidence.</li>
+ </ul>
+ </div>
+ <p><strong>Exit Question:</strong> What does OL mean in continuity mode, and why is that useful?</p>
+ <p><strong>Tomorrow:</strong> Diodes &amp; Power - How we tame electricity to go in only one direction.</p>
 </section>
 
-<footer>
-    <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
-    <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
-</footer>
-
+ <footer>
+ <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+ <p>&copy; 2026 Mississippi Coding Academy / NEXTHANDS</p>
+ </footer>
 </body>
 </html>

@@ -1,291 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 1: Electronics Foundations</title>
-    <style>
-        :root {
-            --primary: #c0392b;
-            --secondary: #2c3e50;
-            --accent: #f1c40f;
-            --text: #ffffff;
-            --dark-bg: #1a1a1a;
-            --success: #27ae60;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 40px 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 2px solid #333;
-        }
-
-        footer {
-        margin-top: 50px;
-        padding: 20px;
-        text-align: center; 
-        border-top: 1px solid #333;
-        font-size: 0.9rem;
-        color: #7f8c8d;
-        width: 100%;
-        }
-
-        .footer-logo {
-        width: 50vw;        /* Exactly half the viewport width */
-        max-width: 250px;   /* Prevents it from becoming a giant on big TV screens */
-        height: auto;       /* Maintains aspect ratio */
-        display: block;
-        margin: 0 auto 15px auto; /* Centers the image and adds space below */
-        opacity: 0.8;       /* Makes it look more integrated and professional */
-        }
-
-        h1 { font-size: 4rem; color: var(--accent); margin: 0; }
-        h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
-        p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
-
-        .safety-alert {
-            background: var(--primary);
-            padding: 30px;
-            border-radius: 15px;
-            border: 5px solid white;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .formula-card {
-            background: #2980b9;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 4rem;
-            margin: 20px 0;
-            font-family: 'Courier New', Courier, monospace;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .lab-task {
-            background: var(--success);
-            padding: 20px;
-            border-left: 15px solid #2ecc71;
-            margin-top: 20px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .diagram-img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            background: white;
-            padding: 10px;
-        }
-
-        .nav-dots {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-        }
-
-        .nav-dots a {
-            display: block;
-            width: 15px;
-            height: 15px;
-            background: #555;
-            margin: 15px;
-            border-radius: 50%;
-            border: 2px solid #888;
-        }
-
-        .nav-dots a:hover { background: var(--accent); }
-
-        .pro-tip {
-            background: #444;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            border-left: 5px solid var(--accent);
-        }
-
-        .recap-card {
-            border: 2px dashed var(--accent);
-            padding: 20px;
-            margin-top: 20px;
-            background: rgba(241, 196, 15, 0.1);
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Day 1: Electronics Foundations</title>
+ <style>
+:root {
+ --primary: #c0392b;
+ --secondary: #2c3e50;
+ --accent: #f1c40f;
+ --text: #ffffff;
+ --dark-bg: #1a1a1a;
+ --success: #27ae60;
+ }
+ body {
+ font-family: 'Helvetica Neue', Arial, sans-serif;
+ background-color: var(--dark-bg);
+ color: var(--text);
+ margin: 0;
+ padding: 0;
+ scroll-behavior: smooth;
+ }
+ section {
+ min-height: 100vh;
+ padding: 40px 10%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-bottom: 2px solid #333;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px;
+ text-align: center;
+ border-top: 1px solid #333;
+ font-size: 0.9rem;
+ color: #7f8c8d;
+ width: 100%;
+ }
+ .footer-logo {
+ width: 50vw;
+ max-width: 250px;
+ height: auto;
+ display: block;
+ margin: 0 auto 15px auto;
+ opacity: 0.8;
+ }
+ h1 { font-size: 4rem; color: var(--accent); margin: 0; }
+ h2 { font-size: 2.5rem; border-bottom: 4px solid var(--primary); display: inline-block; margin-bottom: 30px; }
+ p, li { font-size: 1.6rem; line-height: 1.4; color: #ecf0f1; }
+ .safety-alert {
+ background: var(--primary);
+ padding: 30px;
+ border-radius: 15px;
+ border: 5px solid white;
+ font-weight: bold;
+ margin-bottom: 20px;
+ }
+ .formula-card {
+ background: #2980b9;
+ padding: 40px;
+ border-radius: 20px;
+ text-align: center;
+ font-size: 4rem;
+ margin: 20px 0;
+ font-family: 'Courier New', Courier, monospace;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+ }
+ .lab-task {
+ background: var(--success);
+ padding: 20px;
+ border-left: 15px solid #2ecc71;
+ margin-top: 20px;
+ }
+ .grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+ .diagram-img {
+ width: 100%;
+ max-width: 500px;
+ border-radius: 10px;
+ background: white;
+ padding: 10px;
+ }
+ .nav-dots {
+ position: fixed;
+ right: 20px;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 100;
+ }
+ .nav-dots a {
+ display: block;
+ width: 15px;
+ height: 15px;
+ background: #555;
+ margin: 15px;
+ border-radius: 50%;
+ border: 2px solid #888;
+ }
+ .nav-dots a:hover { background: var(--accent); }
+ .pro-tip {
+ background: #444;
+ padding: 15px;
+ border-radius: 10px;
+ font-size: 1.2rem;
+ border-left: 5px solid var(--accent);
+ }
+ .recap-card {
+ border: 2px dashed var(--accent);
+ padding: 20px;
+ margin-top: 20px;
+ background: rgba(241, 196, 15, 0.1);
+ }
+ </style>
 </head>
 <body>
-
 <div class="nav-dots">
-    <a href="#intro" title="Welcome"></a>
-    <a href="#safety" title="Safety"></a>
-    <a href="#theory" title="Ohm's Law"></a>
-    <a href="#components" title="The Toolkit"></a>
-    <a href="#dmm" title="DMM Use"></a>
-    <a href="#lab" title="Lab Activity"></a>
-    <a href="#recap" title="Summary"></a>
+ <a href="#intro" title="Welcome"></a>
+ <a href="#safety" title="Safety"></a>
+ <a href="#theory" title="Ohm&#x27;s Law"></a>
+ <a href="#components" title="The Toolkit"></a>
+ <a href="#dmm" title="DMM Use"></a>
+ <a href="#preflight" title="Preflight"></a>
+ <a href="#lab" title="Lab Activity"></a>
+ <a href="#recap" title="Summary"></a>
 </div>
 
 <!-- Slide 1: Welcome -->
 <section id="intro">
-    <h1>Day 1</h1>
-    <h2>Orientation & The Circuit</h2>
-    <p>Electronics is the study of controlling the flow of electrons.</p>
-    <ul>
-        <li><strong>Voltage (V):</strong> Potential energy (The "Push")</li>
-        <li><strong>Current (I):</strong> Flow rate (The "River")</li>
-        <li><strong>Resistance (R):</strong> Restriction (The "Narrow Pipe")</li>
-    </ul>
-    <div class="pro-tip">Pro Tip: Electricity always wants to find the path of least resistance to Ground!</div>
+<h1>Day 1</h1>
+ <h2>Orientation &amp; The Circuit</h2>
+ <p>Electronics is the study of controlling the flow of electrons.</p>
+ <ul>
+ <li><strong>Voltage (V):</strong> Potential energy (The "Push")</li>
+ <li><strong>Current (I):</strong> Flow rate (The "River")</li>
+ <li><strong>Resistance (R):</strong> Restriction (The "Narrow Pipe")</li>
+ </ul>
+ <p><strong>Why it matters:</strong> Every repair question eventually becomes: do we have the right push, the right path, and the right limit on flow?</p>
+ <ul>
+ <li><strong>Misconception:</strong> Voltage alone is not dangerous to parts; uncontrolled current and heat are usually what destroy them.</li>
+ <li><strong>Real-world example:</strong> A phone charger label lists voltage and current because the device must receive the correct electrical conditions.</li>
+ <li><strong>Technician habit:</strong> When a circuit fails, start by asking, "Where is the source, where is the load, and where is ground?"</li>
+ </ul>
+ <div class="pro-tip">Pro Tip: Electricity needs a complete path back to the source. The "path of least resistance" still must be a closed loop.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If voltage is the push and current is the flow, which one should we measure first when a circuit is completely dead?</div>
 </section>
 
 <!-- Slide 2: Safety -->
 <section id="safety">
-    <h2>Safety & ESD</h2>
-    <div class="safety-alert">
-        DANGER: NEVER work on "Mains" power (Wall Outlets).<br>
-        <span style="font-size: 1.2rem; font-weight: normal;">Static electricity (ESD) can destroy chips. Wear your wrist strap!</span>
-    </div>
-    <div class="grid">
-        <div>
-            <p><strong>The Golden Rules:</strong></p>
-            <ul>
-                <li>Eye protection during lead clipping.</li>
-                <li>Keep drinks away from your workstation.</li>
-                <li>Check for "Magic Smoke" (Signs of overheating).</li>
-            </ul>
-        </div>
-        <div style="text-align: center;">
-            <img src="feetPics/day1/esd_strap.jpg" class="diagram-img" alt="ESD Strap Usage">
-            <p style="font-size: 1rem;">Proper ESD Protection</p>
-        </div>
-    </div>
+<h2>Safety &amp; ESD</h2>
+ <div class="safety-alert">
+ DANGER: NEVER work on "Mains" power (Wall Outlets).<br>
+ <span style="font-size: 1.2rem; font-weight: normal;">Static electricity (ESD) can destroy chips. Wear your wrist strap!</span>
+ </div>
+ <div class="grid">
+ <div>
+ <p><strong>The Golden Rules:</strong></p>
+ <ul>
+ <li>Eye protection during lead clipping.</li>
+ <li>Keep drinks away from your workstation.</li>
+ <li>Check for "Magic Smoke" (Signs of overheating).</li>
+ <li>De-energize before rewiring; do not move parts while the battery is connected.</li>
+ <li>Use one hand when probing live low-voltage circuits to reduce accidental shorts.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day1/esd_strap.jpg" class="diagram-img" alt="ESD Strap Usage">
+ <p style="font-size: 1rem;">Proper ESD Protection</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Fun Fact:</strong> A static spark can be thousands of volts, but the current is tiny; chips can still be damaged because their internal gates are microscopic.</div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why can a small static shock be harmless to you but harmful to an integrated circuit?</div>
 </section>
 
 <!-- Slide 3: Ohm's Law -->
 <section id="theory">
-    <h2>The Math: Ohm's Law</h2>
-    <div class="formula-card">V = I × R</div>
-    <div class="grid">
-        <div>
-            <p><strong>Calculating Flow:</strong></p>
-            <ul>
-                <li>Increase Voltage = Increase Current</li>
-                <li>Increase Resistance = Decrease Current</li>
-            </ul>
-            <p>Example: If V=9V and R=470Ω, what is I?</p>
-        </div>
-        <div style="text-align: center;">
-            <img src="feetPics/day1/ohms_law.jpg" class="diagram-img" alt="Ohm's Law Triangle">
-        </div>
-    </div>
+<h2>The Math: Ohm's Law</h2>
+ <div class="formula-card">V = I &times; R</div>
+ <div class="grid">
+ <div>
+ <p><strong>Calculating Flow:</strong></p>
+ <ul>
+ <li>Increase Voltage = Increase Current</li>
+ <li>Increase Resistance = Decrease Current</li>
+ <li>Current is the result of voltage pushing through resistance, not a separate "supply knob" in a simple resistor circuit.</li>
+ <li>Always convert milliamps to amps before calculating: 20 mA = 0.020 A.</li>
+ </ul>
+ <p>Example: If V=9V and R=470&Omega;, what is I?</p>
+ <p><strong>Sanity Check:</strong> 9V / 470&Omega; is just under 0.02A, so the LED current should be about 19mA.</p>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day1/ohms_law.jpg" class="diagram-img" alt="Ohm's Law Triangle">
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If the resistor doubles but the battery stays the same, what should happen to current?</div>
 </section>
 
-<!-- Slide 4: Filler Content - The Components -->
+<!-- Slide 4: The Components -->
 <section id="components">
-    <h2>The Component Toolkit</h2>
-    <p>Before we build, look at the physical parts in your kit:</p>
-    <div class="grid">
-        <div>
-            <p><strong>Resistors:</strong> Look for the colored bands. They don't have a "side"—you can plug them in either way.</p>
-            <p><strong>LEDs:</strong> Light Emitting Diodes. These ARE polarized. 
-                <br><small>Short Leg = Negative (-) | Long Leg = Positive (+)</small>
-            </p>
-        </div>
-        <div>
-            <p><strong>Jumper Wires:</strong> Think of these as your "Electron Highways."</p>
-            <p><strong>Breadboards:</strong> These allow us to prototype without permanent soldering.</p>
-        </div>
-    </div>
-    <div class="pro-tip">Talking Point: Why is the resistor needed for the LED? (Hint: To stop the LED from exploding!)</div>
+<h2>The Component Toolkit</h2>
+ <p>Before we build, look at the physical parts in your kit:</p>
+ <div class="grid">
+ <div>
+ <p><strong>Resistors:</strong> Look for the colored bands. They don't have a "side" - you can plug them in either way.</p>
+ <p><strong>LEDs:</strong> Light Emitting Diodes. These ARE polarized.<br><small>Short Leg = Negative (-) | Long Leg = Positive (+)</small></p>
+ <ul>
+ <li><strong>Misconception:</strong> A resistor is not just "extra" - it is the current limiter that protects the LED.</li>
+ <li><strong>Application:</strong> LED indicators on appliances use the same resistor-plus-LED idea.</li>
+ </ul>
+ </div>
+ <div>
+ <p><strong>Jumper Wires:</strong> Think of these as your "Electron Highways." Keep them short and readable.</p>
+ <p><strong>Breadboards:</strong> These allow us to prototype without permanent soldering.</p>
+ <ul>
+ <li>Color-code power and ground when possible.</li>
+ <li>Do not trust a connection until it is seated firmly.</li>
+ </ul>
+ </div>
+ </div>
+ <div class="pro-tip">Talking Point: Why is the resistor needed for the LED? Hint: To stop the LED from turning into a tiny one-time flashlight.</div>
 </section>
 
 <!-- Slide 5: DMM Basics -->
 <section id="dmm">
-    <h2>Using the Multimeter (DMM)</h2>
-    <div class="grid">
-        <div>
-            <p><strong>The Three Big Settings:</strong></p>
-            <ol>
-                <li><strong>DC Voltage:</strong> Probing batteries and power.</li>
-                <li><strong>Resistance (Ω):</strong> Checking component values.</li>
-                <li><strong>Continuity (Beep):</strong> Checking for broken wires.</li>
-            </ol>
-            <p style="color: var(--primary); font-weight: bold;">⚠️ Never check resistance on a live circuit!</p>
-        </div>
-        <div>
-            <div class="pro-tip">
-                <strong>How to measure:</strong><br>
-                - Voltage is measured in <strong>Parallel</strong>.<br>
-                - Current is measured in <strong>Series</strong>.
-            </div>
-        </div>
-    </div>
+<h2>Using the Multimeter (DMM)</h2>
+ <div class="grid">
+ <div>
+ <p><strong>The Three Big Settings:</strong></p>
+ <ol>
+ <li><strong>DC Voltage:</strong> Probing batteries and power.</li>
+ <li><strong>Resistance (&Omega;):</strong> Checking component values.</li>
+ <li><strong>Continuity (Beep):</strong> Checking for broken wires.</li>
+ </ol>
+ <p style="color: var(--primary); font-weight: bold;">&#9888;&#65039; Never check resistance on a live circuit!</p>
+ <ul>
+ <li>Voltage measurements are usually the safest first check on a powered low-voltage circuit.</li>
+ <li>Continuity is for unpowered circuits only.</li>
+ </ul>
+ </div>
+ <div>
+ <div class="pro-tip">
+ <strong>How to measure:</strong><br>
+ - Voltage is measured in <strong>Parallel</strong>.<br>
+ - Current is measured in <strong>Series</strong>.<br>
+ - Resistance is measured with power <strong>OFF</strong>.
+ </div>
+ <p><strong>Sanity Check:</strong> If a 9V battery reads 0V, first verify the meter leads are in the correct jacks and the dial is on DC volts.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> Why would putting a meter set to current directly across a battery be a bad idea?</div>
 </section>
 
-<!-- Slide 6: Lab Activity -->
+<!-- Slide 6: New Slide - Preflight Check -->
+<section id="preflight">
+<h2>Build Preflight: Before Power</h2>
+ <div class="grid">
+ <div>
+ <p><strong>Use this checklist before connecting the battery:</strong></p>
+ <ol>
+ <li>Trace the positive path from source to resistor to LED.</li>
+ <li>Trace the return path from LED back to battery negative.</li>
+ <li>Confirm LED polarity: long leg toward the positive side.</li>
+ <li>Check that no jumper wire directly connects + to -.</li>
+ </ol>
+ </div>
+ <div>
+ <div class="lab-task"><strong>Mini-Demo:</strong> Instructor shows one correct circuit and one circuit with a hidden open connection. Students predict which will light.</div>
+ <p><strong>Rule of Thumb:</strong> If the circuit does nothing, suspect an open path first. If something gets hot, suspect a short or wrong resistor value.</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> What evidence would tell you the LED is backwards versus the breadboard row is disconnected?</div>
+</section>
+
+<!-- Slide 7: Lab Activity -->
 <section id="lab">
-    <h2>Lab 1: Your First Circuit</h2>
-    <div class="grid">
-        <div>
-            <div class="lab-task">
-                <strong>OBJECTIVE:</strong> Construct a simple DC circuit.
-            </div>
-            <ol>
-                <li>Power: 9V Battery</li>
-                <li>Control: 470 Ohm Resistor</li>
-                <li>Load: Standard LED</li>
-            </ol>
-            <p><strong>Common Mistakes:</strong></p>
-            <ul>
-                <li>LED backwards (Long leg is Positive).</li>
-                <li>Resistor not making contact in the breadboard.</li>
-            </ul>
-        </div>
-        <div style="text-align: center;">
-            <img src="feetPics/day1/breadboard_internal_connections.png" class="diagram-img" alt="Breadboard internal connections">
-            <p style="font-size: 1rem; color: #888;">Horizontal rows are connected!</p>
-        </div>
-    </div>
+<h2>Lab 1: Your First Circuit</h2>
+ <div class="grid">
+ <div>
+ <div class="lab-task"><strong>OBJECTIVE:</strong> Construct a simple DC circuit.</div>
+ <ol>
+ <li>Power: 9V Battery</li>
+ <li>Control: 470 Ohm Resistor</li>
+ <li>Load: Standard LED</li>
+ </ol>
+ <p><strong>Common Mistakes:</strong></p>
+ <ul>
+ <li>LED backwards (Long leg is Positive).</li>
+ <li>Resistor not making contact in the breadboard.</li>
+ <li>Using the same connected breadboard row for both LED legs, which bypasses the LED.</li>
+ <li>Forgetting the return wire back to battery negative.</li>
+ </ul>
+ </div>
+ <div style="text-align: center;">
+ <img src="feetPics/day1/breadboard_internal_connections.png" class="diagram-img" alt="Breadboard internal connections">
+ <p style="font-size: 1rem; color: #888;">Horizontal rows are connected!</p>
+ </div>
+ </div>
+ <div class="pro-tip"><strong>Question Hook:</strong> If the LED does not light, what is the first measurement you would take: battery voltage, resistor value, or LED polarity?</div>
 </section>
 
-<!-- Slide 7: Recap -->
+<!-- Slide 8: Recap -->
 <section id="recap">
-    <h1>Wrap Up</h1>
-    <h2>Day 1 Recap</h2>
-    <div class="recap-card">
-        <ul>
-            <li><strong>Safety First:</strong> We wear ESD straps and eye pro. No wall outlets!</li>
-            <li><strong>The Big Three:</strong> Voltage pushes, Current flows, Resistance slows.</li>
-            <li><strong>V = I x R:</strong> The most important math you'll ever use in this shop.</li>
-            <li><strong>Tools:</strong> The Multimeter is your eyes. Use it to "see" electricity.</li>
-            <li><strong>The Lab:</strong> You built a circuit! If it didn't light up, you learned how to troubleshoot.</li>
-        </ul>
-    </div>
-    <p><strong>Tomorrow:</strong> Series vs. Parallel—Why Christmas lights used to be a nightmare.</p>
+<h1>Wrap Up</h1>
+ <h2>Day 1 Recap</h2>
+ <div class="recap-card">
+ <ul>
+ <li><strong>Safety First:</strong> We wear ESD straps and eye pro. No wall outlets!</li>
+ <li><strong>The Big Three:</strong> Voltage pushes, Current flows, Resistance slows.</li>
+ <li><strong>V = I x R:</strong> The most important math you'll ever use in this shop.</li>
+ <li><strong>Tools:</strong> The Multimeter is your eyes. Use it to "see" electricity.</li>
+ <li><strong>The Lab:</strong> You built a circuit! If it didn't light up, you learned how to troubleshoot.</li>
+ <li><strong>Technician Habit:</strong> Predict first, power second, measure third.</li>
+ </ul>
+ </div>
+ <p><strong>Exit Question:</strong> In one sentence, explain why an LED needs a resistor.</p>
+ <p><strong>Tomorrow:</strong> Series vs. Parallel - Why Christmas lights used to be a nightmare.</p>
 </section>
-    <footer>
-        <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
-        <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
-    </footer>
+
+ <footer>
+ <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
+ <p>&copy; 2026 Mississippi Coding Academy / NEXTHANDS</p>
+ </footer>
 </body>
 </html>
