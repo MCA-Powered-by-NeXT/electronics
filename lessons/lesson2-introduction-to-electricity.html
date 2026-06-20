@@ -9,7 +9,7 @@
 <body>
 <header class="site-header">
   <h1>Lesson 2: Introduction to Electricity</h1>
-  <p>Estimated time: 75-90 minutes. Learn the basic circuit model used throughout the course.</p>
+  <p>Estimated time: 75-90 minutes. Learn the circuit model that supports every build and troubleshooting activity in the course.</p>
 </header>
 <nav class="topnav" aria-label="Lesson navigation">
   <a href="lesson1-safety-technician-fundamentals.html">Previous Lesson</a>
@@ -20,6 +20,12 @@
 </nav>
 <main>
   <section>
+    <h2>Lesson Purpose</h2>
+    <p>This lesson gives students a simple, reusable way to understand circuits before they start building them. The model is source, path, load, and return. Students will use this model in later weeks to build LED circuits, use a DMM, test continuity, read schematics, and troubleshoot faults.</p>
+    <p>The goal is not to memorize a definition of electricity. The goal is to look at a simple circuit and explain what must be present for it to work safely.</p>
+  </section>
+
+  <section>
     <h2>Learning Outcomes</h2>
     <ul>
       <li>Identify the source, path, load, and return in a simple circuit.</li>
@@ -27,19 +33,20 @@
       <li>Describe why current requires a complete path.</li>
       <li>Use a simple circuit diagram to reason about faults.</li>
       <li>Connect basic electricity ideas to safe troubleshooting habits.</li>
+      <li>Use beginner circuit vocabulary in a short written explanation.</li>
     </ul>
   </section>
 
   <section>
     <h2>Key Vocabulary</h2>
     <table>
-      <tr><th>Term</th><th>Beginner Meaning</th></tr>
-      <tr><td>Source</td><td>The battery or approved supply that provides electrical energy.</td></tr>
-      <tr><td>Path</td><td>The conductive route that current can travel through, such as wire or breadboard connections.</td></tr>
-      <tr><td>Load</td><td>The part that uses electrical energy, such as an LED, buzzer, lamp, or motor.</td></tr>
-      <tr><td>Return</td><td>The path back to the source, often connected to battery negative or ground in simple DC circuits.</td></tr>
-      <tr><td>Open Circuit</td><td>A broken or incomplete path that stops current.</td></tr>
-      <tr><td>Short Circuit</td><td>An unintended low-resistance path that bypasses the load and may cause heat or damage.</td></tr>
+      <tr><th>Term</th><th>Beginner Meaning</th><th>Technician Question</th></tr>
+      <tr><td>Source</td><td>The battery or approved supply that provides electrical energy.</td><td>Is the source present and connected correctly?</td></tr>
+      <tr><td>Path</td><td>The conductive route current can travel through, such as wire or breadboard connections.</td><td>Is the intended path complete?</td></tr>
+      <tr><td>Load</td><td>The part that uses electrical energy, such as an LED, buzzer, lamp, or motor.</td><td>Is the load connected and rated for the circuit?</td></tr>
+      <tr><td>Return</td><td>The path back to the source, often connected to battery negative or ground in simple DC circuits.</td><td>Can current return to the source?</td></tr>
+      <tr><td>Open Circuit</td><td>A broken or incomplete path that stops current.</td><td>Where is the path interrupted?</td></tr>
+      <tr><td>Short Circuit</td><td>An unintended low-resistance path that bypasses the load and may cause heat or damage.</td><td>Is current taking a path it should not take?</td></tr>
     </table>
   </section>
 
@@ -52,6 +59,7 @@ Source (+ battery) -> Path -> Current-limiting resistor -> LED load -> Return (-
 
 If any required part of the loop is missing, current stops.</pre>
     <p>This model is simple, but it is powerful. Later in the course, when a circuit fails, students will ask: Is the source present? Is the path complete? Is the load good? Is the return complete?</p>
+    <div class="callout"><strong>Rule of thumb:</strong> If you cannot trace the full loop with your finger or pencil, do not power the circuit yet.</div>
   </section>
 
   <section>
@@ -71,12 +79,12 @@ Short path:
 
   <section>
     <h2>Why Current Needs a Complete Path</h2>
-    <p>Current is the movement of electric charge through a closed loop. In the water analogy, voltage is the push, current is the flow, and resistance is a restriction. The analogy is not perfect, but it helps beginners see why a break in the pipe stops the flow.</p>
+    <p>Current is the movement of electric charge through a closed loop. In the water analogy, voltage is the push, current is the flow, and resistance is a restriction. The analogy is not perfect, but it helps beginners see why a break in the path stops the flow.</p>
     <p>In a simple battery circuit, current leaves one side of the battery, travels through the load, and returns to the other side. If the return wire is missing, the circuit is not complete even if the positive wire is connected correctly.</p>
   </section>
 
   <section>
-    <h2>Technician Example: Dead LED Trainer</h2>
+    <h2>Technician Scenario: Dead LED Trainer</h2>
     <p>Suppose an LED training circuit does not light. A beginner may immediately say, "The LED is bad." A technician uses the source-path-load-return model instead:</p>
     <ol>
       <li><strong>Source:</strong> Is the battery connected and within the expected voltage range?</li>
@@ -95,6 +103,7 @@ Short path:
       <li>Use red for positive and black for return when possible, but verify the actual path.</li>
       <li>If nothing happens, suspect an open path first. If something gets hot, suspect a short or wrong value.</li>
       <li>When troubleshooting, describe the symptom before changing the circuit.</li>
+      <li>Use one clear vocabulary set: source, path, load, return. It will make later troubleshooting easier.</li>
     </ul>
   </section>
 
@@ -106,14 +115,15 @@ Short path:
       <li><strong>Confusing open and short:</strong> An open stops current because the path is broken. A short may allow too much current through the wrong path.</li>
       <li><strong>Powering before inspecting:</strong> Inspection should happen before the battery is connected.</li>
       <li><strong>Assuming the visible part is the fault:</strong> The LED may be fine even if it is off; the path may be incomplete.</li>
+      <li><strong>Skipping the resistor:</strong> In an LED circuit, the resistor is not optional. It limits current.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Mini Practice: Trace the Loop</h2>
+    <h2>Mini Activity: Trace the Loop</h2>
     <p>Use the diagram below. Label source, path, load, and return. Then identify where an open switch would stop current.</p>
     <pre class="diagram">Battery + -> Switch -> Resistor -> LED -> Battery -</pre>
-    <p>Now predict: if the switch is open, should the LED be on or off? If a jumper accidentally connects Battery + directly to Battery -, what kind of fault is that?</p>
+    <p>Predict before answering: if the switch is open, should the LED be on or off? If a jumper accidentally connects Battery + directly to Battery -, what kind of fault is that?</p>
   </section>
 
   <section>
@@ -123,11 +133,22 @@ Short path:
     <div class="question">3. In a simple LED circuit, what is the load?</div>
     <div class="question">4. Why can a circuit have a battery connected and still not work?</div>
     <div class="question">5. What should you check first if a wire or component gets hot?</div>
+    <div class="question">6. Why is a current-limiting resistor part of the intended path in a simple LED circuit?</div>
   </section>
 
   <section>
-    <h2>Lab Connection</h2>
-    <p>This lesson supports <a href="../labs/lab1-safety-inspection-ppe.html">Lab 1</a> by giving students the vocabulary to identify unsafe or incomplete circuit setups. It also prepares students for the low-voltage LED circuit in Week 2.</p>
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>A working circuit needs a source, path, load, and return.</li>
+      <li>An open circuit is an incomplete path; a short circuit is an unintended low-resistance path.</li>
+      <li>Tracing the loop before powering a circuit prevents many beginner mistakes.</li>
+      <li>The source-path-load-return model becomes the foundation for troubleshooting later in the course.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What To Do Next</h2>
+    <p>Use this vocabulary in <a href="../labs/lab1-safety-inspection-ppe.html">Lab 1</a> while identifying incomplete or unsafe circuit setups. In Week Two, you will apply the same model while measuring batteries and building a current-limited LED circuit.</p>
   </section>
 </main>
 <footer class="footer">Lesson 2</footer>
