@@ -11,7 +11,7 @@ The electronics repository uses a static 6-week Basic Electronics Technician cou
 
 ## Course folders
 - weeks/: weekly module landing pages
-- lessons/: 12 core lesson pages
+- lessons/: 12 core lesson pages plus Week 1 Tinkercad supplemental lesson
 - labs/: 8 required lab worksheets
 - quizzes/: weekly quiz pages
 - assessments/: practical checkoffs and rubrics
@@ -19,4 +19,4 @@ The electronics repository uses a static 6-week Basic Electronics Technician cou
 - assets/css/styles.css: shared responsive and print-friendly stylesheet
 
 ## Source structure
-The course uses the week, lesson, lab, quiz, assessment, and instructor folders as the source structure for continued development.
+The course materials are organized in week, lesson, lab, quiz, assessment, and instructor folders for classroom delivery.
