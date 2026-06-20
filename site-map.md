@@ -1,6 +1,6 @@
 # Site Map
 
-This branch reorganizes the electronics repository into a static 6-week Basic Electronics Technician course website.
+The electronics repository now uses a static 6-week Basic Electronics Technician course website structure.
 
 ## Top-level pages
 - index.html: course dashboard and start page
@@ -19,5 +19,5 @@ This branch reorganizes the electronics repository into a static 6-week Basic El
 - instructor/: instructor-only support pages
 - assets/css/styles.css: shared responsive and print-friendly stylesheet
 
-## Legacy migration
-Original day1.html through day10.html remain in place while content is migrated into the larger 6-week structure.
+## Migration status
+The legacy day1.html through day10.html slide files have been removed from main. The course now uses the week, lesson, lab, quiz, assessment, and instructor folders as the source structure.
