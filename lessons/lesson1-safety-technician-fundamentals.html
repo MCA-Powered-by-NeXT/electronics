@@ -1,17 +1,150 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lesson 1: Safety and Technician Fundamentals</title><link rel="stylesheet" href="../assets/css/styles.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 1: Safety and Technician Fundamentals</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
 <body>
-<header class="site-header"><h1>Lesson 1: Safety and Technician Fundamentals</h1><p>Estimated time: 2-3 hours. Learn the technician mindset before touching tools or circuits.</p></header>
-<nav class="topnav" aria-label="Lesson navigation"><a href="../index.html">Dashboard</a><a href="../weeks/week1/index.html">Week 1</a><a href="lesson2-introduction-to-electricity.html">Next Lesson</a><a href="../labs/lab1-safety-inspection-ppe.html">Related Lab</a><a href="../quizzes/week1-quiz.html">Week 1 Quiz</a></nav>
+<header class="site-header">
+  <h1>Lesson 1: Safety and Technician Fundamentals</h1>
+  <p>Estimated time: 75-90 minutes. Learn the technician mindset before touching tools or circuits.</p>
+</header>
+<nav class="topnav" aria-label="Lesson navigation">
+  <a href="../index.html">Dashboard</a>
+  <a href="../weeks/week1/index.html">Week 1</a>
+  <a href="lesson2-introduction-to-electricity.html">Next Lesson</a>
+  <a href="../labs/lab1-safety-inspection-ppe.html">Related Lab</a>
+  <a href="../quizzes/week1-quiz.html">Week 1 Quiz</a>
+</nav>
 <main>
-<section><h2>Learning Outcomes</h2><ul><li>Describe what entry-level electronics technicians do.</li><li>Identify common lab hazards and safe responses.</li><li>Select appropriate PPE for beginner electronics labs.</li><li>Explain basic lockout/tagout awareness at a beginner level.</li><li>Describe why unknown circuits are treated as potentially energized.</li></ul></section>
-<section><h2>Key Vocabulary</h2><p><strong>Hazard:</strong> anything that can cause harm. <strong>PPE:</strong> personal protective equipment. <strong>LOTO:</strong> lockout/tagout, a workplace process for controlling hazardous energy. <strong>ESD:</strong> electrostatic discharge. <strong>De-energized:</strong> power has been removed and verified safe.</p></section>
-<section><h2>Main Concept</h2><p>A technician's first job is not to make the circuit work. It is to make the work safe, controlled, and documented. Beginner electronics work should use low-voltage battery-powered DC circuits. Even then, careless wiring can damage parts, heat wires, or create confusing faults.</p><div class="diagram">Safe work flow:
-Inspect area -> Identify hazards -> Put on PPE -> Remove power -> Build or test -> Verify -> Document</div><div class="callout safety"><strong>Safety boundary:</strong> Do not work on wall outlets, mains-powered devices, open power supplies, vehicle electrical systems, charged capacitors, or unknown energized equipment in this course.</div></section>
-<section><h2>Technician Tips</h2><ul><li>Keep your bench clear enough that tools and leads do not accidentally bridge circuit points.</li><li>Use red wires for positive and black wires for ground when possible, but always verify with the circuit, not color alone.</li><li>Stop immediately if you see smoke, smell hot plastic, hear buzzing from an unexpected source, or feel a part heating quickly.</li><li>Ask before energizing a circuit you did not build or inspect.</li></ul></section>
-<section><h2>Common Mistakes</h2><ul><li>Changing wiring while power is still connected.</li><li>Assuming a disconnected-looking wire is safe without testing or instructor confirmation.</li><li>Using a meter without checking the dial and lead jacks first.</li><li>Treating PPE as optional because the circuit is small.</li></ul></section>
-<section><h2>Knowledge Check</h2><div class="question">1. List three hazards you might find at an electronics workstation.</div><div class="question">2. Why should a circuit be powered off before rewiring?</div><div class="question">3. What does LOTO awareness mean for a beginner, even if this course does not certify full LOTO practice?</div></section>
-<section><h2>Lab Connection</h2><p>In <a href="../labs/lab1-safety-inspection-ppe.html">Lab 1</a>, you will inspect a staged workstation, identify hazards, select PPE, and document corrective actions.</p></section>
-</main><footer class="footer">Lesson 1</footer>
-</body></html>
+  <section>
+    <h2>Learning Outcomes</h2>
+    <ul>
+      <li>Describe common entry-level electronics technician duties.</li>
+      <li>Identify basic electrical and lab hazards before work begins.</li>
+      <li>Select appropriate PPE for beginner electronics lab work.</li>
+      <li>Explain ESD awareness and lockout/tagout awareness at a beginner level.</li>
+      <li>Apply a safe work sequence: inspect, de-energize, verify, work, test, document.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key Vocabulary</h2>
+    <table>
+      <tr><th>Term</th><th>Beginner Meaning</th></tr>
+      <tr><td>Hazard</td><td>Anything that can cause injury, damage equipment, or create unsafe work conditions.</td></tr>
+      <tr><td>PPE</td><td>Personal protective equipment, such as safety glasses.</td></tr>
+      <tr><td>ESD</td><td>Electrostatic discharge, a small static spark that can damage sensitive electronic parts.</td></tr>
+      <tr><td>LOTO Awareness</td><td>Awareness of lockout/tagout principles: control energy, prevent unexpected startup, and never remove another person's lock or tag.</td></tr>
+      <tr><td>De-energized</td><td>Power has been removed and the circuit is treated as safe to work on only after verification.</td></tr>
+      <tr><td>Unknown Circuit</td><td>Any circuit whose power source, condition, or stored energy has not been verified.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Why This Matters</h2>
+    <p>An electronics technician is paid to make careful decisions. The work is not just connecting parts until something lights up. A technician inspects, measures, documents, and verifies. That mindset begins with safety.</p>
+    <p>In this course, the circuits are intentionally low-voltage and beginner-safe, but the habits students build should transfer to workplaces where procedures, lockout/tagout rules, and documentation matter. A small training circuit can still overheat a wire, destroy an LED, damage a meter, or teach a bad habit if students rush.</p>
+    <div class="callout safety"><strong>Non-negotiable:</strong> Do not work on wall outlets, mains-powered devices, open power supplies, vehicle electrical systems, charged capacitors, or unknown energized equipment. This course uses low-voltage battery-powered DC training circuits only.</div>
+  </section>
+
+  <section>
+    <h2>Main Concept: The Technician Safety Loop</h2>
+    <p>Before working on a circuit, use a repeatable safety loop. Repeating the same loop reduces mistakes, especially when you are learning and the circuit does not behave as expected.</p>
+    <pre class="diagram">Technician safety loop:
+1. Inspect the bench and tools
+2. Identify hazards
+3. Remove or control power
+4. Verify the circuit state
+5. Perform the task
+6. Test the result safely
+7. Document what happened</pre>
+    <p><strong>Real-world example:</strong> In a repair shop, a technician may receive a device with no history. Before opening it or probing it, they identify the power source, check for damaged cords or connectors, and follow the shop's approved safety procedure. In this class, the same idea appears as checking that the battery is disconnected before changing breadboard wiring.</p>
+  </section>
+
+  <section>
+    <h2>Electrical Hazards in Beginner Labs</h2>
+    <p>Most hazards in this course come from poor habits, not high voltage. Students should learn to spot small risks early.</p>
+    <ul>
+      <li><strong>Short circuits:</strong> A jumper wire may accidentally connect battery positive directly to battery negative.</li>
+      <li><strong>Heat:</strong> A wrong resistor value or short circuit can make parts hot.</li>
+      <li><strong>Flying leads:</strong> Clipped component leads can fly into eyes if safety glasses are not used.</li>
+      <li><strong>Damaged insulation:</strong> Exposed wire can touch another conductor and create an unintended path.</li>
+      <li><strong>Wrong meter setup:</strong> A meter in the wrong mode can give a bad reading or damage the meter.</li>
+      <li><strong>Clutter and liquids:</strong> A messy bench makes accidental contact and spills more likely.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>PPE and Workstation Expectations</h2>
+    <ul>
+      <li>Wear safety glasses during labs, especially when cutting or handling component leads.</li>
+      <li>Keep drinks, food, backpacks, and loose metal objects away from the workstation.</li>
+      <li>Use the correct tool for the job; do not strip wire with teeth, scissors, or improvised blades.</li>
+      <li>Keep red and black power wiring consistent when possible, but always verify with the circuit.</li>
+      <li>Report damaged meter leads, cracked parts, hot components, smoke, odor, or unclear instructions.</li>
+    </ul>
+    <div class="callout"><strong>Technician habit:</strong> A clean bench is not about appearance. It makes the electrical paths easier to see and reduces accidental shorts.</div>
+  </section>
+
+  <section>
+    <h2>LOTO and ESD Awareness</h2>
+    <p><strong>Lockout/tagout awareness</strong> means students understand that real workplaces use formal procedures to control hazardous energy. This course does not certify full LOTO practice, but students should know the basic principle: do not work on equipment that can unexpectedly energize, move, heat, spin, or start.</p>
+    <p><strong>ESD awareness</strong> means students understand that static electricity can damage electronic components even when the person does not feel a shock. In this course, ESD is introduced as a good technician habit: handle parts carefully, avoid unnecessary touching of pins, and use instructor-provided ESD controls when required.</p>
+  </section>
+
+  <section>
+    <h2>Technician Tips</h2>
+    <ul>
+      <li>Stop and ask when the power source is unclear.</li>
+      <li>Disconnect the battery before moving wires or components.</li>
+      <li>Use one hand to steady probes and keep probe tips controlled so they do not slip together.</li>
+      <li>Write down what changed after each test; memory is not documentation.</li>
+      <li>Do not bypass protection devices such as fuses. A blown fuse is evidence, not an inconvenience.</li>
+      <li>When something gets hot, disconnect power first and investigate second.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li><strong>Changing wiring while powered:</strong> This often creates accidental shorts or confusing results.</li>
+      <li><strong>Trusting wire color blindly:</strong> Wire color helps, but it is not proof. Verify the connection.</li>
+      <li><strong>Skipping PPE because the circuit is small:</strong> Small parts and clipped leads can still cause injuries.</li>
+      <li><strong>Assuming a device is safe because it is unplugged:</strong> Some devices can store energy. This course avoids those devices, but the awareness matters.</li>
+      <li><strong>Using the meter before checking the dial and lead jacks:</strong> Meter setup must match the measurement.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Mini Practice: Hazard Recognition</h2>
+    <p>Look at a training bench or a projected photo. Identify hazards using this checklist:</p>
+    <ul class="checklist">
+      <li>[ ] Is power connected when it should be disconnected?</li>
+      <li>[ ] Are safety glasses being used?</li>
+      <li>[ ] Are liquids or clutter near the circuit?</li>
+      <li>[ ] Are any wires damaged or exposed?</li>
+      <li>[ ] Are meter leads in the correct jacks?</li>
+      <li>[ ] Are parts hot, discolored, or producing odor?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Knowledge Check</h2>
+    <div class="question">1. What are three hazards you might find at an electronics workstation?</div>
+    <div class="question">2. Why should power be disconnected before changing breadboard wiring?</div>
+    <div class="question">3. What does LOTO awareness mean for a beginner, even if this course does not certify full LOTO practice?</div>
+    <div class="question">4. What is one example of PPE used in this course?</div>
+    <div class="question">5. What should you do first if a component becomes hot or smells unusual?</div>
+  </section>
+
+  <section>
+    <h2>Lab Connection</h2>
+    <p>In <a href="../labs/lab1-safety-inspection-ppe.html">Lab 1: Safety Inspection and PPE</a>, you will inspect a staged workstation, identify hazards, choose PPE, record corrective actions, and receive instructor signoff.</p>
+  </section>
+</main>
+<footer class="footer">Lesson 1</footer>
+</body>
+</html>

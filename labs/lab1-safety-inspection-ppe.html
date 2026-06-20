@@ -1,21 +1,140 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lab 1: Safety Inspection and PPE</title><link rel="stylesheet" href="../assets/css/styles.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 1: Safety Inspection and PPE</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
 <body>
-<header class="site-header"><h1>Lab 1: Safety Inspection and PPE</h1><p>Week 1 required lab. Practice safe work habits before building circuits.</p></header>
-<nav class="topnav" aria-label="Lab navigation"><a href="../weeks/week1/index.html">Week 1</a><a href="../lessons/lesson1-safety-technician-fundamentals.html">Lesson 1</a><a href="../lessons/lesson2-introduction-to-electricity.html">Lesson 2</a><a href="../quizzes/week1-quiz.html">Week 1 Quiz</a></nav>
+<header class="site-header">
+  <h1>Lab 1: Safety Inspection and PPE</h1>
+  <p>Week 1 required lab. Practice safe inspection habits before building or measuring circuits.</p>
+</header>
+<nav class="topnav" aria-label="Lab navigation">
+  <a href="../weeks/week1/index.html">Week 1</a>
+  <a href="../lessons/lesson1-safety-technician-fundamentals.html">Lesson 1</a>
+  <a href="../lessons/lesson2-introduction-to-electricity.html">Lesson 2</a>
+  <a href="../quizzes/week1-quiz.html">Week 1 Quiz</a>
+</nav>
 <main>
-<section><h2>Safety Warning</h2><div class="callout safety"><strong>No energized work:</strong> This inspection lab uses disconnected training equipment only. Do not touch wall outlets, unknown power supplies, or energized equipment.</div></section>
-<section><h2>Purpose and Skills Practiced</h2><ul><li>Identify common workstation hazards.</li><li>Select appropriate PPE.</li><li>Document corrective actions.</li><li>Practice the technician habit of inspecting before working.</li></ul></section>
-<section><h2>Tools and Parts</h2><ul><li>Safety glasses</li><li>Disconnected breadboard or training board</li><li>Jumper wires and sample components</li><li>Staged hazard cards or instructor-prepared workstation</li><li>Lab worksheet or notebook</li></ul></section>
-<section><h2>Setup Diagram</h2><pre class="diagram">Training bench inspection zones:
-[Tools] [Parts tray] [Training board] [Power source removed] [Notebook]
-Look for: clutter, exposed conductors, damaged leads, liquids, wrong PPE, loose wires.</pre></section>
-<section><h2>Procedure</h2><ol><li>Put on safety glasses before approaching the station.</li><li>Confirm the training board is disconnected from all power.</li><li>Inspect the bench for clutter, liquids, damaged wires, exposed conductors, and misplaced tools.</li><li>Identify which PPE is required for the activity.</li><li>Record each hazard and a safe corrective action.</li><li>Ask the instructor to review your findings before resetting the station.</li></ol></section>
-<section><h2>Inspection Table</h2><table><tr><th>Item Checked</th><th>Safe / Unsafe</th><th>Evidence Observed</th><th>Corrective Action</th></tr><tr><td>Safety glasses</td><td></td><td></td><td></td></tr><tr><td>Power disconnected</td><td></td><td></td><td></td></tr><tr><td>Bench clutter</td><td></td><td></td><td></td></tr><tr><td>Wire condition</td><td></td><td></td><td></td></tr><tr><td>Liquids or food nearby</td><td></td><td></td><td></td></tr></table></section>
-<section><h2>Troubleshooting Questions</h2><ol><li>Why is a disconnected power source still part of the safety inspection?</li><li>Which hazard would make you stop work immediately?</li><li>What is one hazard that could damage components but not injure a person?</li></ol></section>
-<section><h2>Reflection</h2><p>What safety habit will you use before every electronics lab? <span class="field"></span></p></section>
-<section><h2>Cleanup and Reset</h2><ol><li>Return tools to the correct location.</li><li>Remove staged hazards only after instructor review.</li><li>Reset components for the next group.</li><li>Leave the station powered off.</li></ol></section>
-<section><h2>Instructor Signoff</h2><p>Student: <span class="field"></span> Instructor: <span class="field"></span> Date: <span class="field"></span></p><p>Pass / Retry: <span class="field"></span></p></section>
-</main><footer class="footer">Lab 1</footer>
-</body></html>
+  <section>
+    <h2>Prominent Safety Warning</h2>
+    <div class="callout safety"><strong>Disconnected training equipment only:</strong> This lab uses instructor-staged, disconnected training equipment and simulated hazards. Do not touch wall outlets, open power supplies, vehicle systems, charged capacitors, or unknown energized equipment. If you are unsure whether something is powered, stop and ask the instructor.</div>
+  </section>
+
+  <section>
+    <h2>Purpose and Skills Practiced</h2>
+    <ul>
+      <li>Inspect a workstation before starting technical work.</li>
+      <li>Identify hazards that could injure people, damage tools, or damage components.</li>
+      <li>Select appropriate PPE for beginner electronics labs.</li>
+      <li>Explain what corrective action should be taken for each hazard.</li>
+      <li>Practice documenting observations like a technician.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Tools and Parts</h2>
+    <ul>
+      <li>Safety glasses</li>
+      <li>Disconnected breadboard or training board</li>
+      <li>Disconnected battery holder or battery sample</li>
+      <li>Jumper wires and sample components</li>
+      <li>DMM with leads, used as an inspection prop only unless directed</li>
+      <li>Instructor-staged hazard cards or prepared workstation</li>
+      <li>Notebook or printed lab sheet</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Setup Diagram</h2>
+    <pre class="diagram">Training bench inspection zones:
+
+[Tool Area] [Parts Tray] [Training Board] [Power Source Removed] [Notebook]
+
+Look for:
+- missing PPE
+- clutter or liquids
+- damaged insulation
+- exposed conductors
+- unclear power state
+- wrong meter lead placement
+- loose components or sharp leads</pre>
+  </section>
+
+  <section>
+    <h2>Step-by-Step Procedure</h2>
+    <ol>
+      <li>Put on safety glasses before approaching the workstation.</li>
+      <li>Stand back and scan the whole bench before touching anything.</li>
+      <li>Confirm that the training board is disconnected from all power sources.</li>
+      <li>Identify the source area, tool area, parts tray, and work area.</li>
+      <li>Inspect wires and leads for damaged insulation, exposed metal, loose connectors, or sharp ends.</li>
+      <li>Inspect the work area for clutter, liquids, metal objects, and trip or snag hazards.</li>
+      <li>Inspect the DMM as a prop: note whether leads appear undamaged and whether lead placement would match a safe voltage/resistance task.</li>
+      <li>Record at least five observations in the inspection table.</li>
+      <li>For every unsafe item, write a corrective action.</li>
+      <li>Explain one hazard and corrective action to the instructor or a partner.</li>
+      <li>Reset the station only after instructor review.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Safety Inspection Table</h2>
+    <table>
+      <tr><th>Item Checked</th><th>Safe / Unsafe</th><th>Evidence Observed</th><th>Corrective Action</th></tr>
+      <tr><td>PPE / safety glasses</td><td></td><td></td><td></td></tr>
+      <tr><td>Power source disconnected</td><td></td><td></td><td></td></tr>
+      <tr><td>Bench clutter or liquids</td><td></td><td></td><td></td></tr>
+      <tr><td>Wire and lead condition</td><td></td><td></td><td></td></tr>
+      <tr><td>Sharp component leads</td><td></td><td></td><td></td></tr>
+      <tr><td>Tool placement</td><td></td><td></td><td></td></tr>
+      <tr><td>DMM lead condition and setup</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Troubleshooting and Discussion Questions</h2>
+    <ol>
+      <li>Why should a disconnected power source still be part of the safety inspection?</li>
+      <li>Which hazard would make you stop work immediately?</li>
+      <li>What is one hazard that could damage components but not obviously injure a person?</li>
+      <li>How could clutter create a false measurement or accidental short circuit?</li>
+      <li>What should a technician do if the power state of a circuit is unclear?</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Student Reflection</h2>
+    <p>What safety habit will you use before every electronics lab? <span class="field"></span></p>
+    <p>Which hazard was easiest to miss? <span class="field"></span></p>
+  </section>
+
+  <section>
+    <h2>Cleanup and Reset Instructions</h2>
+    <ol>
+      <li>Leave all power sources disconnected.</li>
+      <li>Return tools to the correct location.</li>
+      <li>Return parts to the parts tray unless the instructor asks you to leave the station as-is for review.</li>
+      <li>Remove only the staged hazards the instructor tells you to reset.</li>
+      <li>Clear the bench so the next student can inspect it.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Instructor Signoff</h2>
+    <p>Student: <span class="field"></span> Instructor: <span class="field"></span> Date: <span class="field"></span></p>
+    <table>
+      <tr><th>Criteria</th><th>Pass</th><th>Retry</th><th>Notes</th></tr>
+      <tr><td>Wore required PPE</td><td></td><td></td><td></td></tr>
+      <tr><td>Identified at least five inspection items</td><td></td><td></td><td></td></tr>
+      <tr><td>Correctly identified unsafe conditions</td><td></td><td></td><td></td></tr>
+      <tr><td>Wrote reasonable corrective actions</td><td></td><td></td><td></td></tr>
+      <tr><td>Explained one safety decision clearly</td><td></td><td></td><td></td></tr>
+    </table>
+  </section>
+</main>
+<footer class="footer">Lab 1</footer>
+</body>
+</html>
