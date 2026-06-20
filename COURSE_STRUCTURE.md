@@ -1,3 +1,3 @@
 # Course Structure
 
-This branch adds the initial 6-week course scaffold for Basic Electronics Technician.
+The Basic Electronics Technician course is organized as a 6-week static course website with top-level student pages, weekly module pages, 12 lessons, 8 labs, weekly quizzes, practical assessments, and instructor support materials.
