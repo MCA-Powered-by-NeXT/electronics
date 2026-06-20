@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lesson 8: Reading Basic Schematics</title><link rel="stylesheet" href="../assets/css/styles.css"></head>
+<body>
+<header class="site-header"><h1>Lesson 8: Reading Basic Schematics</h1><p>Estimated time: 2-3 hours. Learn to read electrical function, not physical layout.</p></header>
+<nav class="topnav" aria-label="Lesson navigation"><a href="lesson7-common-components-wiring-basics.html">Previous Lesson</a><a href="../weeks/week4/index.html">Week 4</a><a href="lesson9-series-parallel-circuits.html">Next Lesson</a><a href="../labs/lab5-component-identification-schematics.html">Related Lab</a><a href="../quizzes/week4-quiz.html">Week 4 Quiz</a></nav>
+<main>
+<section><h2>Learning Outcomes</h2><ul><li>Explain what schematics show and what they do not show.</li><li>Recognize battery, resistor, switch, LED, fuse, and ground symbols.</li><li>Trace a simple path from source through load to return.</li><li>Identify connected nodes, junction dots, and reference labels.</li></ul></section>
+<section><h2>Key Vocabulary</h2><p><strong>Schematic:</strong> diagram of electrical connections and function. <strong>Node:</strong> connected electrical point. <strong>Junction dot:</strong> mark showing wires connect. <strong>Reference designator:</strong> label such as R1, LED1, SW1, or F1. <strong>Ground:</strong> common reference or return point in many circuits.</p></section>
+<section><h2>Main Concept</h2><p>A schematic is not a picture of the breadboard. It is a map of electrical relationships. Parts that are far apart physically may be adjacent on the schematic because they are electrically connected.</p><div class="diagram">Basic LED schematic path:
+BT1 + -> SW1 -> R1 -> LED1 -> GND/BT1 -
+
+Filled dot = wires connect
+Crossing lines without dot = usually not connected</div><div class="callout"><strong>Reading habit:</strong> Start at the source, follow through control and load, then return to ground or battery negative.</div></section>
+<section><h2>Technician Tips</h2><ul><li>Circle the source first, then the load, then the return.</li><li>Highlight each node as you trace it.</li><li>Use component labels in your notes: "R1 measured 470 ohm" is clearer than "the resistor is okay."</li><li>If a schematic seems confusing, redraw only the part you are testing.</li></ul></section>
+<section><h2>Common Mistakes</h2><ul><li>Thinking wire length on the schematic means physical wire length.</li><li>Missing a junction dot and assuming two wires are separate.</li><li>Ignoring labels and guessing which part is being measured.</li><li>Trying to build without checking polarity marks.</li></ul></section>
+<section><h2>Knowledge Check</h2><div class="question">1. What does a schematic show better than a photo?</div><div class="question">2. What does a filled junction dot usually mean?</div><div class="question">3. Trace the example path from source to return.</div></section>
+<section><h2>Lab Connection</h2><p>Use this lesson in <a href="../labs/lab5-component-identification-schematics.html">Lab 5</a> before building circuits in <a href="../labs/lab6-series-parallel-circuits.html">Lab 6</a>.</p></section>
+</main><footer class="footer">Lesson 8</footer>
+</body></html>
