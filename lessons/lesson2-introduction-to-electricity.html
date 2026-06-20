@@ -1,20 +1,135 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lesson 2: Introduction to Electricity</title><link rel="stylesheet" href="../assets/css/styles.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 2: Introduction to Electricity</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
 <body>
-<header class="site-header"><h1>Lesson 2: Introduction to Electricity</h1><p>Estimated time: 2-3 hours. Understand the basic parts every working circuit must have.</p></header>
-<nav class="topnav" aria-label="Lesson navigation"><a href="lesson1-safety-technician-fundamentals.html">Previous Lesson</a><a href="../weeks/week1/index.html">Week 1</a><a href="lesson3-voltage-current-resistance.html">Next Lesson</a><a href="../labs/lab1-safety-inspection-ppe.html">Related Lab</a><a href="../quizzes/week1-quiz.html">Week 1 Quiz</a></nav>
+<header class="site-header">
+  <h1>Lesson 2: Introduction to Electricity</h1>
+  <p>Estimated time: 75-90 minutes. Learn the basic circuit model used throughout the course.</p>
+</header>
+<nav class="topnav" aria-label="Lesson navigation">
+  <a href="lesson1-safety-technician-fundamentals.html">Previous Lesson</a>
+  <a href="../weeks/week1/index.html">Week 1</a>
+  <a href="lesson3-voltage-current-resistance.html">Next Lesson</a>
+  <a href="../labs/lab1-safety-inspection-ppe.html">Related Lab</a>
+  <a href="../quizzes/week1-quiz.html">Week 1 Quiz</a>
+</nav>
 <main>
-<section><h2>Learning Outcomes</h2><ul><li>Identify the source, path, load, and return in a simple circuit.</li><li>Explain open and closed circuits in beginner-friendly language.</li><li>Describe the difference between a normal load path and a short circuit.</li><li>Recognize why electricity requires a complete path.</li></ul></section>
-<section><h2>Key Vocabulary</h2><p><strong>Source:</strong> battery or supply that provides electrical energy. <strong>Path:</strong> conductive route for current. <strong>Load:</strong> part that uses energy, such as an LED or buzzer. <strong>Return:</strong> path back to the source. <strong>Open:</strong> broken path. <strong>Short:</strong> unintended low-resistance path.</p></section>
-<section><h2>Main Concept</h2><p>A circuit works only when there is a complete path from the source, through the load, and back to the source. If the path is open, current cannot flow. If current bypasses the load through an unintended low-resistance path, the circuit may overheat or damage the source.</p><div class="diagram">Simple LED circuit:
-+ Battery -> Resistor -> LED -> Battery -
+  <section>
+    <h2>Learning Outcomes</h2>
+    <ul>
+      <li>Identify the source, path, load, and return in a simple circuit.</li>
+      <li>Explain open circuits, closed circuits, and short circuits.</li>
+      <li>Describe why current requires a complete path.</li>
+      <li>Use a simple circuit diagram to reason about faults.</li>
+      <li>Connect basic electricity ideas to safe troubleshooting habits.</li>
+    </ul>
+  </section>
 
-Open circuit: a break anywhere stops current.
-Short circuit: current bypasses the intended load.</div><div class="callout safety"><strong>Safe habit:</strong> Disconnect the battery before moving wires. Many beginner faults happen during quick changes.</div></section>
-<section><h2>Technician Tips</h2><ul><li>When a circuit is dead, first ask: do I have source voltage, a complete path, and a working load?</li><li>When something gets hot, suspect a short, wrong resistor value, or reversed part.</li><li>Draw a quick line from positive to negative before building; if you cannot trace the path on paper, the breadboard will be harder.</li></ul></section>
-<section><h2>Common Mistakes</h2><ul><li>Thinking ground is a magic drain instead of a return/reference point.</li><li>Connecting an LED directly to a battery without a current-limiting resistor.</li><li>Using breadboard rows incorrectly and creating an accidental open circuit.</li></ul></section>
-<section><h2>Knowledge Check</h2><div class="question">1. What four parts does every simple working circuit need?</div><div class="question">2. What is the difference between an open circuit and a short circuit?</div><div class="question">3. In the diagram, which part is the load?</div></section>
-<section><h2>Lab Connection</h2><p>This lesson supports the Week 1 safety lab and prepares you for the LED circuit in <a href="../labs/lab2-battery-voltage-led-circuit.html">Lab 2</a>.</p></section>
-</main><footer class="footer">Lesson 2</footer>
-</body></html>
+  <section>
+    <h2>Key Vocabulary</h2>
+    <table>
+      <tr><th>Term</th><th>Beginner Meaning</th></tr>
+      <tr><td>Source</td><td>The battery or approved supply that provides electrical energy.</td></tr>
+      <tr><td>Path</td><td>The conductive route that current can travel through, such as wire or breadboard connections.</td></tr>
+      <tr><td>Load</td><td>The part that uses electrical energy, such as an LED, buzzer, lamp, or motor.</td></tr>
+      <tr><td>Return</td><td>The path back to the source, often connected to battery negative or ground in simple DC circuits.</td></tr>
+      <tr><td>Open Circuit</td><td>A broken or incomplete path that stops current.</td></tr>
+      <tr><td>Short Circuit</td><td>An unintended low-resistance path that bypasses the load and may cause heat or damage.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Main Concept: Source, Path, Load, Return</h2>
+    <p>Every working circuit needs a complete route for current. A battery by itself is not a working circuit. An LED by itself is not a working circuit. A circuit works when a source pushes current through a path, through a load, and back to the source through a return path.</p>
+    <pre class="diagram">Simple LED circuit model:
+
+Source (+ battery) -> Path -> Current-limiting resistor -> LED load -> Return (- battery)
+
+If any required part of the loop is missing, current stops.</pre>
+    <p>This model is simple, but it is powerful. Later in the course, when a circuit fails, students will ask: Is the source present? Is the path complete? Is the load good? Is the return complete?</p>
+  </section>
+
+  <section>
+    <h2>Open, Closed, and Short Circuits</h2>
+    <p>A <strong>closed circuit</strong> has a complete intended path. A switch that is turned on creates a closed path. An <strong>open circuit</strong> has a break somewhere. A switch that is off creates an open path on purpose. A broken wire creates an open path by accident.</p>
+    <p>A <strong>short circuit</strong> is different. It is not simply a circuit that does not work. A short is an unintended low-resistance path, often bypassing the load. Shorts can create excessive current and heat.</p>
+    <pre class="diagram">Closed path:
++ -> switch closed -> resistor -> LED -> -
+
+Open path:
++ -> switch open     resistor -> LED -> -
+
+Short path:
++ -> accidental wire -> -     (load bypassed)</pre>
+    <div class="callout safety"><strong>Safety reminder:</strong> If a wire, battery, resistor, or LED becomes hot, disconnect the source. Heat is evidence that current may be taking the wrong path or exceeding a component rating.</div>
+  </section>
+
+  <section>
+    <h2>Why Current Needs a Complete Path</h2>
+    <p>Current is the movement of electric charge through a closed loop. In the water analogy, voltage is the push, current is the flow, and resistance is a restriction. The analogy is not perfect, but it helps beginners see why a break in the pipe stops the flow.</p>
+    <p>In a simple battery circuit, current leaves one side of the battery, travels through the load, and returns to the other side. If the return wire is missing, the circuit is not complete even if the positive wire is connected correctly.</p>
+  </section>
+
+  <section>
+    <h2>Technician Example: Dead LED Trainer</h2>
+    <p>Suppose an LED training circuit does not light. A beginner may immediately say, "The LED is bad." A technician uses the source-path-load-return model instead:</p>
+    <ol>
+      <li><strong>Source:</strong> Is the battery connected and within the expected voltage range?</li>
+      <li><strong>Path:</strong> Are the jumper wires in the correct breadboard rows?</li>
+      <li><strong>Load:</strong> Is the LED installed correctly and paired with a current-limiting resistor?</li>
+      <li><strong>Return:</strong> Is there a complete path back to battery negative?</li>
+    </ol>
+    <p>This process prevents random part swapping and prepares students for systematic troubleshooting later.</p>
+  </section>
+
+  <section>
+    <h2>Technician Tips</h2>
+    <ul>
+      <li>Trace the circuit with your finger before applying power.</li>
+      <li>Do not assume two breadboard holes are connected just because they are close together.</li>
+      <li>Use red for positive and black for return when possible, but verify the actual path.</li>
+      <li>If nothing happens, suspect an open path first. If something gets hot, suspect a short or wrong value.</li>
+      <li>When troubleshooting, describe the symptom before changing the circuit.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li><strong>Missing the return path:</strong> Students often wire the positive side but forget the path back to the battery.</li>
+      <li><strong>Bypassing the load:</strong> A jumper may accidentally connect positive to negative without going through the LED and resistor.</li>
+      <li><strong>Confusing open and short:</strong> An open stops current because the path is broken. A short may allow too much current through the wrong path.</li>
+      <li><strong>Powering before inspecting:</strong> Inspection should happen before the battery is connected.</li>
+      <li><strong>Assuming the visible part is the fault:</strong> The LED may be fine even if it is off; the path may be incomplete.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Mini Practice: Trace the Loop</h2>
+    <p>Use the diagram below. Label source, path, load, and return. Then identify where an open switch would stop current.</p>
+    <pre class="diagram">Battery + -> Switch -> Resistor -> LED -> Battery -</pre>
+    <p>Now predict: if the switch is open, should the LED be on or off? If a jumper accidentally connects Battery + directly to Battery -, what kind of fault is that?</p>
+  </section>
+
+  <section>
+    <h2>Knowledge Check</h2>
+    <div class="question">1. What four parts does every simple working circuit need?</div>
+    <div class="question">2. What is the difference between an open circuit and a short circuit?</div>
+    <div class="question">3. In a simple LED circuit, what is the load?</div>
+    <div class="question">4. Why can a circuit have a battery connected and still not work?</div>
+    <div class="question">5. What should you check first if a wire or component gets hot?</div>
+  </section>
+
+  <section>
+    <h2>Lab Connection</h2>
+    <p>This lesson supports <a href="../labs/lab1-safety-inspection-ppe.html">Lab 1</a> by giving students the vocabulary to identify unsafe or incomplete circuit setups. It also prepares students for the low-voltage LED circuit in Week 2.</p>
+  </section>
+</main>
+<footer class="footer">Lesson 2</footer>
+</body>
+</html>
