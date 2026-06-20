@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lesson 9: Series and Parallel Circuits</title><link rel="stylesheet" href="../assets/css/styles.css"></head>
+<body>
+<header class="site-header"><h1>Lesson 9: Series and Parallel Circuits</h1><p>Estimated time: 2-3 hours. Learn how current paths change circuit behavior and fault symptoms.</p></header>
+<nav class="topnav" aria-label="Lesson navigation"><a href="lesson8-reading-basic-schematics.html">Previous Lesson</a><a href="../weeks/week4/index.html">Week 4</a><a href="lesson10-applied-control-workmanship.html">Next Lesson</a><a href="../labs/lab6-series-parallel-circuits.html">Related Lab</a><a href="../quizzes/week4-quiz.html">Week 4 Quiz</a></nav>
+<main>
+<section><h2>Learning Outcomes</h2><ul><li>Build and identify series and parallel circuits.</li><li>Explain current path behavior in series and parallel branches.</li><li>Predict what happens when one load opens in each circuit type.</li><li>Use voltage checks to locate simple open faults.</li></ul></section>
+<section><h2>Key Vocabulary</h2><p><strong>Series:</strong> one path for current. <strong>Parallel:</strong> multiple current paths. <strong>Branch:</strong> one parallel path. <strong>Voltage drop:</strong> voltage used across a component. <strong>Open fault:</strong> a break that stops current in a path.</p></section>
+<section><h2>Main Concept</h2><p>In a series circuit, all current must pass through every part. One open can stop the whole circuit. In a parallel circuit, each branch has its own path, so one open branch may leave other branches working. Parallel branches can increase total current draw, so the source and wiring must be appropriate.</p><div class="diagram">Series:
++ -> R1 -> LED1 -> LED2 -> -
+
+Parallel:
++ -> R1 -> LED1 -> -
++ -> R2 -> LED2 -> -</div><div class="callout"><strong>Rule of thumb:</strong> In series, resistance adds. In parallel, branch currents add.</div></section>
+<section><h2>Technician Tips</h2><ul><li>If all loads are dead, check the source and shared return first.</li><li>If one parallel branch is dead, compare it to a working branch.</li><li>Use continuity only with power off; use voltage measurements when checking powered low-voltage training circuits.</li><li>Give each parallel LED its own current-limiting resistor.</li></ul></section>
+<section><h2>Common Mistakes</h2><ul><li>Using one resistor for several parallel LEDs and expecting equal brightness.</li><li>Assuming more resistors always means more total resistance; that is true in series, not always in parallel.</li><li>Removing one series part and wondering why the whole loop is off.</li></ul></section>
+<section><h2>Knowledge Check</h2><div class="question">1. What happens to two series LEDs if one LED is removed?</div><div class="question">2. Why does adding a parallel branch make the source work harder?</div><div class="question">3. Where would you measure voltage first if all loads are off?</div></section>
+<section><h2>Lab Connection</h2><p>In <a href="../labs/lab6-series-parallel-circuits.html">Lab 6</a>, you will build and compare series and parallel LED circuits.</p></section>
+</main><footer class="footer">Lesson 9</footer>
+</body></html>
