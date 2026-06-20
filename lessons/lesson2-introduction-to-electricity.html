@@ -34,6 +34,7 @@
       <li>Use a simple circuit diagram to reason about faults.</li>
       <li>Connect basic electricity ideas to safe troubleshooting habits.</li>
       <li>Use beginner circuit vocabulary in a short written explanation.</li>
+      <li>Recognize conductors and insulators in beginner circuit examples.</li>
     </ul>
   </section>
 
@@ -47,6 +48,8 @@
       <tr><td>Return</td><td>The path back to the source, often connected to battery negative or ground in simple DC circuits.</td><td>Can current return to the source?</td></tr>
       <tr><td>Open Circuit</td><td>A broken or incomplete path that stops current.</td><td>Where is the path interrupted?</td></tr>
       <tr><td>Short Circuit</td><td>An unintended low-resistance path that bypasses the load and may cause heat or damage.</td><td>Is current taking a path it should not take?</td></tr>
+      <tr><td>Conductor</td><td>A material that allows current to flow easily, such as copper wire.</td><td>Is this part intended to carry current?</td></tr>
+      <tr><td>Insulator</td><td>A material that resists current flow, such as plastic wire covering.</td><td>Is this part intended to prevent contact?</td></tr>
     </table>
   </section>
 
@@ -60,6 +63,30 @@ Source (+ battery) -> Path -> Current-limiting resistor -> LED load -> Return (-
 If any required part of the loop is missing, current stops.</pre>
     <p>This model is simple, but it is powerful. Later in the course, when a circuit fails, students will ask: Is the source present? Is the path complete? Is the load good? Is the return complete?</p>
     <div class="callout"><strong>Rule of thumb:</strong> If you cannot trace the full loop with your finger or pencil, do not power the circuit yet.</div>
+  </section>
+
+  <section>
+    <h2>The Four-Part Circuit Model in Detail</h2>
+    <table>
+      <tr><th>Part</th><th>What It Does</th><th>Beginner Example</th><th>Fault If Missing</th></tr>
+      <tr><td>Source</td><td>Provides electrical energy.</td><td>Battery pack.</td><td>No electrical push is available.</td></tr>
+      <tr><td>Path</td><td>Carries current through intended conductors.</td><td>Jumper wires and breadboard rows.</td><td>Current cannot reach the load.</td></tr>
+      <tr><td>Load</td><td>Uses electrical energy to do work.</td><td>LED, buzzer, or small lamp.</td><td>The circuit may have no useful output.</td></tr>
+      <tr><td>Return</td><td>Completes the loop back to the source.</td><td>Wire back to battery negative.</td><td>The circuit is open even if the positive side looks correct.</td></tr>
+    </table>
+    <p><strong>What students should notice:</strong> The return is just as important as the positive side. Many beginner circuits fail because the student connects power to the load but forgets the path back to the source.</p>
+  </section>
+
+  <section>
+    <h2>Conductors and Insulators</h2>
+    <p>A circuit path depends on conductors. Copper wire, metal component leads, and breadboard contacts are examples of conductors. Plastic insulation, rubber grips, and the plastic body of a breadboard are examples of insulators.</p>
+    <p>Technicians need both. Conductors create the intended path. Insulators prevent current from touching places it should not touch.</p>
+    <pre class="diagram">Wire anatomy:
+[plastic insulation] around [metal conductor]
+
+The metal carries current.
+The insulation helps keep the current on the intended path.</pre>
+    <p><strong>Mini-demonstration:</strong> With power disconnected, compare a bare jumper lead, an insulated wire, and a plastic tool handle. Ask students which parts are intended to conduct and which are intended to insulate.</p>
   </section>
 
   <section>
@@ -81,6 +108,7 @@ Short path:
     <h2>Why Current Needs a Complete Path</h2>
     <p>Current is the movement of electric charge through a closed loop. In the water analogy, voltage is the push, current is the flow, and resistance is a restriction. The analogy is not perfect, but it helps beginners see why a break in the path stops the flow.</p>
     <p>In a simple battery circuit, current leaves one side of the battery, travels through the load, and returns to the other side. If the return wire is missing, the circuit is not complete even if the positive wire is connected correctly.</p>
+    <div class="callout"><strong>Common misconception:</strong> Beginners sometimes think the battery "sends electricity to the LED" and stops there. In a working circuit, current must have a complete loop through the load and back to the source.</div>
   </section>
 
   <section>
@@ -93,6 +121,17 @@ Short path:
       <li><strong>Return:</strong> Is there a complete path back to battery negative?</li>
     </ol>
     <p>This process prevents random part swapping and prepares students for systematic troubleshooting later.</p>
+  </section>
+
+  <section>
+    <h2>Practice Scenario: What Would You Check?</h2>
+    <table>
+      <tr><th>Symptom</th><th>Possible Category</th><th>First Safe Check</th></tr>
+      <tr><td>LED never turns on.</td><td>Open path, reversed LED, weak source, missing return.</td><td>Disconnect power and trace the loop from source to return.</td></tr>
+      <tr><td>Battery wire gets warm.</td><td>Possible short or too much current.</td><td>Disconnect power immediately and inspect for unintended positive-to-negative path.</td></tr>
+      <tr><td>LED flickers when the board is moved.</td><td>Loose path or intermittent connection.</td><td>Disconnect power and inspect jumper seating and breadboard rows.</td></tr>
+      <tr><td>One student says, "The positive wire is connected, so it should work."</td><td>Missing return-path reasoning.</td><td>Ask the student to trace the complete loop back to battery negative.</td></tr>
+    </table>
   </section>
 
   <section>
@@ -127,6 +166,14 @@ Short path:
   </section>
 
   <section>
+    <h2>Suggested YouTube Support</h2>
+    <p><strong>Suggested video topic:</strong> Basic electric circuits for beginners. Use an instructor-approved YouTube video that explains simple battery circuits, complete paths, open circuits, and short circuits without demonstrating unsafe household wiring.</p>
+    <p><a href="https://www.youtube.com/results?search_query=basic+electric+circuits+for+beginners+battery+switch+LED" target="_blank" rel="noopener">YouTube search: basic electric circuits for beginners battery switch LED</a></p>
+    <p><strong>Viewing prompt:</strong> While watching, draw the source, path, load, and return shown in the video. Then write one example of an open circuit and one example of a short circuit.</p>
+    <p><strong>Instructor note:</strong> Preview the video before class and choose one that matches the low-voltage DC training boundary.</p>
+  </section>
+
+  <section>
     <h2>Knowledge Check</h2>
     <div class="question">1. What four parts does every simple working circuit need?</div>
     <div class="question">2. What is the difference between an open circuit and a short circuit?</div>
@@ -134,6 +181,7 @@ Short path:
     <div class="question">4. Why can a circuit have a battery connected and still not work?</div>
     <div class="question">5. What should you check first if a wire or component gets hot?</div>
     <div class="question">6. Why is a current-limiting resistor part of the intended path in a simple LED circuit?</div>
+    <div class="question">7. What is the difference between a conductor and an insulator?</div>
   </section>
 
   <section>
@@ -143,6 +191,7 @@ Short path:
       <li>An open circuit is an incomplete path; a short circuit is an unintended low-resistance path.</li>
       <li>Tracing the loop before powering a circuit prevents many beginner mistakes.</li>
       <li>The source-path-load-return model becomes the foundation for troubleshooting later in the course.</li>
+      <li>Conductors carry current; insulators help keep current on the intended path.</li>
     </ul>
   </section>
 

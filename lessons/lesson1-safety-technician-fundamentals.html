@@ -22,7 +22,7 @@
   <section>
     <h2>Lesson Purpose</h2>
     <p>This lesson introduces the habits that make the rest of the course possible. Students will not begin by wiring circuits. They will begin by learning how to approach a workstation, identify hazards, control power, use basic PPE, and think like entry-level technicians.</p>
-    <p>Safety in this course is practical. It is not a list of rules to memorize and forget. It is a routine students will repeat before measuring, building, troubleshooting, or documenting any circuit.</p>
+    <p>Safety in this course is practical. It is not a list of rules to memorize and forget. It is a routine students will repeat before measuring, building, troubleshooting, or documenting any circuit. A technician who learns to pause, inspect, and explain their next action is already working more professionally than someone who rushes into a circuit without a plan.</p>
     <div class="callout safety"><strong>Non-negotiable:</strong> Do not work on wall outlets, mains-powered devices, open power supplies, vehicle electrical systems, charged capacitors, or unknown energized equipment. This course uses low-voltage battery-powered DC training circuits only.</div>
   </section>
 
@@ -35,6 +35,7 @@
       <li>Explain ESD awareness and lockout/tagout awareness at a beginner level.</li>
       <li>Apply a safe work sequence: inspect, de-energize, verify, work, test, document.</li>
       <li>Explain why documentation is part of safe technical work.</li>
+      <li>Distinguish between personal safety, equipment safety, and measurement reliability.</li>
     </ul>
   </section>
 
@@ -48,6 +49,7 @@
       <tr><td>LOTO Awareness</td><td>Awareness of lockout/tagout principles: control energy, prevent unexpected startup, and never remove another person's lock or tag.</td><td>Real workplaces use energy-control procedures to protect people.</td></tr>
       <tr><td>De-energized</td><td>Power has been removed and the circuit is treated as safe to work on only after verification.</td><td>Assuming power is off is not the same as verifying it.</td></tr>
       <tr><td>Unknown Circuit</td><td>Any circuit whose power source, condition, or stored energy has not been verified.</td><td>Unknown circuits are treated as potentially energized until verified safe.</td></tr>
+      <tr><td>Stored Energy</td><td>Energy that may remain in a device after power is removed.</td><td>This course avoids stored-energy devices, but technicians must know why unknown devices require caution.</td></tr>
     </table>
   </section>
 
@@ -66,6 +68,18 @@
   </section>
 
   <section>
+    <h2>Three Kinds of Safety</h2>
+    <p>Beginners often think safety only means preventing injury. That is the most important part, but technicians also protect equipment and protect the quality of their measurements.</p>
+    <table>
+      <tr><th>Safety Type</th><th>Question To Ask</th><th>Example</th></tr>
+      <tr><td>Personal safety</td><td>Could this hurt someone?</td><td>Missing safety glasses while clipping component leads.</td></tr>
+      <tr><td>Equipment safety</td><td>Could this damage a tool, circuit, or component?</td><td>A jumper wire accidentally shorts the battery terminals.</td></tr>
+      <tr><td>Measurement reliability</td><td>Could this cause a false or confusing reading?</td><td>Loose leads or cluttered wiring make it hard to know where probes are touching.</td></tr>
+    </table>
+    <p>This three-part view helps students give better answers during inspections. Instead of saying, "This bench is messy," a stronger technician statement is, "The loose wires make the circuit path hard to trace and could create an accidental short or false measurement."</p>
+  </section>
+
+  <section>
     <h2>Main Concept: The Technician Safety Loop</h2>
     <p>Before working on a circuit, use a repeatable safety loop. Repeating the same loop reduces mistakes, especially when the circuit does not behave as expected.</p>
     <pre class="diagram">Technician safety loop:
@@ -77,6 +91,18 @@
 6. Test the result safely
 7. Document what happened</pre>
     <p><strong>Scenario:</strong> A student sees an LED circuit that is not lighting. The unsafe approach is to move wires while the battery is still connected. The technician approach is to disconnect the source, inspect the path, make one change, inspect again, reconnect power, and observe the result.</p>
+    <p><strong>What students should notice:</strong> The safety loop does not slow the work down once it becomes a habit. It prevents repeated mistakes, damaged parts, and unclear troubleshooting notes.</p>
+  </section>
+
+  <section>
+    <h2>Electricity You Can See: Static vs. Current</h2>
+    <p>Students may have already experienced electricity before entering the lab. A static shock from a doorknob, a balloon sticking to hair, or a spark from clothing are all familiar examples of electrical charge. Those examples are useful, but they are not the same as the current that flows through a working circuit.</p>
+    <table>
+      <tr><th>Type</th><th>Plain-Language Description</th><th>Course Connection</th></tr>
+      <tr><td>Static electricity</td><td>Charge builds up and may discharge suddenly.</td><td>Helps explain ESD awareness and why sensitive parts should be handled carefully.</td></tr>
+      <tr><td>Current electricity</td><td>Charge flows through a complete path.</td><td>Used in the battery-powered circuits students will build later.</td></tr>
+    </table>
+    <p><strong>Safe mini-demonstration:</strong> The instructor may demonstrate static charge with a balloon and small paper pieces. Students should notice that the effect happens without building a complete circuit. Then compare that to a battery-powered LED circuit, where the LED only works when the path is complete.</p>
   </section>
 
   <section>
@@ -152,6 +178,14 @@
   </section>
 
   <section>
+    <h2>Suggested YouTube Support</h2>
+    <p><strong>Suggested video topic:</strong> Electrical safety basics for beginners. Use an instructor-approved YouTube video that explains electrical hazards, PPE, and safe work habits without encouraging students to work on household wiring or mains voltage.</p>
+    <p><a href="https://www.youtube.com/results?search_query=electrical+safety+basics+for+beginners+PPE+electronics" target="_blank" rel="noopener">YouTube search: electrical safety basics for beginners PPE electronics</a></p>
+    <p><strong>Viewing prompt:</strong> While watching, list three hazards shown or discussed, then write the safe response a technician should take for each one.</p>
+    <p><strong>Instructor note:</strong> Preview the video before class. Avoid videos that demonstrate live household outlet work, bypassing protection, or unsafe meter use.</p>
+  </section>
+
+  <section>
     <h2>Knowledge Check</h2>
     <div class="question">1. What are three hazards you might find at an electronics workstation?</div>
     <div class="question">2. Why should power be disconnected before changing breadboard wiring?</div>
@@ -159,6 +193,7 @@
     <div class="question">4. What is one example of PPE used in this course?</div>
     <div class="question">5. What should you do first if a component becomes hot or smells unusual?</div>
     <div class="question">6. Why is documentation part of technician safety?</div>
+    <div class="question">7. What is the difference between static electricity and current electricity?</div>
   </section>
 
   <section>
@@ -168,6 +203,7 @@
       <li>Technicians inspect before touching and disconnect power before changing circuits.</li>
       <li>PPE, ESD awareness, and LOTO awareness are part of professional work habits.</li>
       <li>Good notes help the next person understand what happened.</li>
+      <li>Safe technicians protect people, equipment, and the quality of measurements.</li>
     </ul>
   </section>
 
