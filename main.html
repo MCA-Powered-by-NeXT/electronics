@@ -1,279 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syllabus: ELT 101 Foundations of Applied Electronics</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
-            --bg: #f4f7f6;
-            --text: #333;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-            margin: 0;
-            display: flex;
-        }
-
-        /* Sidebar Navigation */
-        nav {
-            width: 250px;
-            background: var(--primary);
-            height: 100vh;
-            position: fixed;
-            padding: 20px;
-            color: white;
-            overflow-y: auto;
-        }
-
-        nav h2 { font-size: 1.1rem; border-bottom: 1px solid var(--accent); padding-bottom: 10px; margin-top: 25px; }
-        nav h2:first-child { margin-top: 0; }
-
-        nav a {
-            display: block;
-            color: #bdc3c7;
-            text-decoration: none;
-            padding: 8px 0;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--accent); }
-
-        /* Main Content */
-        main {
-            margin-left: 290px;
-            padding: 40px;
-            max-width: 1000px;
-            background: var(--white);
-            min-height: 100vh;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.05);
-        }
-
-        header {
-            border-bottom: 4px solid var(--primary);
-            margin-bottom: 30px;
-        }
-
-        h1 { color: var(--primary); margin-bottom: 5px; }
-        h2 { color: var(--secondary); border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; }
-        
-        .meta-table {
-            width: 100%;
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th { background-color: var(--primary); color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-
-        .safety-box {
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            padding: 20px;
-            border-radius: 8px;
-            color: #856404;
-        }
-
-        .capstone {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            padding: 20px;
-            border-radius: 8px;
-            color: #155724;
-        }
-
-        .footer-logo {
-        width: 50vw;
-        max-width: 250px;
-        height: auto;
-        display: block;
-        margin: 0 auto 15px auto;
-        opacity: 0.8;
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-
-        @media print {
-            nav { display: none; }
-            main { margin-left: 0; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Electronics Technician Course Hub</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-
-<nav>
-    <h2>Syllabus Navigation</h2>
-    <a href="#description">Course Description</a>
-    <a href="#outcomes">Learning Outcomes</a>
-    <a href="#grading">Grading</a>
-    <a href="#schedule">Daily Schedule</a>
-    <a href="#safety">Safety Protocols</a>
-    <a href="#capstone">Capstone Project</a>
-
-    <h2>Daily Lessons</h2>
-    <a href="day1.html">Day 1: Safety & Intro</a>
-    <a href="day2.html">Day 2: Series & Parallel</a>
-    <a href="day3.html">Day 3: DMM Usage</a>
-    <a href="day4.html">Day 4: Diodes & Power</a>
-    <a href="day5.html">Day 5: Capacitors & RC</a>
-    <a href="day6.html">Day 6: Transistor Switches</a>
-    <a href="day7.html">Day 7: Digital Logic</a>
-    <a href="day8.html">Day 8: Soldering Skills</a>
-    <a href="day9.html">Day 9: Troubleshooting</a>
-    <a href="day10.html">Day 10: Final Capstone</a>
+<header class="site-header">
+  <h1>Basic Electronics Technician</h1>
+  <p>Compatibility landing page for the reorganized 6-week workforce course.</p>
+</header>
+<nav class="topnav" aria-label="Course navigation">
+  <a href="index.html">Dashboard</a><a href="syllabus.html">Syllabus</a><a href="course-map.html">Course Map</a><a href="competencies.html">Competencies</a><a href="tools-equipment.html">Tools</a>
 </nav>
-
 <main>
-    <header>
-        <h1>ELT 101: Foundations of Applied Electronics</h1>
-        <p><strong>Instructional Designer: Mike Russell</strong> Systems Architect | <strong>Duration:</strong> 2 Weeks Intensive</p>
-    </header>
-
-    <div class="meta-table">
-        <strong>Course Level:</strong> Introductory (No Prerequisites)<br>
-        <strong>Path:</strong> Electronics Technology AAS / Repair Certification<br>
-        <strong>Total Hours:</strong> 40 Hours (Lab + Theory)
-    </div>
-
-    <section id="description">
-        <h2>Course Overview</h2>
-        <p>This course provides a comprehensive foundation in fundamental electronic principles. Students progress from basic electrical safety to constructing and troubleshooting active circuits. We emphasize hands-on experience with professional diagnostic tools to prepare you for entry-level repair roles or further academic study.</p>
-    </section>
-
-    <section id="outcomes">
-        <h2>Learning Outcomes</h2>
-        <ul>
-            <li>Implement industry-standard <strong>Electrical Safety and ESD</strong> protocols.</li>
-            <li>Calculate <strong>Voltage, Current, Resistance, and Power</strong> using Ohm’s/Watt’s Law.</li>
-            <li>Operate a <strong>Digital Multimeter (DMM)</strong> for component testing.</li>
-            <li>Interpret <strong>Schematic Diagrams</strong> and build them on breadboards.</li>
-            <li>Perform high-quality <strong>Soldering and Rework</strong>.</li>
-            <li>Execute a <strong>Systematic Troubleshooting</strong> process to isolate circuit faults.</li>
-        </ul>
-    </section>
-
-    <section id="grading">
-        <h2>Assessment Breakdown</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Assessment Item</th>
-                    <th>Weight</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Lab Participation & Safety Compliance</td>
-                    <td>20%</td>
-                </tr>
-                <tr>
-                    <td>Laboratory Notebook & Documentation</td>
-                    <td>30%</td>
-                </tr>
-                <tr>
-                    <td>Mid-Course Practical Exam</td>
-                    <td>20%</td>
-                </tr>
-                <tr>
-                    <td>Final Capstone Project</td>
-                    <td>30%</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="schedule">
-        <h2>Daily Schedule</h2>
-        
-        <h3>Week 1: Fundamentals & Instruments</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Theory Topic</th>
-                    <th>Lab Activity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>Safety, ESD, Intro to Circuits, Ohm's Law</td><td>Safety Demo, PPE, Build simple DC circuit</td></tr>
-                <tr><td>2</td><td>Series/Parallel, Power (P=VI), Resistors</td><td>Measure networks, calculate dissipation</td></tr>
-                <tr><td>3</td><td>DMM Modes, Continuity, Lead Use</td><td>DMM Drills: Find shorts and opens</td></tr>
-                <tr><td>4</td><td>Diodes, Rectifiers, Power Supplies</td><td>Build Half/Full-wave rectifiers</td></tr>
-                <tr><td>5</td><td>Capacitors, Inductors, RC Timing</td><td>LED delay-off circuit, inspect failed caps</td></tr>
-            </tbody>
-        </table>
-
-        <h3>Week 2: Active Devices & Repair</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Theory Topic</th>
-                    <th>Lab Activity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>6</td><td>Transistors (BJT) as Switches</td><td>Build BJT switch, measure gain/saturation</td></tr>
-                <tr><td>7</td><td>Digital Logic, Gates, Pull-up Resistors</td><td>Logic state observation, debug digital circuits</td></tr>
-                <tr><td>8</td><td>Soldering Theory & Technique</td><td>Through-hole practice, desoldering, rework</td></tr>
-                <tr><td>9</td><td>Systematic Troubleshooting Flow</td><td>Diagnose "planted" faults on PCBs</td></tr>
-                <tr><td>10</td><td>Final Integration & Review</td><td>Practical Exam & Capstone Presentation</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="safety">
-        <h2>Safety Expectations</h2>
-        <div class="safety-box">
-            <strong>CRITICAL:</strong> 
-            1. Safety glasses are required at all times during soldering. <br>
-            2. ESD straps must be used when handling semiconductors. <br>
-            3. No work on high-voltage "Mains" circuitry is permitted.
-        </div>
-    </section>
-
-    <section id="capstone">
-        <h2>Capstone Project</h2>
-        <div class="capstone">
-            Students will be provided with a non-functional electronic device. To pass, you must verify the symptom, trace the circuit using a schematic, identify the fault (e.g., a blown diode or cold solder joint), and perform a successful repair with documented verification.
-        </div>
-    </section>
-
-    <footer>
-        <img src="feetPics/nexthands.png" alt="Next Hands" class="footer-logo">
-        <p>© 2026 Mississippi Coding Academy / NEXTHANDS</p>
-    </footer>
+  <section>
+    <h2>Course Reorganized</h2>
+    <p>The original 10-day slide deck is being expanded into a full 6-week Basic Electronics Technician course. Use the new dashboard to navigate the student, lab, quiz, assessment, and instructor materials.</p>
+    <p><a href="index.html">Open the new course dashboard</a></p>
+  </section>
+  <section>
+    <h2>Legacy Day Files</h2>
+    <p>The original <a href="day1.html">Day 1</a> through <a href="day10.html">Day 10</a> files remain available as migration source material.</p>
+  </section>
 </main>
-
+<footer class="footer">Basic Electronics Technician</footer>
 </body>
 </html>
