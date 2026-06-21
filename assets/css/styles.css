@@ -264,3 +264,169 @@ ol,ul{padding-left:1.35rem}
   .field{min-width:180px;border-bottom:1px solid #000}
   a{color:#000!important;text-decoration:underline}
 }
+
+/* =========================================================
+   Global Header Branding
+   Uses semantic <header> / .site-header pseudo-elements
+   Assets:
+   - mca-logo.png
+   - nexthands.png
+
+   Adjust these paths if your images live somewhere else.
+   Example: if this CSS file is /assets/css/styles.css
+   and images are in /assets/img/, use ../img/mca-logo.png
+   ========================================================= */
+
+:root {
+  --brand-mca-logo: url("../img/mca-logo.png");
+  --brand-nexthands-logo: url("../img/nexthands.png");
+
+  --brand-header-logo-size: clamp(72px, 9vw, 118px);
+  --brand-header-lockup-width: clamp(190px, 26vw, 360px);
+  --brand-header-top: clamp(1rem, 2vw, 1.6rem);
+  --brand-header-side: clamp(1rem, 3vw, 2rem);
+}
+
+/* Applies to the semantic header used across pages */
+header,
+.site-header {
+  position: relative;
+  overflow: hidden;
+
+  /* Creates room so the logos do not overlap page titles */
+  padding-top: clamp(7.5rem, 12vw, 10rem);
+  padding-left: clamp(1.25rem, 10vw, 9rem);
+  padding-right: clamp(1.25rem, 26vw, 24rem);
+}
+
+/* MCA logo: top-left */
+header::before,
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: var(--brand-header-top);
+  left: var(--brand-header-side);
+  width: var(--brand-header-logo-size);
+  height: var(--brand-header-logo-size);
+  background-image: var(--brand-mca-logo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* NeXT Hands logo lockup: top-right */
+header::after,
+.site-header::after {
+  content: "";
+  position: absolute;
+  top: var(--brand-header-top);
+  right: var(--brand-header-side);
+  width: var(--brand-header-lockup-width);
+  height: calc(var(--brand-header-lockup-width) * 0.34);
+  min-height: 64px;
+  background-image: var(--brand-nexthands-logo);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Keep header text above any decorative background layers */
+header > *,
+.site-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tablet adjustments */
+@media (max-width: 900px) {
+  header,
+  .site-header {
+    padding-top: 8.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  header::before,
+  .site-header::before {
+    width: 76px;
+    height: 76px;
+  }
+
+  header::after,
+  .site-header::after {
+    width: 230px;
+    height: 78px;
+  }
+}
+
+/* Mobile: keep both logos visible without crowding the title */
+@media (max-width: 620px) {
+  header,
+  .site-header {
+    padding-top: 9.5rem;
+    text-align: center;
+  }
+
+  header::before,
+  .site-header::before {
+    top: 0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+  }
+
+  header::after,
+  .site-header::after {
+    top: 5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(82vw, 260px);
+    height: 60px;
+    min-height: 0;
+    background-position: center;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  header,
+  .site-header {
+    padding-top: 9rem;
+  }
+
+  header::before,
+  .site-header::before {
+    width: 60px;
+    height: 60px;
+  }
+
+  header::after,
+  .site-header::after {
+    top: 4.6rem;
+    width: 86vw;
+    height: 54px;
+  }
+}
+
+/* Print: avoid large decorative branding taking page space */
+@media print {
+  header,
+  .site-header {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  header::before,
+  header::after,
+  .site-header::before,
+  .site-header::after {
+    display: none;
+  }
+}
