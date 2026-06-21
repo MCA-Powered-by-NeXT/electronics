@@ -278,8 +278,8 @@ ol,ul{padding-left:1.35rem}
    ========================================================= */
 
 :root {
-  --brand-mca-logo: url("../img/mca-logo.png");
-  --brand-nexthands-logo: url("../img/nexthands.png");
+  --brand-mca-logo: url("../mca-logo.png");
+  --brand-nexthands-logo: url("../nexthands.png");
 
   --brand-header-logo-size: clamp(72px, 9vw, 118px);
   --brand-header-lockup-width: clamp(190px, 26vw, 360px);
