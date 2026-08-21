@@ -1,349 +1,194 @@
-# Basic Electronics Technician
+# NeXTHands: Basic Electronics Technician
 
-## 6-Week Workforce Training Course
+## ETA Associate Certified Electronics Technician (CETa) Preparation Course
 
-**Duration:** 6 Weeks (60-90 Hours)
+**Duration:** 6 Weeks / 60-90 instructional hours  
+**Target Audience:** Beginners, workforce development participants, high school graduates, adult learners, and entry-level technician candidates  
+**Delivery:** Classroom instruction, hands-on low-voltage lab, milestone sessions, documentation, practical checkoffs, and final readiness assessment  
 
-**Target Audience:** Beginners, Workforce Development Participants, High School Graduates, Adult Learners
+## Course Mission
 
-**Delivery:** Classroom + Hands-On Lab
+The NeXTHands: Basic Electronics Technician program is an ETA Associate Certified Electronics Technician (CETa) preparation course. The course prepares students to perform safe, professional, entry-level electronics technician work while building the knowledge and confidence needed to sit for the ETA CETa certification exam.
 
-## Course Description
+Students should graduate with:
 
-This introductory course provides students with the foundational knowledge and practical skills needed to safely work with basic electrical and electronic systems. Students will learn electrical safety, proper use of a digital multimeter, continuity testing, identification of common electronic components, basic circuit construction, and troubleshooting techniques.
+- MCA Basic Electronics Technician Certificate eligibility
+- Hands-on technician skills
+- Readiness for the ETA Associate Certified Electronics Technician (CETa) certification exam
 
-## Module 1: Electrical Safety & Technician Fundamentals
+## Course Philosophy
 
-### Topics
+> The NeXTHands: Basic Electronics Technician program prepares students for entry-level employment by emphasizing safety, professionalism, accountability, documentation, teamwork, and technical competence. Students are expected to perform to industry standards while developing the knowledge and skills necessary to successfully pursue the ETA Associate Certified Electronics Technician (CETa) certification. Safety is not simply a lesson—it is an expectation that applies to every class, every lab, and every task.
 
-- Electronics Technician Career Overview
-- Electrical Hazards
-- Lockout/Tagout Awareness
-- Personal Protective Equipment (PPE)
-- Safe Use of Test Equipment
-- Introduction to Electricity
+## Final Goal
 
-### Lab Activities
+Ensure every lesson, lab, quiz, and assessment supports one mission:
 
-- Safety inspection exercise
-- PPE identification
-- Electrical hazard recognition
+> Graduate safe, professional, entry-level electronics technicians who are prepared to enter the workforce and are ready to sit for the ETA Associate Certified Electronics Technician (CETa) certification exam.
 
-### Learning Outcomes
+## MCA CETa Exam Support
 
-Students will:
+Students who successfully complete the course, complete all labs, pass all practical checkoffs, meet attendance requirements, and pass the MCA CETa Readiness Assessment may qualify to have their ETA CETa certification exam paid for by MCA, subject to MCA approval, funding availability, and current certification-administrator requirements.
 
-- Demonstrate safe work habits
-- Identify common electrical hazards
-- Explain basic electrical concepts
+## Standard Course Framework
 
-## Module 2: Understanding Voltage, Current & Resistance
+Every class follows a consistent workforce-training framework:
 
-### Topics
+- Safety First
+- Professionalism
+- Accountability
+- Hands-On Learning
+- Documentation
+- Workforce Readiness
+- Continuous Improvement
+- ETA CETa Preparation
 
-- What is Voltage?
-- What is Current?
-- What is Resistance?
-- Ohm's Law Basics
-- AC vs DC Power
-- Batteries and Power Supplies
+Core framework pages:
 
-### Lab Activities
+- `program/mission-and-philosophy.html`
+- `program/course-framework.html`
+- `program/cohort-schedule-attendance.html`
+- `program/milestone-session-guide.html`
+- `program/standard-three-hour-class-framework.html`
 
-- Measuring battery voltage
-- Identifying AC and DC sources
-- Simple circuit demonstrations
+## Cohort Schedule Model
 
-### Learning Outcomes
+### Day Cohort
 
-Students will:
+- Monday, 9:00 AM - 12:00 PM: Lesson A
+- Wednesday, 9:00 AM - 12:00 PM: Lesson B
+- Friday, 9:00 AM - 12:00 PM: Milestone Day
 
-- Define voltage, current, and resistance
-- Explain the relationship between electrical quantities
-- Use Ohm's Law for basic calculations
+### Evening Cohort
 
-## Module 3: Using a Digital Multimeter (DMM)
+- Tuesday, 6:00 PM - 9:00 PM: Lesson A
+- Thursday, 6:00 PM - 9:00 PM: Lesson B
+- Following Monday evening, 6:00 PM - 9:00 PM: Milestone Day
 
-### Topics
+Both cohorts remain synchronized:
 
-- Parts of a Multimeter
-- Selecting Proper Settings
-- Measuring:
-  - AC Voltage
-  - DC Voltage
-  - Resistance
-  - Current
-- Meter Safety Practices
+- Monday = Tuesday
+- Wednesday = Thursday
+- Friday morning = following Monday evening
 
-### Lab Activities
+Students may attend the alternate cohort to make up missed instruction when approved by the instructor. Students must still complete the required safety brief, lab, documentation, and checkoffs.
 
-- Measure household batteries
-- Test power supplies
-- Measure resistance of components
-- Practice meter setup and operation
+## Standard Three-Hour Class Framework
 
-### Learning Outcomes
+Each Lesson A and Lesson B class uses this structure:
 
-Students will:
+| Segment | Minutes |
+| --- | ---: |
+| Student Check-In | 10 |
+| Safety Brief | 10 |
+| Lesson Review | 15 |
+| New Instruction | 35 |
+| Instructor Demonstration | 10 |
+| Hands-On Lab | 75 |
+| Practical Checkoff | 10 |
+| Laboratory Shutdown | 10 |
+| After Action Review | 5 |
 
-- Correctly operate a digital multimeter
-- Select proper measurement functions
-- Accurately record electrical measurements
+## Milestone Sessions
 
-## Module 4: Continuity Testing & Circuit Components
+Milestone sessions include weekly quizzes, practical exams, practical checkoffs, CETa practice questions, troubleshooting, lab makeups, TestOut, Tinkercad, final projects, career readiness, instructor coaching, tool inventory, equipment maintenance, and weekly AAR. No new instruction occurs on Milestone Days.
 
-### Topics
+## Safety Program
 
-- What is Continuity?
-- Continuity Testing Procedures
-- Reading Basic Schematics
-- Resistors
-- Switches
-- Fuses
-- LEDs
-- Wiring Basics
+The safety program is documented in these files:
 
-### Lab Activities
+- `safety/laboratory-safety-manual.html`
+- `safety/daily-safety-brief-template.html`
+- `safety/ppe-policy.html`
+- `safety/electronics-fire-safety-plan.html`
+- `safety/battery-safety.html`
+- `safety/laboratory-shutdown-procedure.html`
+- `safety/after-action-review-template.html`
 
-- Continuity testing exercises
-- Testing switches and fuses
-- Identifying open and closed circuits
-- Building simple LED circuits
+Safety boundaries:
 
-### Learning Outcomes
+- Student labs use approved low-voltage DC training systems only.
+- No live AC measurements are performed in this course.
+- Students do not work on building wiring, wall outlets, open power supplies, vehicle electrical systems, charged capacitors, or unknown energized equipment.
 
-Students will:
+## ETA CETa Alignment
 
-- Perform continuity testing safely
-- Identify common electrical components
-- Verify circuit integrity
+The course includes a working ETA CETa crosswalk:
 
-## Module 5: Circuit Building & Troubleshooting
+- `alignment/eta-ceta-competency-matrix.html`
 
-### Topics
+The matrix maps ETA CETa objective areas to MCA lessons, labs, quizzes, practical checkoffs, and final readiness assessment evidence.
 
-- Series Circuits
-- Parallel Circuits
-- Common Electrical Faults
-- Troubleshooting Methods
-- Wire Identification
-- Connectors and Terminals
+## Assessments and Checkoffs
 
-### Lab Activities
+Assessment evidence includes:
 
-- Assemble simple circuits
-- Diagnose intentionally faulty circuits
-- Replace defective components
-- Verify repairs
+- Weekly quizzes
+- Tool Checkoff
+- Breadboard Checkoff
+- DMM Practical Checkoff
+- Continuity Practical Checkoff
+- Troubleshooting Checkoff
+- Final Project Rubric
+- Final Practical Exam
+- MCA CETa Readiness Assessment
+- Certificate Competency Checklist
 
-### Learning Outcomes
+Assessment files are located in `assessments/` and quiz files are located in `quizzes/`.
 
-Students will:
+## Course Modules
 
-- Build basic circuits
-- Troubleshoot common electrical problems
-- Apply systematic fault-finding techniques
+### Module 1: Electrical Safety and Technician Fundamentals
 
-## Module 6: Practical Applications & Final Project
+Students learn lab expectations, PPE, hazard recognition, ESD awareness, LOTO awareness, technician mindset, documentation, and safe low-voltage lab procedures.
 
-### Topics
+### Module 2: Voltage, Current, Resistance, and Approved Sources
 
-- Preventive Maintenance
-- Basic Electrical Documentation
-- Workplace Expectations
-- Career Opportunities
-- Review and Assessment
+Students learn voltage, current, resistance, Ohm's Law, batteries, DC training sources, and AC awareness. No live AC measurements are performed.
 
-### Final Project Options
+### Module 3: Digital Multimeter Use
 
-Students will:
+Students learn DMM parts, lead placement, settings, voltage/resistance/continuity measurements, current-mode awareness, meter safety, and measurement logs.
 
-- Wire and test an LED lighting circuit
-- Build a continuity testing board
-- Assemble a basic alarm circuit
-- Troubleshoot and repair a training board fault
+### Module 4: Continuity, Components, Breadboards, and Schematics
 
-### Learning Outcomes
+Students identify components, wires, connectors, terminals, symbols, and simple schematic paths while building safe breadboard circuits.
 
-Students will:
+### Module 5: Circuit Building, Wiring, Troubleshooting, and Workmanship
 
-- Demonstrate proper use of a multimeter
-- Perform continuity testing independently
-- Apply electrical safety procedures
-- Complete a basic electrical project
+Students build simple series/parallel circuits, identify faults, complete repair tickets, practice systematic troubleshooting, and develop technician workmanship habits.
 
-## Required Tools & Equipment
+### Module 6: Final Project, Documentation, Career Readiness, and CETa Review
 
-- Digital Multimeter
-- Continuity Tester (optional)
-- Safety Glasses
-- Wire Strippers
+Students complete final project work, final practical assessment, documentation, career readiness activities, and MCA CETa readiness review.
+
+## Required Tools and Equipment
+
+- Digital multimeter
+- Safety glasses
+- Wire strippers
+- Needle-nose pliers
+- Flush cutters
+- Crimpers
 - Screwdrivers
-- Electrical Training Boards
-- Batteries and Power Supplies
-- Assorted Wires
-- LEDs, Resistors, Switches, and Fuses
+- Nut drivers
+- Tweezers
+- Electrical training boards
+- Breadboards
+- Approved DC training sources
+- Batteries and battery holders
+- Assorted wires
+- LEDs, resistors, switches, fuses, potentiometers, pushbuttons, relays, buzzers, thermistors, photoresistors, and DC motors
 
-## Certificate Competencies
+## Repository Structure
 
-Upon successful completion, students will be able to:
-
-- Practice electrical safety procedures
-- Identify common electrical components
-- Read a digital multimeter
-- Measure AC/DC voltage and resistance
-- Perform continuity testing
-- Build and test simple electrical circuits
-- Troubleshoot basic electrical problems
-- Demonstrate entry-level electronics technician skills
-
-This structure works well as a NeXTHands: Basic Electronics Technician workforce course and can serve as a feeder into more advanced pathways such as industrial maintenance, automation, robotics, telecommunications, or renewable energy technologies.
-
-## Free or Low-Cost Industry-Recognized Credential Options
-
-For a 6-week Basic Electronics Technician course, truly free industry-recognized certifications are somewhat limited, but there are several good options that students can earn at no cost or very low cost.
-
-### 1. OSHA 10-Hour General Industry
-
-**Cost:** Often free through workforce grants, WIOA, community colleges, libraries, or workforce boards.
-
-**Value:**
-
-- Widely recognized by employers.
-- Demonstrates workplace safety knowledge.
-- Useful for electronics, manufacturing, maintenance, and industrial jobs.
-
-### 2. NC3 Digital Badges
-
-**Cost:** Free if your organization becomes an NC3 partner.
-
-**Relevant Areas:**
-
-- Basic Electrical Concepts
-- Multimeter Use
-- Safety Fundamentals
-- Electrical Measurements
-
-**Value:**
-
-- Recognized by many technical employers and community colleges.
-- Stackable credentials.
-
-**Website:** https://www.nc3.net
-
-### 3. SkillUp Coalition Certificates
-
-**Cost:** Free
-
-**Relevant Courses:**
-
-- Electrical Safety
-- Manufacturing Fundamentals
-- Maintenance Basics
-- Workplace Readiness
-
-**Website:** https://skillup.org
-
-### 4. Alison Electronics Courses
-
-**Cost:** Free to complete (certificate PDF may cost extra)
-
-**Relevant Courses:**
-
-- Diploma in Electrical Studies
-- Electronics Fundamentals
-- Electrical Wiring Basics
-
-**Website:** Free Online Courses & Online Learning | Alison
-
-### 5. Coursera Audit Courses
-
-**Cost:** Free to learn
-
-**Examples:**
-
-- Introduction to Electronics
-- Fundamentals of Electrical Engineering
-
-Offered by universities such as:
-
-- Georgia Tech
-- University of Colorado
-- University at Buffalo
-
-**Website:** Coursera | Courses, Professional Certificates, and Degrees Online
-
-### 6. NIMS Manufacturing Credentials (Grant-Funded)
-
-**Cost:** Frequently free through workforce programs.
-
-**Relevant Credentials:**
-
-- Measurement, Materials & Safety
-- Manufacturing Fundamentals
-
-Good pathway into:
-
-- Industrial Maintenance
-- Electronics Manufacturing
-- Automation
-
-### 7. Mississippi-Specific Workforce Certifications
-
-Since MCA powered by NeXT operates in Mississippi, students may be eligible for free certifications through:
-
-- AccelerateMS
-- WIN Job Centers
-- WIOA Funding
-- Mississippi Department of Employment Security (MDES)
-
-These programs often cover:
-
-- OSHA 10
-- MSSC CPT
-- NIMS Credentials
-- Manufacturing Safety
-
-## Best Free Credential Stack for Your 6-Week Course
-
-I would structure the program around these:
-
-### Required
-
-- OSHA 10 General Industry
-- NeXT Basic Electronics Technician Certificate of Completion
-
-### Optional Free Badges
-
-- NC3 Electrical Safety Badge
-- NC3 Multimeter Fundamentals Badge
-- SkillUp Electrical Fundamentals Certificate
-
-### Advanced Pathway (Next Course)
-
-- ETA Electronics Technician (CET) Prep
-- MSSC Certified Production Technician
-- Siemens Mechatronics
-- Industrial Maintenance Technician
-
-## MCA Powered by NeXT Recommendation
-
-For a short 6-week workforce course, market it as:
-
-**NeXTHands: Basic Electronics Technician**
-
-- OSHA 10
-- Multimeter Operation
-- Continuity Testing
-- Electrical Safety
-- Basic Troubleshooting
-- Circuit Building
-- NC3 Digital Badges (if partnership established)
-
-This gives students at least 2-4 credentials/badges without paying testing fees and creates a pathway into Industrial Maintenance, Mechatronics, Robotics, Telecommunications, and Renewable Energy training.
-
-## Reference
-
-Home - NC3 | National Coalition of Certification Centers
-
-A post from NC3Admin on NC3 | National Coalition of Certification Centers provided by: https://www.nc3.net
+- `index.html` - course dashboard
+- `program/` - mission, course framework, schedule, milestone model, class framework
+- `safety/` - safety manual, PPE policy, fire safety, battery safety, shutdown, AAR
+- `alignment/` - ETA CETa competency matrix
+- `weeks/` - weekly and daily course pages
+- `lessons/` - lesson pages
+- `labs/` - lab worksheets and activities
+- `quizzes/` - weekly quizzes and final quiz
+- `assessments/` - checkoffs, rubrics, final practical, readiness assessment
+- `instructor/` - instructor setup, grading, pacing, answer keys, and support materials
