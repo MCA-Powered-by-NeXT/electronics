@@ -154,6 +154,21 @@ section,.card,.course-card,.node-container{
   box-shadow:0 18px 48px -28px rgba(0,112,243,.72),0 10px 30px -10px rgba(0,112,243,.15);
 }
 
+/* Standard framework block for daily lesson pages. */
+body:has(nav[aria-label="Day navigation"]) main::before{
+  content:"Standard Class Framework\A\AThis class follows the MCA three-hour class framework: Student Check-In, Safety Brief, Lesson Review, New Instruction, Instructor Demonstration, Hands-On Lab, Practical Checkoff, Laboratory Shutdown, and After Action Review.\A\ALesson A and Lesson B deliver new instruction and hands-on practice. Milestone sessions are reserved for quizzes, practical checkoffs, makeups, CETa practice questions, troubleshooting, documentation review, coaching, tool inventory, equipment maintenance, and AAR. No new instruction occurs on Milestone Days.\A\AFramework reference: ../../program/standard-three-hour-class-framework.html | Milestone guide: ../../program/milestone-session-guide.html";
+  display:block;
+  white-space:pre-line;
+  color:var(--text-soft);
+  background:rgba(0,223,216,.07);
+  border:1px solid rgba(0,223,216,.2);
+  border-left:4px solid var(--color-accent-green);
+  border-radius:var(--radius-md);
+  padding:15px 17px;
+  margin:0 0 18px;
+  box-shadow:0 12px 36px -28px rgba(0,223,216,.55);
+}
+
 h1,h2,h3,.course-title{font-weight:800;letter-spacing:-.02em;color:#fff}
 h2{margin-top:0;font-size:clamp(1.45rem,2.3vw,2.1rem)}
 h3{color:#e0f2fe;font-size:1.12rem}
@@ -257,6 +272,7 @@ ol,ul{padding-left:1.35rem}
   .site-header{background:#fff!important;color:#000!important;border-bottom:2px solid #000;padding:16px 0}
   .site-header h1,.site-header p,h1,h2,h3,p,li,td,strong{color:#000!important}
   main{max-width:none;padding:0}
+  body:has(nav[aria-label="Day navigation"]) main::before{color:#000!important;background:#fff!important;border:1px solid #000!important;box-shadow:none!important}
   section,.card{background:#fff!important;border:1px solid #000!important;border-radius:0;page-break-inside:avoid;margin:12px 0;padding:14px}
   table{background:#fff!important;border:1px solid #000;border-radius:0;border-collapse:collapse;display:table}
   th,td{border:1px solid #000!important;color:#000!important;background:#fff!important}
