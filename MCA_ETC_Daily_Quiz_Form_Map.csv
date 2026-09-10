@@ -1,0 +1,31 @@
+form_code,week_number,day_number,form_title,google_form_name,source_exists,source_github_pages_url,points,automation_status
+MCA-ETC-1.1.4,1,1,Day 1 Quiz/Form: Safety and Technician Habits,MCA-ETC-1.1.4 - Day 1 Form - Safety and Technician Habits,To Create,,10,Create
+MCA-ETC-1.2.4,1,2,Day 2 Quiz/Form: Tinkercad Circuits,MCA-ETC-1.2.4 - Day 2 Form - Tinkercad Circuits,To Create,,10,Create
+MCA-ETC-1.3.4,1,3,Day 3 Quiz/Form: Electricity and Circuit Model,MCA-ETC-1.3.4 - Day 3 Form - Electricity and Circuit Model,To Create,,10,Create
+MCA-ETC-1.4.4,1,4,Day 4 Quiz/Form: Lab 1 Safety Inspection,MCA-ETC-1.4.4 - Day 4 Form - Lab 1 Safety Inspection,To Create,,10,Create
+MCA-ETC-1.5.4,1,5,Day 5 Quiz/Form: Review Quiz Readiness,MCA-ETC-1.5.4 - Day 5 Form - Review Quiz Readiness,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week1/day5-review-quiz-readiness.html,10,Create
+MCA-ETC-2.1.4,2,1,Day 1 Quiz/Form: Voltage Current Resistance,MCA-ETC-2.1.4 - Day 1 Form - Voltage Current Resistance,To Create,,10,Create
+MCA-ETC-2.2.4,2,2,Day 2 Quiz/Form: Resistors Color Code,MCA-ETC-2.2.4 - Day 2 Form - Resistors Color Code,To Create,,10,Create
+MCA-ETC-2.3.4,2,3,Day 3 Quiz/Form: Ohm's Law Current Limiting,MCA-ETC-2.3.4 - Day 3 Form - Ohm's Law Current Limiting,To Create,,10,Create
+MCA-ETC-2.4.4,2,4,Day 4 Quiz/Form: LED Circuit Lab,MCA-ETC-2.4.4 - Day 4 Form - LED Circuit Lab,To Create,,10,Create
+MCA-ETC-2.5.4,2,5,Day 5 Quiz/Form: Review Quiz,MCA-ETC-2.5.4 - Day 5 Form - Review Quiz,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week2/day5-review-quiz.html,10,Create
+MCA-ETC-3.1.4,3,1,Day 1 Quiz/Form: DMM Parts Safety,MCA-ETC-3.1.4 - Day 1 Form - DMM Parts Safety,To Create,,10,Create
+MCA-ETC-3.2.4,3,2,Day 2 Quiz/Form: Voltage Resistance Measurements,MCA-ETC-3.2.4 - Day 2 Form - Voltage Resistance Measurements,To Create,,10,Create
+MCA-ETC-3.3.4,3,3,Day 3 Quiz/Form: Continuity Switch Fuse,MCA-ETC-3.3.4 - Day 3 Form - Continuity Switch Fuse,To Create,,10,Create
+MCA-ETC-3.4.4,3,4,Day 4 Quiz/Form: DMM Checkoff,MCA-ETC-3.4.4 - Day 4 Form - DMM Checkoff,To Create,,10,Create
+MCA-ETC-3.5.4,3,5,Day 5 Quiz/Form: Review Quiz,MCA-ETC-3.5.4 - Day 5 Form - Review Quiz,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week3/day5-review-quiz.html,10,Create
+MCA-ETC-4.1.4,4,1,Day 1 Quiz/Form: Components Wiring,MCA-ETC-4.1.4 - Day 1 Form - Components Wiring,To Create,,10,Create
+MCA-ETC-4.2.4,4,2,Day 2 Quiz/Form: Schematics Tracing,MCA-ETC-4.2.4 - Day 2 Form - Schematics Tracing,To Create,,10,Create
+MCA-ETC-4.3.4,4,3,Day 3 Quiz/Form: Component Schematic Lab,MCA-ETC-4.3.4 - Day 3 Form - Component Schematic Lab,To Create,,10,Create
+MCA-ETC-4.4.4,4,4,Day 4 Quiz/Form: Series Parallel,MCA-ETC-4.4.4 - Day 4 Form - Series Parallel,To Create,,10,Create
+MCA-ETC-4.5.4,4,5,Day 5 Quiz/Form: Checkoff Quiz,MCA-ETC-4.5.4 - Day 5 Form - Checkoff Quiz,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week4/day5-checkoff-quiz.html,10,Create
+MCA-ETC-5.1.4,5,1,Day 1 Quiz/Form: Control Workmanship,MCA-ETC-5.1.4 - Day 1 Form - Control Workmanship,To Create,,10,Create
+MCA-ETC-5.2.4,5,2,Day 2 Quiz/Form: Troubleshooting Method,MCA-ETC-5.2.4 - Day 2 Form - Troubleshooting Method,To Create,,10,Create
+MCA-ETC-5.3.4,5,3,Day 3 Quiz/Form: Fault Board Lab,MCA-ETC-5.3.4 - Day 3 Form - Fault Board Lab,To Create,,10,Create
+MCA-ETC-5.4.4,5,4,Day 4 Quiz/Form: Troubleshooting Checkoff,MCA-ETC-5.4.4 - Day 4 Form - Troubleshooting Checkoff,To Create,,10,Create
+MCA-ETC-5.5.4,5,5,Day 5 Quiz/Form: Review Quiz,MCA-ETC-5.5.4 - Day 5 Form - Review Quiz,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week5/day5-review-quiz.html,10,Create
+MCA-ETC-6.1.4,6,1,Day 1 Quiz/Form: Project Planning,MCA-ETC-6.1.4 - Day 1 Form - Project Planning,To Create,,10,Create
+MCA-ETC-6.2.4,6,2,Day 2 Quiz/Form: Build Test,MCA-ETC-6.2.4 - Day 2 Form - Build Test,To Create,,10,Create
+MCA-ETC-6.3.4,6,3,Day 3 Quiz/Form: Troubleshoot Document,MCA-ETC-6.3.4 - Day 3 Form - Troubleshoot Document,To Create,,10,Create
+MCA-ETC-6.4.4,6,4,Day 4 Quiz/Form: Demo Rubric,MCA-ETC-6.4.4 - Day 4 Form - Demo Rubric,To Create,,10,Create
+MCA-ETC-6.5.4,6,5,Day 5 Quiz/Form: Final Quiz Certificate,MCA-ETC-6.5.4 - Day 5 Form - Final Quiz Certificate,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week6/day5-final-quiz-certificate.html,10,Create
