@@ -30,6 +30,23 @@ Ensure every lesson, lab, quiz, and assessment supports one mission:
 
 Students who successfully complete the course, complete all labs, pass all practical checkoffs, meet attendance requirements, and pass the MCA CETa Readiness Assessment may qualify to have their ETA CETa certification exam paid for by MCA, subject to MCA approval, funding availability, and current certification-administrator requirements.
 
+## Google Classroom and Drive Build
+
+Production delivery is Google Classroom and Google Drive. GitHub is used as the curriculum source and migration preview only.
+
+Current build plan files:
+
+- `CLASSROOM_BUILD.md` - Classroom, Drive, Forms, grading, and automation rules
+- `NeXTHands_Daily_Form_Map.csv` - one daily Form per course day
+
+Student-facing delivery rules:
+
+- Classroom posts are published on build, not draft.
+- Student materials are attached view-only.
+- Due dates are blank for the first build.
+- GitHub links are not attached to student Classroom posts.
+- Instructor-only guides are created under `Instructor Materials` in Drive and not posted to students.
+
 ## Standard Course Framework
 
 Every class follows a consistent workforce-training framework:
