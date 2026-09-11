@@ -1,0 +1,31 @@
+form_code,week_number,day_number,form_title,google_form_name,source_exists,source_github_pages_url,points,form_structure,automation_status
+NeXTHands-1.1.4,1,1,Day 1 Knowledge Check: Safety and Technician Habits,QUIZ NeXTHands-1.1 - Day 1 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-1.2.4,1,2,Day 2 Knowledge Check: Tinkercad Circuits,QUIZ NeXTHands-1.2 - Day 2 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-1.3.4,1,3,Day 3 Knowledge Check: Electricity and Circuit Model,QUIZ NeXTHands-1.3 - Day 3 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-1.4.4,1,4,Day 4 Knowledge Check: Lab 1 Safety Inspection,QUIZ NeXTHands-1.4 - Day 4 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-1.5.4,1,5,Day 5 Knowledge Check: Review Quiz Readiness,QUIZ NeXTHands-1.5 - Day 5 Knowledge Check,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week1/day5-review-quiz-readiness.html,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-2.1.4,2,1,Day 1 Knowledge Check: Voltage Current Resistance,QUIZ NeXTHands-2.1 - Day 1 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-2.2.4,2,2,Day 2 Knowledge Check: Resistors Color Code,QUIZ NeXTHands-2.2 - Day 2 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-2.3.4,2,3,Day 3 Knowledge Check: Ohm's Law Current Limiting,QUIZ NeXTHands-2.3 - Day 3 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-2.4.4,2,4,Day 4 Knowledge Check: LED Circuit Lab,QUIZ NeXTHands-2.4 - Day 4 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-2.5.4,2,5,Day 5 Knowledge Check: Review Quiz,QUIZ NeXTHands-2.5 - Day 5 Knowledge Check,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week2/day5-review-quiz.html,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-3.1.4,3,1,Day 1 Knowledge Check: DMM Parts Safety,QUIZ NeXTHands-3.1 - Day 1 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-3.2.4,3,2,Day 2 Knowledge Check: Voltage Resistance Measurements,QUIZ NeXTHands-3.2 - Day 2 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-3.3.4,3,3,Day 3 Knowledge Check: Continuity Switch Fuse,QUIZ NeXTHands-3.3 - Day 3 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-3.4.4,3,4,Day 4 Knowledge Check: DMM Checkoff,QUIZ NeXTHands-3.4 - Day 4 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-3.5.4,3,5,Day 5 Knowledge Check: Review Quiz,QUIZ NeXTHands-3.5 - Day 5 Knowledge Check,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week3/day5-review-quiz.html,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-4.1.4,4,1,Day 1 Knowledge Check: Components Wiring,QUIZ NeXTHands-4.1 - Day 1 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-4.2.4,4,2,Day 2 Knowledge Check: Schematics Tracing,QUIZ NeXTHands-4.2 - Day 2 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-4.3.4,4,3,Day 3 Knowledge Check: Component Schematic Lab,QUIZ NeXTHands-4.3 - Day 3 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-4.4.4,4,4,Day 4 Knowledge Check: Series Parallel,QUIZ NeXTHands-4.4 - Day 4 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-4.5.4,4,5,Day 5 Knowledge Check: Checkoff Quiz,QUIZ NeXTHands-4.5 - Day 5 Knowledge Check,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week4/day5-checkoff-quiz.html,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-5.1.4,5,1,Day 1 Knowledge Check: Control Workmanship,QUIZ NeXTHands-5.1 - Day 1 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-5.2.4,5,2,Day 2 Knowledge Check: Troubleshooting Method,QUIZ NeXTHands-5.2 - Day 2 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-5.3.4,5,3,Day 3 Knowledge Check: Fault Board Lab,QUIZ NeXTHands-5.3 - Day 3 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-5.4.4,5,4,Day 4 Knowledge Check: Troubleshooting Checkoff,QUIZ NeXTHands-5.4 - Day 4 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-5.5.4,5,5,Day 5 Knowledge Check: Review Quiz,QUIZ NeXTHands-5.5 - Day 5 Knowledge Check,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week5/day5-review-quiz.html,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-6.1.4,6,1,Day 1 Knowledge Check: Project Planning,QUIZ NeXTHands-6.1 - Day 1 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-6.2.4,6,2,Day 2 Knowledge Check: Build Test,QUIZ NeXTHands-6.2 - Day 2 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-6.3.4,6,3,Day 3 Knowledge Check: Troubleshoot Document,QUIZ NeXTHands-6.3 - Day 3 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-6.4.4,6,4,Day 4 Knowledge Check: Demo Rubric,QUIZ NeXTHands-6.4 - Day 4 Knowledge Check,To Create,,10,Scored daily quiz section + unscored exit ticket section,Create
+NeXTHands-6.5.4,6,5,Day 5 Knowledge Check: Final Quiz Certificate,QUIZ NeXTHands-6.5 - Day 5 Knowledge Check,Yes,https://mca-powered-by-next.github.io/electronics/weeks/week6/day5-final-quiz-certificate.html,10,Scored daily quiz section + unscored exit ticket section,Create
